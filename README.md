@@ -5,7 +5,17 @@ anaemia and for the ABO × Rh blood-group system, using Punnett-square logic
 expressed as a linear-algebra problem.
 
 Implemented independently in **Python** and **MATLAB** so the two can be checked
-against each other. Full write-up: [`report/Bioinformatics-Arshyia-Mehran.pdf`](report/Bioinformatics-Arshyia-Mehran.pdf) (54 pages).
+against each other.
+
+### Write-ups
+
+- [`report/IB-Mathematics-Extended-Essay.pdf`](report/IB-Mathematics-Extended-Essay.pdf)
+  (29 pages) — the mathematical derivation. Sets up the problem, develops the matrix
+  formulation, and covers the linear algebra it needs (matrix inverses, determinants,
+  eigenvalues). This is where the modelling argument is actually made.
+- [`report/Bioinformatics-Arshyia-Mehran.pdf`](report/Bioinformatics-Arshyia-Mehran.pdf)
+  (54 pages) — the computational write-up: implementation, simulation results and
+  discussion.
 
 ## The idea
 
