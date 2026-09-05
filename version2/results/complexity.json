@@ -1,0 +1,282 @@
+{
+  "traits": [
+    {
+      "name": "Sickle cell (HBB, simplified)",
+      "allele_counts": [
+        2
+      ],
+      "G": 3,
+      "U": 6,
+      "nnz": 10,
+      "dense_entries": 18,
+      "density": 0.5555555555555556,
+      "dense_payload_bytes": 144,
+      "csr_value_payload_bytes": 80,
+      "max_children_one_pair": 3
+    },
+    {
+      "name": "ABO",
+      "allele_counts": [
+        3
+      ],
+      "G": 6,
+      "U": 21,
+      "nnz": 45,
+      "dense_entries": 126,
+      "density": 0.35714285714285715,
+      "dense_payload_bytes": 1008,
+      "csr_value_payload_bytes": 360,
+      "max_children_one_pair": 6
+    },
+    {
+      "name": "ABO x Rh",
+      "allele_counts": [
+        3,
+        2
+      ],
+      "G": 18,
+      "U": 171,
+      "nnz": 615,
+      "dense_entries": 3078,
+      "density": 0.19980506822612085,
+      "dense_payload_bytes": 24624,
+      "csr_value_payload_bytes": 4920,
+      "max_children_one_pair": 18
+    },
+    {
+      "name": "Eye colour (HERC2 + modifier)",
+      "allele_counts": [
+        2,
+        2
+      ],
+      "G": 9,
+      "U": 45,
+      "nnz": 125,
+      "dense_entries": 405,
+      "density": 0.30864197530864196,
+      "dense_payload_bytes": 3240,
+      "csr_value_payload_bytes": 1000,
+      "max_children_one_pair": 9
+    },
+    {
+      "name": "Three biallelic loci",
+      "allele_counts": [
+        2,
+        2,
+        2
+      ],
+      "G": 27,
+      "U": 378,
+      "nnz": 1750,
+      "dense_entries": 10206,
+      "density": 0.17146776406035666,
+      "dense_payload_bytes": 81648,
+      "csr_value_payload_bytes": 14000,
+      "max_children_one_pair": 27
+    },
+    {
+      "name": "Five biallelic loci",
+      "allele_counts": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "G": 243,
+      "U": 29646,
+      "nnz": 381250,
+      "dense_entries": 7203978,
+      "density": 0.05292214940134465,
+      "dense_payload_bytes": 57631824,
+      "csr_value_payload_bytes": 3050000,
+      "max_children_one_pair": 243
+    }
+  ],
+  "biallelic_series": [
+    {
+      "n": 1,
+      "G": 3,
+      "U": 6,
+      "nnz": 10,
+      "dense_entries": 18,
+      "density": 0.5555555555555556,
+      "nnz_ratio_to_previous": null,
+      "dense_ratio_to_previous": null
+    },
+    {
+      "n": 2,
+      "G": 9,
+      "U": 45,
+      "nnz": 125,
+      "dense_entries": 405,
+      "density": 0.30864197530864196,
+      "nnz_ratio_to_previous": 12.5,
+      "dense_ratio_to_previous": 22.5
+    },
+    {
+      "n": 3,
+      "G": 27,
+      "U": 378,
+      "nnz": 1750,
+      "dense_entries": 10206,
+      "density": 0.17146776406035666,
+      "nnz_ratio_to_previous": 14.0,
+      "dense_ratio_to_previous": 25.2
+    },
+    {
+      "n": 4,
+      "G": 81,
+      "U": 3321,
+      "nnz": 25625,
+      "dense_entries": 269001,
+      "density": 0.09525986892242036,
+      "nnz_ratio_to_previous": 14.642857142857142,
+      "dense_ratio_to_previous": 26.357142857142858
+    },
+    {
+      "n": 5,
+      "G": 243,
+      "U": 29646,
+      "nnz": 381250,
+      "dense_entries": 7203978,
+      "density": 0.05292214940134465,
+      "nnz_ratio_to_previous": 14.878048780487806,
+      "dense_ratio_to_previous": 26.78048780487805
+    },
+    {
+      "n": 6,
+      "G": 729,
+      "U": 266085,
+      "nnz": 5703125,
+      "dense_entries": 193975965,
+      "density": 0.029401194111858136,
+      "nnz_ratio_to_previous": 14.959016393442623,
+      "dense_ratio_to_previous": 26.92622950819672
+    },
+    {
+      "n": 7,
+      "G": 2187,
+      "U": 2392578,
+      "nnz": 85468750,
+      "dense_entries": 5232568086,
+      "density": 0.016333996728810075,
+      "nnz_ratio_to_previous": 14.986301369863014,
+      "dense_ratio_to_previous": 26.975342465753425
+    },
+    {
+      "n": 8,
+      "G": 6561,
+      "U": 21526641,
+      "nnz": 1281640625,
+      "dense_entries": 141236291601,
+      "density": 0.00907444262711671,
+      "nnz_ratio_to_previous": 14.995429616087751,
+      "dense_ratio_to_previous": 26.991773308957953
+    },
+    {
+      "n": 9,
+      "G": 19683,
+      "U": 193720086,
+      "nnz": 19222656250,
+      "dense_entries": 3812992452738,
+      "density": 0.005041357015064838,
+      "nnz_ratio_to_previous": 14.99847607436757,
+      "dense_ratio_to_previous": 26.997256933861628
+    },
+    {
+      "n": 10,
+      "G": 59049,
+      "U": 1743421725,
+      "nnz": 288330078125,
+      "dense_entries": 102947309439525,
+      "density": 0.0028007538972582434,
+      "nnz_ratio_to_previous": 14.999491973176184,
+      "dense_ratio_to_previous": 26.99908555171713
+    },
+    {
+      "n": 11,
+      "G": 177147,
+      "U": 15690618378,
+      "nnz": 4324902343750,
+      "dense_entries": 2779545973807566,
+      "density": 0.0015559743873656909,
+      "nnz_ratio_to_previous": 14.99983065198984,
+      "dense_ratio_to_previous": 26.99969517358171
+    },
+    {
+      "n": 12,
+      "G": 531441,
+      "U": 141215033961,
+      "nnz": 64873291015625,
+      "dense_entries": 75047458863267801,
+      "density": 0.0008644302152031615,
+      "nnz_ratio_to_previous": 14.999943550025966,
+      "dense_ratio_to_previous": 26.99989839004674
+    }
+  ],
+  "asymptotic_limits": {
+    "genotypes": "Theta(3^n) for n biallelic loci; Theta(prod a_l(a_l+1)/2) in general",
+    "unordered_pairs": "Theta(9^n / 2)",
+    "supported_transitions": "Theta(15^n) since (15^n + 5^n)/2 is between 15^n/2 and 15^n",
+    "dense_entries": "Theta(27^n / 2)",
+    "density_limit": "density -> 0 as (15/27)^n, so sparsity improves without bound",
+    "nnz_ratio_limit": 15.0,
+    "dense_ratio_limit": 27.0,
+    "nnz_ratio_at_top_measured_step": 14.878048780487806
+  },
+  "measured_growth": {
+    "dense": {
+      "update": {
+        "per_locus_multiplier": 4.560901375617151,
+        "log_intercept": -12.612265415825988,
+        "r_squared": 0.9305999140362501
+      },
+      "update_top_step_ratio": 11.128566624718916,
+      "construction": {
+        "per_locus_multiplier": 9.999680336842422,
+        "log_intercept": -12.164047246795247,
+        "r_squared": 0.9843332245817731
+      },
+      "construction_top_step_ratio": 15.010521414012652
+    },
+    "csr": {
+      "update": {
+        "per_locus_multiplier": 4.115029211875665,
+        "log_intercept": -12.303879977783465,
+        "r_squared": 0.9358821180934338
+      },
+      "update_top_step_ratio": 9.29609034291956,
+      "construction": {
+        "per_locus_multiplier": 8.462046599372531,
+        "log_intercept": -11.416944563944856,
+        "r_squared": 0.9739484585452354
+      },
+      "construction_top_step_ratio": 15.088018665717781
+    },
+    "hash": {
+      "update": {
+        "per_locus_multiplier": 9.121459359429718,
+        "log_intercept": -13.53825231015036,
+        "r_squared": 0.9816085313520821
+      },
+      "update_top_step_ratio": 13.561889863503412,
+      "construction": {
+        "per_locus_multiplier": 10.348040886539652,
+        "log_intercept": -12.293254567205011,
+        "r_squared": 0.9890135186159429
+      },
+      "construction_top_step_ratio": 14.681891663617835
+    },
+    "streamed_kernel": {
+      "update": {
+        "per_locus_multiplier": 12.388340274308831,
+        "log_intercept": -12.902653389509599,
+        "r_squared": 0.9977838854068005
+      },
+      "update_top_step_ratio": 14.210383933175898
+    }
+  },
+  "growth_comparison_note": "Construction is dominated by enumerating supported transitions, so the work ratio from four to five loci is nnz(5)/nnz(4) = 14.878. Measured construction time over that same step rose by 15.01 (dense), 15.09 (CSR) and 14.68 (hash), agreeing with the derived ratio to about 1.5 per cent. A least-squares exponent fitted over all of n = 1..5 instead gives 8.5 to 10.4, because fixed per-call overhead dominates the smallest problems and flattens the fitted slope. The asymptotic claim is therefore supported by the top of the measured range and not by the whole of it, which is what an asymptotic claim is entitled to.",
+  "completed_at_utc": "2026-09-05T17:20:35.315456+00:00"
+}

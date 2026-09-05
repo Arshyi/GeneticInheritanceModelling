@@ -1,0 +1,935 @@
+{
+  "model": {
+    "loci": [
+      "HERC2 rs12913832 (real genotype calls)",
+      "declared modifier locus (compressed residual pigmentation variation)"
+    ],
+    "genotypes_G": 9,
+    "unordered_pairs_U": 45,
+    "supported_transitions_nnz": 125,
+    "dense_entries_GU": 405,
+    "dense_payload_bytes": 3240,
+    "csr_value_payload_bytes": 1000,
+    "phenotype_classes": [
+      "blue",
+      "intermediate",
+      "hazel",
+      "brown"
+    ],
+    "phenotype_map": {
+      "2_0": "blue",
+      "2_1": "blue",
+      "2_2": "intermediate",
+      "1_0": "hazel",
+      "1_1": "brown",
+      "1_2": "brown",
+      "0_0": "hazel",
+      "0_1": "brown",
+      "0_2": "brown"
+    }
+  },
+  "representation_agreement": {
+    "timings_seconds": {
+      "dense": {
+        "build_seconds": 0.0002677999436855316,
+        "update_seconds": 8.409982547163963e-05
+      },
+      "csr": {
+        "build_seconds": 0.012446900131180882,
+        "update_seconds": 0.00013980013318359852
+      },
+      "hash": {
+        "build_seconds": 0.0003005999606102705,
+        "update_seconds": 8.270004764199257e-05
+      },
+      "streamed": {
+        "build_seconds": null,
+        "update_seconds": 0.0003192999865859747
+      }
+    },
+    "max_absolute_deviation_from_dense": {
+      "dense": 0.0,
+      "csr": 2.7755575615628914e-17,
+      "hash": 2.7755575615628914e-17,
+      "streamed": 2.7755575615628914e-17
+    }
+  },
+  "modifier_locus": {
+    "declared_frequency": 0.5,
+    "declared_implied_gg_non_blue": 0.25,
+    "calibrated_frequency_from_canpath": 0.5744562646538028,
+    "calibration_note": "The calibrated value reproduces the published GG discordance by construction. It is a calibration, not a validation, and no accuracy is claimed from it."
+  },
+  "external_anchors": {
+    "canpath": {
+      "cohort": "Canadian Partnership for Tomorrow's Health (CanPath)",
+      "individuals": 5481,
+      "gg_individuals": 2757,
+      "aa_ag_individuals": 2724,
+      "gg_non_blue_fraction": 0.33,
+      "aa_ag_non_brown_or_hazel_count": 512
+    },
+    "irisplex": {
+      "snps": 6,
+      "auc_blue": 0.96,
+      "auc_brown": 0.96,
+      "cohort_size": 6168
+    }
+  },
+  "population_records": [
+    {
+      "population": "ACB",
+      "superpopulation": "AFR",
+      "n": 96,
+      "counts_AA_AG_GG": [
+        82,
+        13,
+        1
+      ],
+      "blue_allele_frequency": 0.078125,
+      "observed_genotype_frequencies": [
+        0.8541666666666666,
+        0.13541666666666666,
+        0.010416666666666666
+      ],
+      "hwe_expected": [
+        81.5859375,
+        13.828125,
+        0.5859375
+      ],
+      "hwe_exact_p": 0.4468928148000675,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 0.9999999999999998,
+      "predicted_phenotypes": {
+        "blue": 0.0069791666666666665,
+        "intermediate": 0.0034374999999999996,
+        "hazel": 0.17920114287268185,
+        "brown": 0.8103821904606514
+      }
+    },
+    {
+      "population": "ASW",
+      "superpopulation": "AFR",
+      "n": 61,
+      "counts_AA_AG_GG": [
+        45,
+        15,
+        1
+      ],
+      "blue_allele_frequency": 0.13934426229508196,
+      "observed_genotype_frequencies": [
+        0.7377049180327869,
+        0.2459016393442623,
+        0.01639344262295082
+      ],
+      "hwe_expected": [
+        45.18442622950819,
+        14.631147540983605,
+        1.1844262295081966
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.01098360655737705,
+        "intermediate": 0.00540983606557377,
+        "hazel": 0.17811882363186324,
+        "brown": 0.805487733745186
+      }
+    },
+    {
+      "population": "BEB",
+      "superpopulation": "SAS",
+      "n": 86,
+      "counts_AA_AG_GG": [
+        69,
+        17,
+        0
+      ],
+      "blue_allele_frequency": 0.09883720930232558,
+      "observed_genotype_frequencies": [
+        0.8023255813953488,
+        0.19767441860465115,
+        0.0
+      ],
+      "hwe_expected": [
+        69.84011627906978,
+        15.319767441860463,
+        0.8401162790697673
+      ],
+      "hwe_exact_p": 0.9999999999999973,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 0.9999999999999999,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "CDX",
+      "superpopulation": "EAS",
+      "n": 93,
+      "counts_AA_AG_GG": [
+        93,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        93.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "CEU",
+      "superpopulation": "EUR",
+      "n": 99,
+      "counts_AA_AG_GG": [
+        4,
+        38,
+        57
+      ],
+      "blue_allele_frequency": 0.7676767676767676,
+      "observed_genotype_frequencies": [
+        0.04040404040404041,
+        0.3838383838383838,
+        0.5757575757575758
+      ],
+      "hwe_expected": [
+        5.343434343434346,
+        35.313131313131315,
+        58.34343434343433
+      ],
+      "hwe_exact_p": 0.5793736815866181,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0000000000000002,
+      "predicted_phenotypes": {
+        "blue": 0.38575757575757585,
+        "intermediate": 0.19,
+        "hazel": 0.0768249875664703,
+        "brown": 0.34741743667595393
+      }
+    },
+    {
+      "population": "CHB",
+      "superpopulation": "EAS",
+      "n": 103,
+      "counts_AA_AG_GG": [
+        103,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        103.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "CHS",
+      "superpopulation": "EAS",
+      "n": 105,
+      "counts_AA_AG_GG": [
+        103,
+        2,
+        0
+      ],
+      "blue_allele_frequency": 0.009523809523809525,
+      "observed_genotype_frequencies": [
+        0.9809523809523809,
+        0.01904761904761905,
+        0.0
+      ],
+      "hwe_expected": [
+        103.00952380952383,
+        1.980952380952381,
+        0.009523809523809525
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 0.9999999999999999,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076058
+      }
+    },
+    {
+      "population": "CLM",
+      "superpopulation": "AMR",
+      "n": 94,
+      "counts_AA_AG_GG": [
+        50,
+        38,
+        6
+      ],
+      "blue_allele_frequency": 0.26595744680851063,
+      "observed_genotype_frequencies": [
+        0.5319148936170213,
+        0.40425531914893614,
+        0.06382978723404255
+      ],
+      "hwe_expected": [
+        50.648936170212764,
+        36.702127659574465,
+        6.648936170212765
+      ],
+      "hwe_exact_p": 0.9999999999999971,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.04276595744680851,
+        "intermediate": 0.021063829787234038,
+        "hazel": 0.16952869596734782,
+        "brown": 0.7666415167986096
+      }
+    },
+    {
+      "population": "ESN",
+      "superpopulation": "AFR",
+      "n": 99,
+      "counts_AA_AG_GG": [
+        99,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        99.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "FIN",
+      "superpopulation": "EUR",
+      "n": 99,
+      "counts_AA_AG_GG": [
+        0,
+        18,
+        81
+      ],
+      "blue_allele_frequency": 0.9090909090909091,
+      "observed_genotype_frequencies": [
+        0.0,
+        0.18181818181818182,
+        0.8181818181818182
+      ],
+      "hwe_expected": [
+        0.8181818181818187,
+        16.36363636363637,
+        81.81818181818181
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0000000000000002,
+      "predicted_phenotypes": {
+        "blue": 0.5481818181818183,
+        "intermediate": 0.26999999999999996,
+        "hazel": 0.03292499467134442,
+        "brown": 0.1488931871468374
+      }
+    },
+    {
+      "population": "GBR",
+      "superpopulation": "EUR",
+      "n": 91,
+      "counts_AA_AG_GG": [
+        4,
+        25,
+        62
+      ],
+      "blue_allele_frequency": 0.8186813186813187,
+      "observed_genotype_frequencies": [
+        0.04395604395604396,
+        0.27472527472527475,
+        0.6813186813186813
+      ],
+      "hwe_expected": [
+        2.9917582417582422,
+        27.016483516483518,
+        60.99175824175824
+      ],
+      "hwe_exact_p": 0.47999675062055536,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.4564835164835165,
+        "intermediate": 0.2248351648351648,
+        "hazel": 0.057709193956916864,
+        "brown": 0.26097212472440184
+      }
+    },
+    {
+      "population": "GIH",
+      "superpopulation": "SAS",
+      "n": 103,
+      "counts_AA_AG_GG": [
+        86,
+        17,
+        0
+      ],
+      "blue_allele_frequency": 0.0825242718446602,
+      "observed_genotype_frequencies": [
+        0.8349514563106796,
+        0.1650485436893204,
+        0.0
+      ],
+      "hwe_expected": [
+        86.70145631067962,
+        15.59708737864078,
+        0.7014563106796117
+      ],
+      "hwe_exact_p": 0.9999999999999918,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239425,
+        "brown": 0.8189125293076056
+      }
+    },
+    {
+      "population": "GWD",
+      "superpopulation": "AFR",
+      "n": 113,
+      "counts_AA_AG_GG": [
+        108,
+        5,
+        0
+      ],
+      "blue_allele_frequency": 0.022123893805309734,
+      "observed_genotype_frequencies": [
+        0.9557522123893806,
+        0.04424778761061947,
+        0.0
+      ],
+      "hwe_expected": [
+        108.05530973451326,
+        4.889380530973451,
+        0.05530973451327434
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076058
+      }
+    },
+    {
+      "population": "IBS",
+      "superpopulation": "EUR",
+      "n": 107,
+      "counts_AA_AG_GG": [
+        48,
+        49,
+        10
+      ],
+      "blue_allele_frequency": 0.32242990654205606,
+      "observed_genotype_frequencies": [
+        0.4485981308411215,
+        0.45794392523364486,
+        0.09345794392523364
+      ],
+      "hwe_expected": [
+        49.123831775700936,
+        46.75233644859813,
+        11.123831775700934
+      ],
+      "hwe_exact_p": 0.8245501380497957,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.06261682242990654,
+        "intermediate": 0.030841121495327098,
+        "hazel": 0.1641634080108621,
+        "brown": 0.7423786480639043
+      }
+    },
+    {
+      "population": "ITU",
+      "superpopulation": "SAS",
+      "n": 102,
+      "counts_AA_AG_GG": [
+        92,
+        10,
+        0
+      ],
+      "blue_allele_frequency": 0.049019607843137254,
+      "observed_genotype_frequencies": [
+        0.9019607843137255,
+        0.09803921568627451,
+        0.0
+      ],
+      "hwe_expected": [
+        92.24509803921568,
+        9.509803921568627,
+        0.24509803921568626
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076058
+      }
+    },
+    {
+      "population": "JPT",
+      "superpopulation": "EAS",
+      "n": 104,
+      "counts_AA_AG_GG": [
+        104,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        104.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "KHV",
+      "superpopulation": "EAS",
+      "n": 99,
+      "counts_AA_AG_GG": [
+        99,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        99.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "LWK",
+      "superpopulation": "AFR",
+      "n": 99,
+      "counts_AA_AG_GG": [
+        99,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        99.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "MSL",
+      "superpopulation": "AFR",
+      "n": 85,
+      "counts_AA_AG_GG": [
+        85,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        85.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "MXL",
+      "superpopulation": "AMR",
+      "n": 64,
+      "counts_AA_AG_GG": [
+        47,
+        11,
+        6
+      ],
+      "blue_allele_frequency": 0.1796875,
+      "observed_genotype_frequencies": [
+        0.734375,
+        0.171875,
+        0.09375
+      ],
+      "hwe_expected": [
+        43.06640625,
+        18.8671875,
+        2.06640625
+      ],
+      "hwe_exact_p": 0.002751801587352563,
+      "hwe_exact_p_holm": 0.07154684127116664,
+      "joint_genotype_mass": 0.9999999999999999,
+      "predicted_phenotypes": {
+        "blue": 0.06281250000000001,
+        "intermediate": 0.030937499999999996,
+        "hazel": 0.1641105203149823,
+        "brown": 0.7421394796850177
+      }
+    },
+    {
+      "population": "PEL",
+      "superpopulation": "AMR",
+      "n": 85,
+      "counts_AA_AG_GG": [
+        66,
+        19,
+        0
+      ],
+      "blue_allele_frequency": 0.11176470588235295,
+      "observed_genotype_frequencies": [
+        0.7764705882352941,
+        0.2235294117647059,
+        0.0
+      ],
+      "hwe_expected": [
+        67.06176470588234,
+        16.876470588235296,
+        1.061764705882353
+      ],
+      "hwe_exact_p": 0.5883972180431835,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076058
+      }
+    },
+    {
+      "population": "PJL",
+      "superpopulation": "SAS",
+      "n": 96,
+      "counts_AA_AG_GG": [
+        79,
+        15,
+        2
+      ],
+      "blue_allele_frequency": 0.09895833333333333,
+      "observed_genotype_frequencies": [
+        0.8229166666666666,
+        0.15625,
+        0.020833333333333332
+      ],
+      "hwe_expected": [
+        77.94010416666666,
+        17.119791666666664,
+        0.9401041666666665
+      ],
+      "hwe_exact_p": 0.21913509233653214,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.013958333333333333,
+        "intermediate": 0.006874999999999999,
+        "hazel": 0.1773148150529694,
+        "brown": 0.8018518516136971
+      }
+    },
+    {
+      "population": "PUR",
+      "superpopulation": "AMR",
+      "n": 104,
+      "counts_AA_AG_GG": [
+        64,
+        32,
+        8
+      ],
+      "blue_allele_frequency": 0.23076923076923078,
+      "observed_genotype_frequencies": [
+        0.6153846153846154,
+        0.3076923076923077,
+        0.07692307692307693
+      ],
+      "hwe_expected": [
+        61.53846153846153,
+        36.92307692307692,
+        5.538461538461539
+      ],
+      "hwe_exact_p": 0.17212339051270786,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.05153846153846154,
+        "intermediate": 0.025384615384615384,
+        "hazel": 0.1671576652545178,
+        "brown": 0.7559192578224053
+      }
+    },
+    {
+      "population": "STU",
+      "superpopulation": "SAS",
+      "n": 102,
+      "counts_AA_AG_GG": [
+        96,
+        6,
+        0
+      ],
+      "blue_allele_frequency": 0.029411764705882353,
+      "observed_genotype_frequencies": [
+        0.9411764705882353,
+        0.058823529411764705,
+        0.0
+      ],
+      "hwe_expected": [
+        96.08823529411764,
+        5.823529411764706,
+        0.08823529411764706
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    },
+    {
+      "population": "TSI",
+      "superpopulation": "EUR",
+      "n": 107,
+      "counts_AA_AG_GG": [
+        34,
+        56,
+        17
+      ],
+      "blue_allele_frequency": 0.4205607476635514,
+      "observed_genotype_frequencies": [
+        0.3177570093457944,
+        0.5233644859813084,
+        0.1588785046728972
+      ],
+      "hwe_expected": [
+        35.92523364485982,
+        52.14953271028038,
+        18.925233644859812
+      ],
+      "hwe_exact_p": 0.5523886358103537,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 0.9999999999999999,
+      "predicted_phenotypes": {
+        "blue": 0.10644859813084112,
+        "intermediate": 0.052429906542056065,
+        "hazel": 0.15231656413378958,
+        "brown": 0.6888049311933132
+      }
+    },
+    {
+      "population": "YRI",
+      "superpopulation": "AFR",
+      "n": 108,
+      "counts_AA_AG_GG": [
+        108,
+        0,
+        0
+      ],
+      "blue_allele_frequency": 0.0,
+      "observed_genotype_frequencies": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "hwe_expected": [
+        108.0,
+        0.0,
+        0.0
+      ],
+      "hwe_exact_p": 1.0,
+      "hwe_exact_p_holm": 1.0,
+      "joint_genotype_mass": 1.0,
+      "predicted_phenotypes": {
+        "blue": 0.0,
+        "intermediate": 0.0,
+        "hazel": 0.18108747069239428,
+        "brown": 0.8189125293076057
+      }
+    }
+  ],
+  "ceu_generations": [
+    {
+      "blue": 0.38575757575757585,
+      "intermediate": 0.19,
+      "hazel": 0.0768249875664703,
+      "brown": 0.34741743667595393
+    },
+    {
+      "blue": 0.39484950515253553,
+      "intermediate": 0.1944781144781145,
+      "hazel": 0.07436762264431049,
+      "brown": 0.33630475772503965
+    },
+    {
+      "blue": 0.39484950515253553,
+      "intermediate": 0.19447811447811456,
+      "hazel": 0.0743676226443105,
+      "brown": 0.33630475772503965
+    },
+    {
+      "blue": 0.3948495051525357,
+      "intermediate": 0.19447811447811458,
+      "hazel": 0.07436762264431052,
+      "brown": 0.33630475772503976
+    },
+    {
+      "blue": 0.3948495051525359,
+      "intermediate": 0.1944781144781147,
+      "hazel": 0.07436762264431057,
+      "brown": 0.3363047577250399
+    },
+    {
+      "blue": 0.3948495051525364,
+      "intermediate": 0.19447811447811492,
+      "hazel": 0.07436762264431065,
+      "brown": 0.3363047577250403
+    },
+    {
+      "blue": 0.3948495051525373,
+      "intermediate": 0.1944781144781154,
+      "hazel": 0.07436762264431081,
+      "brown": 0.3363047577250411
+    }
+  ],
+  "data_provenance": {
+    "dataset_id": "ensembl_rs12913832_phase3",
+    "variant": "rs12913832",
+    "assembly": "GRCh38",
+    "chromosome": "15",
+    "position": 28120472,
+    "strand": 1,
+    "ensembl_release": 116,
+    "individuals": 2504,
+    "csv_sha256": "7532a5d90b1aa6862d2b7b9c6dc8922496b5b315d45ea4d83f15ad435a194b02"
+  },
+  "orientation": {
+    "blue_associated_allele": "G",
+    "brown_associated_allele": "A",
+    "resolved_by": "population frequency ordering, not the database allele label",
+    "northern_european_frequency": {
+      "FIN": 0.909091,
+      "GBR": 0.818681,
+      "CEU": 0.767677
+    },
+    "african_east_asian_frequency": {
+      "YRI": 0.0,
+      "ESN": 0.0,
+      "LWK": 0.0,
+      "CHB": 0.0,
+      "JPT": 0.0
+    }
+  },
+  "validation_status": "Genotype calls only; the panel carries no eye-colour observations. No predictive accuracy is established.",
+  "completed_at_utc": "2026-09-05T17:20:58.643635+00:00"
+}

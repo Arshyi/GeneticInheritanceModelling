@@ -468,6 +468,135 @@
       "accessed_date": "2026-09-05"
     },
     {
+      "id": "sturm2008herc2",
+      "type": "primary_research",
+      "authors": [
+        "Richard A. Sturm",
+        "David L. Duffy",
+        "Zhen Zhen Zhao",
+        "and colleagues"
+      ],
+      "title": "A Single SNP in an Evolutionary Conserved Region within Intron 86 of the HERC2 Gene Determines Human Blue-Brown Eye Color",
+      "year": 2008,
+      "venue": "American Journal of Human Genetics 82(2):424-431",
+      "doi": "10.1016/j.ajhg.2007.11.005",
+      "url": "https://www.cell.com/ajhg/fulltext/S0002-9297(07)00040-7",
+      "access_status": "Bibliographic record and headline findings confirmed by web search 2026-09-05; publisher full text not read in this session.",
+      "supports": [
+        "rs12913832 in HERC2 intron 86 as the dominant common determinant of blue versus brown iris colour",
+        "Ordinal logistic regression R-squared of 0.68 and association LOD of 444 for this single SNP",
+        "The variant lying in a conserved regulatory region controlling OCA2 expression"
+      ],
+      "does_not_establish": [
+        "That a single locus is sufficient to predict an individual's eye colour",
+        "The two-locus phenotype map declared in this work, which is a modelling choice",
+        "Any frequency used in this work, which come from the frozen reference panel"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "walsh2011irisplex",
+      "type": "primary_research",
+      "authors": [
+        "Susan Walsh",
+        "Fan Liu",
+        "Kaye N. Ballantyne",
+        "Mannis van Oven",
+        "Oscar Lao",
+        "Manfred Kayser"
+      ],
+      "title": "IrisPlex: A sensitive DNA tool for accurate prediction of blue and brown eye colour in the absence of ancestry information",
+      "year": 2011,
+      "venue": "Forensic Science International: Genetics 5(3):170-180. PMID 20457092",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20457092/",
+      "access_status": "Authors, title, journal, volume, issue, pages and PMID confirmed by web search 2026-09-05; publisher full text not read in this session. DOI not independently confirmed and is therefore omitted.",
+      "supports": [
+        "A six-SNP model for blue and brown eye colour",
+        "Reported areas under the receiver operating characteristic curve of 0.96 for blue and 0.96 for brown",
+        "That a published predictive benchmark for this trait exists and is far stronger than the model built here"
+      ],
+      "does_not_establish": [
+        "Performance of any model in this repository",
+        "Transferability of that accuracy to populations outside the development cohorts",
+        "Prediction of intermediate, green or hazel classes, which the cited accuracies do not cover"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "abbatangelo2026canpath",
+      "type": "primary_research",
+      "authors": [
+        "Cristina L. Abbatangelo",
+        "Frida Lona Durazo",
+        "Melissa Edwards",
+        "Esteban J. Parra"
+      ],
+      "title": "A comparative GWAS of eye colour in light and dark eye genetic backgrounds defined by HERC2 rs12913832 polymorphism in a Canadian cohort of European ancestry",
+      "year": 2026,
+      "venue": "Scientific Reports, article 44580. Preprint: bioRxiv 10.1101/2025.07.20.665796",
+      "doi": "10.1038/s41598-026-44580-8",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.07.20.665796v3.full",
+      "access_status": "Authors, title, cohort and the two discordance figures read from the open bioRxiv version of the same work on 2026-09-05; the Scientific Reports page requires authentication and was not read.",
+      "supports": [
+        "CanPath cohort of 5,481 genotyped and self-reported individuals, 2,757 GG and 2,724 AA or AG",
+        "33 per cent of rs12913832 GG individuals self-reporting an eye colour other than blue",
+        "512 of 2,724 AA or AG individuals reporting a colour other than brown or hazel"
+      ],
+      "does_not_establish": [
+        "That the same discordance holds in any other population",
+        "A causal mechanism for the discordance",
+        "The modifier-locus frequency calibrated against it here, which is a calibration and not a measurement"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "piel2010sickle",
+      "type": "primary_research",
+      "authors": [
+        "Frederic B. Piel",
+        "Anand P. Patil",
+        "Rosalind E. Howes",
+        "and colleagues"
+      ],
+      "title": "Global distribution of the sickle cell gene and geographical confirmation of the malaria hypothesis",
+      "year": 2010,
+      "venue": "Nature Communications 1:104",
+      "doi": "10.1038/ncomms1104",
+      "url": "https://www.nature.com/articles/ncomms1104",
+      "access_status": "Bibliographic record and headline findings confirmed by web search 2026-09-05; the publisher page redirects to an authentication endpoint and the full text and licence terms were not read. Cited in text only; no figure is reproduced.",
+      "supports": [
+        "An evidence-based geostatistical map of worldwide HbS allele frequency",
+        "Geographical coincidence of high HbS frequency with historical malaria endemicity"
+      ],
+      "does_not_establish": [
+        "Any allele frequency used in a calculation here, which come from the frozen rs334 snapshot",
+        "A causal test of heterozygote advantage",
+        "Permission to reproduce any figure from that article"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "ensembl_rs12913832_phase3",
+      "type": "public_dataset",
+      "organization": "Ensembl, The 1000 Genomes Project Consortium",
+      "title": "rs12913832 population genotype and allele counts, 1000GENOMES:phase_3 subset",
+      "year": 2026,
+      "venue": "Ensembl REST API, release 116. Frozen snapshot in data/eye_color_genotypes.csv",
+      "url": "https://rest.ensembl.org/variation/human/rs12913832?population_genotypes=1;pops=1;content-type=application/json",
+      "access_status": "Retrieved live on 2026-09-05, validated against independently supplied allele counts, and frozen with a SHA-256 digest. Offline revalidation is part of the reproduction sequence.",
+      "supports": [
+        "Genotype counts for 2,504 individuals across 26 component populations at rs12913832",
+        "The population frequency ordering used to resolve which allele is blue-associated",
+        "Exact Hardy-Weinberg testing at this locus"
+      ],
+      "does_not_establish": [
+        "Any eye-colour observation; the panel is not phenotyped",
+        "Worldwide eye-colour prevalence",
+        "Predictive accuracy of any model"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
       "id": "dean_abo_2005",
       "type": "authoritative_reference_chapter",
       "authors": [

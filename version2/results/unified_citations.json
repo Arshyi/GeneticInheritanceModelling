@@ -8,6 +8,7 @@
     "froedtert_sickle_2022",
     "britannica_sickle_2022",
     "bender_carlberg_scd_2025",
+    "piel2010sickle",
     "haese_2014_furthermaths",
     "isogg_generation_2016",
     "desmos_2022",
@@ -34,9 +35,13 @@
     "holm1979",
     "dean_mns_2005",
     "dean_hh_2005",
+    "sturm2008herc2",
+    "ensembl_rs12913832_phase3",
+    "abbatangelo2026canpath",
+    "walsh2011irisplex",
+    "yengo2022height",
     "nist_wilson",
     "scipy_kstest",
-    "yengo2022height",
     "kong2012paternal",
     "jonsson2017trios",
     "blokzijl2016somatic",
@@ -48,5 +53,5 @@
     "hannum2013aging",
     "nelder1972glm"
   ],
-  "total": 47
+  "total": 52
 }

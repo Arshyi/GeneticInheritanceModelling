@@ -8,9 +8,11 @@ sys.path.insert(0,str(root))
 if (root/'.deps').is_dir():sys.path.insert(0,str(root/'.deps'))
 commands={'science':'experiments.science','reproduce':'experiments.reproduce_version1',
           'benchmark':'experiments.benchmark','manuscript':'experiments.build_manuscript','unified':'experiments.build_unified',
-          'fetch':'experiments.fetch_population_data'}
+          'fetch':'experiments.fetch_population_data',
+          'eyecolor':'experiments.eye_color','complexity':'experiments.complexity',
+          'fetcheye':'experiments.fetch_eye_color_data'}
 if len(sys.argv)<2 or sys.argv[1] not in {*commands,'test'}:
-    raise SystemExit('Usage: python run.py {test|reproduce|science|benchmark|manuscript|unified|fetch} [arguments]')
+    raise SystemExit('Usage: python run.py {test|reproduce|science|benchmark|eyecolor|complexity|manuscript|unified|fetch|fetcheye} [arguments]')
 command=sys.argv.pop(1)
 if command=='test':
     import pytest

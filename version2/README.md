@@ -2,7 +2,7 @@
 
 A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchanged in the parent directory. The main result is a reproducible audit and complete probabilistic inheritance engine, with measured dense/CSR/hash/streamed comparisons and explicitly limited biological validation.
 
-**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (42 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. The [Version II review manuscript](output/pdf/Genetics_Version_II.pdf) ([source](manuscript/version2_manuscript.md)) remains available as the standalone audit. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
+**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (74 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. The [Version II review manuscript](output/pdf/Genetics_Version_II.pdf) ([source](manuscript/version2_manuscript.md)) remains available as the standalone audit. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
 
 ## Findings
 
@@ -12,6 +12,18 @@ A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchang
 - At five biallelic loci, dense payload is **57,631,824 bytes**, CSR **4,575,976 bytes**. Median validated updates were **12.560 ms** and **9.535 ms**, respectively, in the retained local run. All measured implementation results agreed within **6.94e-17**.
 - Public rs334 calls from **26 populations / 2,504 samples** support an HWE and pooling audit. They do not validate clinical prediction or worldwide prevalence.
 - A **200-locus synthetic additive model** has 401 score bins. Its nominal 90% interval covered **90.03%** of 10,000 independent simulated outcomes. It is not a human height predictor.
+- **Eye colour** is built as a two-locus epistatic trait on **real rs12913832 calls for 2,504 individuals**
+  across 26 populations. Four representations agree to 2.78e-17. Density 0.3086, so sparse storage is not
+  worth its overhead at this size. Under neutral random mating the distribution reaches its Hardy-Weinberg
+  fixed point in **one generation** and never moves again.
+- The declared eye-colour map implies 25% of HERC2 GG individuals are not blue; a phenotyped cohort of 5,481
+  reports **33%**. Matching it requires fitting a parameter to it - a calibration, not a validation. A
+  published six-SNP model reports **AUC 0.96**; this work reports none, because it has no phenotypes.
+- **Complexity, with lower bounds.** Materialising the complete kernel is **Omega(15^n)** for any
+  implementation; returning all children of a heterozygous pair is **Omega(3^n)** by output size. The
+  implemented factored query is **Theta(n)** and therefore optimal. Derived growth is confirmed at the top of
+  the measured range: nnz rises 14.878x from four to five loci, measured construction time rose 15.01x,
+  15.09x and 14.68x.
 - **LIMITATION - mutation destroys the sparsity the architecture rests on.** With any positive
   per-transmission mutation probability every structural zero becomes positive. At five loci the
   supported-transition count rises from **381,250 to the full dense 7,203,978**, and CSR becomes
@@ -43,6 +55,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe run.py benchmark
 .\.venv\Scripts\python.exe run.py test -q --junitxml=results/tests.xml
 .\.venv\Scripts\python.exe run.py manuscript
+.\.venv\Scripts\python.exe run.py eyecolor
+.\.venv\Scripts\python.exe run.py complexity
 .\.venv\Scripts\python.exe run.py unified
 ```
 
@@ -62,6 +76,9 @@ Fetch defaults to offline validation against the frozen provenance. Use `python 
 | `experiments/reproduce_version1.py` | Exact rational reconstruction with legacy state order |
 | `experiments/benchmark.py` | Isolated workers, raw repeated timings, distinct memory metrics |
 | `experiments/science.py` | HWE, synthetic dynamics, MNS, ABO/FUT1, linkage and quantitative-trait checks |
+| `experiments/eye_color.py` | Two-locus eye-colour model on real rs12913832 calls, four representations, HWE audit |
+| `experiments/complexity.py` | Derived bounds per model, and measured growth against derived growth |
+| `experiments/fetch_eye_color_data.py` | Fetch/validate the rs12913832 snapshot; resolves strand from population ordering |
 | `experiments/build_unified.py` | Unified Version I + II manuscript and PDF, bound to retained results |
 | `manuscript/unified_template.md` | Source of the unified paper; edit here, not the generated file |
 | `legacy/matlab/` | Version I's five MATLAB programs, verbatim; embedded as Appendix F and digested in the manifest |

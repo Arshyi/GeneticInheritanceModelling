@@ -108,15 +108,82 @@ def matlab_appendix():
     return '\n\n'.join(blocks), digests
 
 
+def eye_tables(eye):
+    """Everything the eye-colour part reports, bound to results/eye_color.json."""
+    model = eye['model']
+    agreement = eye['representation_agreement']
+    rep = table(
+        ['Representation', 'Build (ms)', 'Update (ms)', 'Max deviation from dense'],
+        [(kind.replace('_', ' '),
+          'no full kernel' if t['build_seconds'] is None else f"{t['build_seconds']*1000:.3f}",
+          f"{t['update_seconds']*1000:.3f}",
+          f"{agreement['max_absolute_deviation_from_dense'][kind]:.3g}")
+         for kind, t in agreement['timings_seconds'].items()])
+
+    records = sorted(eye['population_records'], key=lambda r: -r['blue_allele_frequency'])
+    pop = table(
+        ['Population', 'Group', 'N', 'AA, AG, GG', 'Blue allele', 'Exact HWE p', 'Holm p',
+         'Model P(blue)'],
+        [(r['population'], r['superpopulation'], r['n'], ', '.join(map(str, r['counts_AA_AG_GG'])),
+          f"{r['blue_allele_frequency']:.4f}", f"{r['hwe_exact_p']:.4f}",
+          f"{r['hwe_exact_p_holm']:.4f}", f"{r['predicted_phenotypes']['blue']:.4f}")
+         for r in records])
+
+    gens = table(
+        ['Generation'] + [p.capitalize() for p in eye['model']['phenotype_classes']],
+        [(i, *[f"{g[p]:.6f}" for p in eye['model']['phenotype_classes']])
+         for i, g in enumerate(eye['ceu_generations'])])
+
+    canpath, iris = eye['external_anchors']['canpath'], eye['external_anchors']['irisplex']
+    modifier = eye['modifier_locus']
+    external = table(
+        ['Quantity', 'This model', 'Published', 'Source'],
+        [('Loci used', len(model['loci']), f"{iris['snps']} SNPs (IrisPlex)", '[walsh2011irisplex]'),
+         ('P(non-blue | GG), declared modifier at 0.5',
+          f"{modifier['declared_implied_gg_non_blue']:.4f}",
+          f"{canpath['gg_non_blue_fraction']:.2f}", '[abbatangelo2026canpath]'),
+         ('Modifier frequency reproducing that discordance',
+          f"{modifier['calibrated_frequency_from_canpath']:.6f}", 'not applicable',
+          'calibrated here, not measured'),
+         ('Phenotyped individuals', 0, f"{canpath['individuals']:,} (CanPath); {iris['cohort_size']:,} (IrisPlex development)",
+          '[abbatangelo2026canpath] [walsh2011irisplex]'),
+         ('Reported AUC, blue', 'none; no phenotypes available', f"{iris['auc_blue']:.2f}",
+          '[walsh2011irisplex]'),
+         ('Reported AUC, brown', 'none; no phenotypes available', f"{iris['auc_brown']:.2f}",
+          '[walsh2011irisplex]')])
+    return rep, pop, gens, external
+
+
+def complexity_tables(comp):
+    traits = table(
+        ['Model', 'Allele counts', 'G', 'U', 'Supported transitions', 'Dense entries', 'Density'],
+        [(t['name'], ' x '.join(map(str, t['allele_counts'])), f"{t['G']:,}", f"{t['U']:,}",
+          f"{t['nnz']:,}", f"{t['dense_entries']:,}", f"{t['density']:.4f}")
+         for t in comp['traits']])
+    measured = comp['measured_growth']
+    growth = table(
+        ['Representation', 'Fitted over n = 1..5', 'Measured n = 4 to 5', 'Derived work ratio'],
+        [(method.replace('_', ' '),
+          f"{entry['construction']['per_locus_multiplier']:.2f}" if 'construction' in entry else 'no full kernel',
+          f"{entry['construction_top_step_ratio']:.2f}" if 'construction' in entry else 'no full kernel',
+          f"{comp['asymptotic_limits']['nnz_ratio_at_top_measured_step']:.3f}")
+         for method, entry in measured.items()])
+    return traits, growth
+
+
 def main():
     ledger, values = bindings()
     legacy = read('version1_reproduction.json')
     poly = read('polygenic_synthetic.json')
+    eye = read('eye_color.json')
+    comp = read('complexity.json')
     counts = legacy['state_counts']
     checks = legacy['displayed_matrix_checks']
 
     variants_table, top6, top18, exact = coverage_tables(legacy)
     matlab_source, matlab_digests = matlab_appendix()
+    eye_rep, eye_pop, eye_gens, eye_external = eye_tables(eye)
+    comp_traits, comp_growth = complexity_tables(comp)
 
     values.update({
         'V1_COVERAGE_VARIANTS': variants_table,
@@ -147,6 +214,37 @@ def main():
             f"standard deviation {poly['residual_sd']:.1f}, seed {poly['seed']}, and {poly['independent_synthetic_draws']:,} independent draws, "
             f"{poly['observed_interval_coverage']*100:.2f}% fall inside the nominal {poly['nominal_interval_mass']*100:.0f}% interval. The "
             f"probability-integral-transform KS statistic is {poly['pit_KS_statistic']:.5f}."),
+        'EYE_REPRESENTATION_TABLE': eye_rep,
+        'EYE_POPULATION_TABLE': eye_pop,
+        'EYE_GENERATION_TABLE': eye_gens,
+        'EYE_EXTERNAL_TABLE': eye_external,
+        'EYE_MODEL_COUNTS': (
+            f"G = {eye['model']['genotypes_G']}, U = {eye['model']['unordered_pairs_U']}, "
+            f"{eye['model']['supported_transitions_nnz']} supported transitions out of "
+            f"{eye['model']['dense_entries_GU']} dense entries, a density of "
+            f"{eye['model']['supported_transitions_nnz']/eye['model']['dense_entries_GU']:.4f}. "
+            f"Dense payload is {eye['model']['dense_payload_bytes']:,} bytes against "
+            f"{eye['model']['csr_value_payload_bytes']:,} bytes of CSR values."),
+        'EYE_AGREEMENT': (
+            f"{max(eye['representation_agreement']['max_absolute_deviation_from_dense'].values()):.3g}"),
+        'EYE_HWE_RESULT': (
+            'none of the 26 component populations' if not [
+                r for r in eye['population_records'] if r['hwe_exact_p_holm'] < 0.05]
+            else ', '.join(r['population'] for r in eye['population_records']
+                           if r['hwe_exact_p_holm'] < 0.05)),
+        'EYE_ORIENTATION': (
+            f"FIN {eye['orientation']['northern_european_frequency']['FIN']:.4f}, "
+            f"GBR {eye['orientation']['northern_european_frequency']['GBR']:.4f}, "
+            f"CEU {eye['orientation']['northern_european_frequency']['CEU']:.4f}"),
+        'COMPLEXITY_TRAIT_TABLE': comp_traits,
+        'COMPLEXITY_GROWTH_TABLE': comp_growth,
+        'COMPLEXITY_NOTE': comp['growth_comparison_note'],
+        'PN_TABLE': table(
+            ['Loci n', 'Genotypes G = 3^n', 'Pairs U', 'Supported transitions',
+             'Dense entries', 'Density'],
+            [(r['n'], f"{r['G']:,}", f"{r['U']:,}", f"{r['nnz']:,}",
+              f"{r['dense_entries']:,}", f"{r['density']:.3g}")
+             for r in comp['biallelic_series'] if r['n'] <= 10]),
         'MATLAB_APPENDIX': matlab_source,
         'RUN_COMMANDS_UNIFIED': (
             '```text\ncd version2\npython -m pip install -r requirements.txt\n'

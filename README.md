@@ -24,12 +24,32 @@ against each other.
 Python are untouched.
 
 **The single unified paper is [`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)**
-(60 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
+(74 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
 and Version II into one document, in six parts: the original biology and matrix algebra with
 every derivation preserved; sickle cell, then ABO, then ABO x Rh, each given its Version I
 treatment and then audited; the combinatorial theorem and the complete kernel that replaces
 the square matrix; real-data evidence and an explicit comparison against the original
 square-matrix baseline; age, mutation and epigenetic regulation; then evaluation.
+**Part V adds eye colour, height and P(n).** Eye colour is built as a two-locus epistatic trait on
+real rs12913832 genotype calls for 2,504 individuals across 26 populations, run through the same
+kernel with four representations agreeing to 2.78e-17, audited for Hardy-Weinberg, and compared
+against two published cohorts. Its density is 0.3086, so the sparse architecture earns nothing at
+this size - a useful negative result. Under neutral random mating the distribution reaches its
+Hardy-Weinberg fixed point in one generation and never moves again: nothing decays. The declared
+model implies 25% of HERC2 GG individuals are not blue where a phenotyped cohort of 5,481 reports
+33%, and matching that requires fitting a parameter to it. A published six-SNP model reports AUC
+0.96; this work reports none, because it has no phenotypes. Height is then treated derivationally,
+and P(n) states the general case.
+
+**Complexity is now derived throughout, with lower bounds.** Each model carries its own cost note,
+Section 10 compares derived growth against measured growth, and Section 15 gives output-size lower
+bounds: materialising the complete kernel is Omega(15^n) for *any* implementation, returning all
+children of a heterozygous pair is Omega(3^n), and the implemented factored query is Theta(n) and
+therefore asymptotically optimal. The derived exponent is confirmed at the top of the measured
+range - supported transitions rise 14.878x from four to five loci, measured construction time rose
+15.01x, 15.09x and 14.68x - while a single exponent fitted across all of n = 1..5 returns 8.5-10.4,
+because fixed overhead flattens the small-n slope.
+
 Appendix E reserves a documented slot for further polygenic traits, and **Appendix F reproduces
 Version I's five MATLAB programs verbatim** - including the `X_next(3) = 0;` line that Section 4.4
 audits, so the finding can be checked against the code rather than a description of it. Version I's
