@@ -1,5 +1,9 @@
 # Genetic Inheritance Modelling
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22401514.svg)](https://doi.org/10.5281/zenodo.22401514)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
+
 Simulating how genotype frequencies evolve across generations, for sickle-cell
 anaemia and for the ABO × Rh blood-group system, using Punnett-square logic
 expressed as a linear-algebra problem.
@@ -22,9 +26,6 @@ recorded in Appendix D so the audit's primary source remains identifiable.
 **Version I**: evidence to be audited, not ground truth. The original PDFs, MATLAB and
 Python are untouched.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22401514.svg)](https://doi.org/10.5281/zenodo.22401514)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 
 > **Published** as a preprint on Zenodo: <https://zenodo.org/records/22401515>
 > Cite all versions with **10.5281/zenodo.22401514**; this version is **10.5281/zenodo.22401515**.
