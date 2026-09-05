@@ -24,7 +24,7 @@ The intellectual progression remains that of Version I: first explain a biologic
 
 The extension proceeds through four linked arguments. First, the original paper must be reconstructed as it exists, including discrepancies between its prose, tables, and software. Second, the parent-to-child mapping must be separated from the rule that constructs the next generation's parents. Third, storage and inference should exploit actual mathematical structure rather than discard low-probability outcomes. Fourth, increasingly realistic biological assumptions must be introduced only when their meaning can be tested.
 
-Sections 1-3 audit Version I. Sections 4-7 derive the complete representation and evaluate the architecture. Sections 8-10 report population and trait experiments. Sections 11-13 discuss falsification, reproducibility, and remaining work. The appendices give executable examples, detailed results, and a source bibliography. Every reported benchmark number comes from retained machine-readable output. Theoretical extrapolations are identified separately.
+Sections 1-3 audit Version I. Sections 4-7 derive the complete representation and evaluate the architecture. Sections 8-10 report population and trait experiments. Sections 11-13 discuss falsification, reproducibility, and remaining work. Section 14 is different in kind: it derives, but does not implement, an extension in which age enters the model through germline mutation, somatic accumulation, and epigenetic regulation, and states what would have to be measured before any of it could be believed. The appendices give executable examples, detailed results, and a source bibliography. Every reported benchmark number comes from retained machine-readable output. Theoretical extrapolations are identified separately.
 
 # 1. Version I as evidence, rather than an unquestioned baseline
 
@@ -454,7 +454,346 @@ The square-matrix restriction is unnecessary for complete inheritance representa
 
 The results support a layered architecture: a small exact oracle; bounded dense and CSR kernels for complete enumeration; dynamic maps and streaming for flexible access; and local factors or score distributions when the output permits compression. No single data structure wins every workload, and none removes the need to specify biology correctly.
 
-Before integration or submission, the author should review the changed interpretation of Version I, the intended scope of the computational contribution, the source ledger, and the validation limits. The next empirical priority is an independent parent-offspring transmission dataset and a preregistered evaluation target. A real polygenic phenotype study should follow only after appropriate effects, linkage information, outcomes, and calibration cohorts are available. The original paper remains intact until the author chooses how to present this extension alongside it.
+Before integration or submission, the author should review the changed interpretation of Version I, the intended scope of the computational contribution, the source ledger, and the validation limits. The next empirical priority is an independent parent-offspring transmission dataset and a preregistered evaluation target. A real polygenic phenotype study should follow only after appropriate effects, linkage information, outcomes, and calibration cohorts are available. The original paper remains intact until the author chooses how to present this extension alongside it. Section 14 sets out, in derivational form only, the one limitation both versions have carried unchanged: neither model has a clock.
+
+<!-- pagebreak -->
+
+# 14. Age, somatic mutation and epigenetic regulation: a derivational proposal
+
+**Status of this section.** Nothing in it is implemented, tested or validated. Sections 1 to 13 report executed work; this section derives a candidate extension and states what would have to be measured before any of it could be believed. It is placed after the conclusion for that reason. Every equation below is a proposal, and the distinction between a derived consequence of stated assumptions and an empirical claim about human biology is maintained throughout. Where a quantity is anchored to published measurement, the measurement is cited and its scope is recorded; no parameter in this section has been estimated from data by this project.
+
+## 14.1 The problem: the kernel has no clock
+
+Every object constructed in Sections 3 to 10 is timeless. The transmission kernel K[o, pair(i,j)] depends on two parental genotypes and nothing else. The population operators advance a generation index, not an age. Two parents produce the same offspring distribution whether they are twenty or fifty, and an individual's genotype is treated as fixed from conception to death.
+
+Both simplifications are wrong in the same direction, and Version I said so. Its conclusion records that "random mutations can occur in an individual before they breed" and identifies this as a scenario the model cannot represent. [1] That is an accurate self-assessment, and it survives into Version II unchanged: adding sparse storage, factored queries and score dynamic programming did nothing about it. The representation improved; the biology did not.
+
+Age enters this system by two mechanisms that are routinely conflated and must not be.
+
+## 14.2 Two routes, one of which touches the kernel
+
+> **OBSERVATION 14.1 — THE GERMLINE ROUTE AND THE SOMATIC ROUTE ARE DIFFERENT OBJECTS**
+>
+> **Germline.** Parental age at conception changes the mutation content of the gametes actually transmitted. This alters what the next generation inherits. It modifies the transmission kernel itself, and its effects are heritable.
+>
+> **Somatic and epigenetic.** An individual's own age changes which cells carry which mutations, and changes the methylation and histone-modification state of their chromatin. This alters whether an inherited genotype is expressed. It modifies the genotype-to-phenotype map, and its effects are, with narrow exceptions, not transmitted.
+
+The distinction is not pedantic. A model that adds a single "age" term and lets it act on both routes at once will produce an operator that is neither a valid transmission kernel nor a valid penetrance function, and no amount of fitting will reveal the error, because both routes make outcomes depend on age in the same direction. Sections 14.4, 14.5 and 14.6 therefore treat them separately, and only 14.4 is permitted to alter K.
+
+## 14.3 Notation for this section
+
+| Symbol | Name | Definition |
+|---|---|---|
+| t | Age | Age of an individual in years, measured from conception or birth as stated. Continuous. |
+| a_f, a_m | Parental ages | Paternal and maternal age in years at the conception of the offspring. |
+| L | Locus index set | The modelled loci, indexed by l, as in Section 4. |
+| Lambda | Expected germline count | Expected number of de novo mutations genome-wide in one transmission. |
+| mu_l | Expected locus count | Expected number of de novo mutations falling inside locus l in one transmission. |
+| eps_l | Per-transmission mutation probability | Probability that locus l carries at least one de novo mutation in one transmission. |
+| Q | Substitution matrix | Row-stochastic matrix over the allele alphabet of a locus, given that a mutation has occurred. |
+| M(a) | Age-dependent gamete operator | Row-stochastic allele transition applied to gametes, parameterised by parental age. |
+| lambda_l(t) | Somatic intensity | Instantaneous rate of somatic mutation at locus l at age t. |
+| m_l(t) | Methylation fraction | Fraction of the relevant CpG sites of locus l that are methylated at age t, in [0,1]. |
+| h_l(t) | Acetylation level | Standardised activating histone-acetylation signal at locus l at age t. |
+| alpha, beta | Epigenetic rates | Methylation and demethylation rates in the two-state model of 14.6. |
+| z_l(t) | Expression score | Linear predictor of the expression gate. Log-odds scale. |
+| w | Weight vector | Coefficients of the expression score. The quantities to be estimated. |
+| b_l | Bias | Locus-specific intercept of the expression score. |
+| pi_l(t) | Expression probability | Probability that locus l is transcriptionally competent at age t. |
+| sigma | Logistic function | sigma(z) = 1/(1+exp(-z)). |
+| y_i | Observed label | 1 if locus observed expressed in sample i, 0 if silenced. |
+| J(w) | Objective | Mean negative log-likelihood of the observed labels. |
+| eta | Step size | Scalar multiplying the gradient in an update. |
+
+## 14.4 The germline route: parental age inside the transmission kernel
+
+### 14.4.1 What is measured
+
+Two large trio studies give the empirical anchor. Sequencing 78 Icelandic parent-offspring trios gave an average de novo mutation rate of 1.20e-8 per nucleotide per generation at a mean paternal age of 29.7 years, with the count rising by roughly two mutations per year of paternal age. [26] The larger follow-up, 1,548 trios and 108,778 high-quality de novo mutations, gave a mean of 70.3 mutations per trio and separated the parental contributions: 1.51 additional mutations per year of paternal age against 0.37 per year of maternal age. [27]
+
+These are population-level regression slopes from one country's cohort. They are the best available anchor and they are not a per-locus mutation probability for an arbitrary gene in an arbitrary population.
+
+### 14.4.2 From a genome-wide count to a per-locus probability
+
+Model the expected genome-wide de novo count as affine in both parental ages, with the slopes above and a reference point where the intercept is calibrated:
+
+```equation
+Lambda(a_f, a_m) = Lambda_0 + beta_f (a_f - a_f0) + beta_m (a_m - a_m0)
+beta_f = 1.51 per year,  beta_m = 0.37 per year   [anchored, not fitted here]
+```
+
+De novo mutations are, to a first approximation and away from clustered events, spread across the genome. Writing G_bp for the callable genome length and L_l for the length of locus l, the expected count falling inside that locus is
+
+```equation
+mu_l(a_f, a_m) = Lambda(a_f, a_m) * (L_l / G_bp) * kappa_l
+```
+
+where kappa_l is a locus-specific enrichment factor absorbing the fact that mutation rate is not uniform: CpG sites, replication timing and sequence context all matter. Setting kappa_l = 1 asserts uniformity, which is known to be false and is retained only as an explicit null. Treating the occurrence of de novo mutations in a short interval as Poisson,
+
+```equation
+eps_l(a_f, a_m) = 1 - exp( -mu_l(a_f, a_m) )
+```
+
+For a gene-sized locus this is of order 1e-8 to 1e-6 per transmission. It is small, and Section 14.11 returns to what that smallness does to binary64 arithmetic.
+
+### 14.4.3 The age-dependent gamete operator
+
+The implementation already contains the required interface. `genetics/core.py` exposes `mutation(allele_frequencies, transition)`, which applies a row-stochastic allele transition to gametes before fertilization and validates that the matrix is finite, nonnegative and row-stochastic. The extension is not a new mechanism; it is making that matrix a function of parental age.
+
+> **RESULT 14.2 — AGE-PARAMETERISED GAMETE MUTATION OPERATOR**
+>
+> For a locus with allele alphabet of size k, define
+>
+> ```equation
+> M_ab(a_f, a_m) = (1 - eps_l) * delta_ab + eps_l * Q_ab
+> ```
+>
+> where Q is row-stochastic over the alphabet and delta is the Kronecker delta. The transmitted gamete allele distribution becomes t~_g(a) = sum_b t_g(b) M_ba, with t_g the ordinary Mendelian gamete law of Section 3.1.
+
+The result is a one-line change in form and a substantial change in meaning: the parent-to-child map now carries two continuous parameters that were previously absent from the entire architecture.
+
+> **RESULT 14.3 — NORMALISATION IS PRESERVED**
+>
+> Each row of M sums to (1 - eps_l) + eps_l * sum_b Q_ab = (1 - eps_l) + eps_l = 1. Since t_g is a probability distribution over alleles and M is row-stochastic, sum_a t~_g(a) = sum_b t_g(b) sum_a M_ba = sum_b t_g(b) = 1.
+>
+> Therefore the modified kernel remains a conditional distribution over children, and every normalisation test in `tests/` would still be a valid check of it.
+
+This matters because it means the extension does not invalidate the verification apparatus. The allele-copy oracle of Section 6 compares against exact Mendelian probabilities; with mutation switched on it would compare against exact Mendelian probabilities composed with a known stochastic matrix, which is equally checkable by enumeration.
+
+### 14.4.4 The consequence nobody wants: sparsity dies
+
+> **RESULT 14.4 — A POSITIVE MUTATION RATE DESTROYS STRUCTURAL SPARSITY**
+>
+> Section 4.2 establishes that the unordered kernel has exactly (15^n + 5^n)/2 nonzero entries against G*U = (27^n + 9^n)/2 total entries, and that this falling density is the entire justification for compressed sparse storage.
+>
+> If eps_l > 0 and Q has full support, then every allele is reachable from every allele in one transmission. Every structural zero of the kernel becomes a positive number of order eps_l per mutated locus. The nonzero count rises from (15^n + 5^n)/2 to G*U exactly.
+>
+> At five biallelic loci that is a rise from 381,250 to 7,213,978 stored entries, and CSR becomes strictly worse than dense: it pays index overhead on a matrix with no zeros.
+
+This is the most consequential thing in the section and it was not anticipated when the architecture was chosen. The measured 12.59-fold CSR payload advantage of Section 7.2 is an advantage over a mutation-free model. Introduce biologically realistic mutation and the advantage does not shrink; it inverts.
+
+Three responses are available, and choosing between them is an experiment, not a preference. Thresholding restores sparsity but violates the scientific contract of Section 12, which forbids pruning positive transmission branches. Factored representation avoids the problem entirely, because the per-locus operators stay small and are never multiplied out; this is the same argument as Section 5.3 and it becomes considerably stronger here. Structured storage keeps the Mendelian part sparse and represents the mutation part as a low-rank or Kronecker correction, exploiting the fact that M is the identity plus a rank-structured perturbation of size eps_l. The third is the interesting one and it is not implemented.
+
+## 14.5 The somatic route: accumulation within one lifetime
+
+Somatic mutation does not alter what an individual transmits. It alters the individual. The relevant object is therefore not the kernel but a per-locus state that evolves with age.
+
+Adult stem cells of the liver, colon and small intestine accumulate mutations across life at approximately 40 novel mutations per year, at a broadly similar rate across those tissues despite very different cancer incidence. [28] Approximate linearity in age is the empirical starting point.
+
+Model somatic mutation at locus l as an inhomogeneous Poisson process with intensity lambda_l(t). The expected accumulated count and the probability that the locus is still unmutated at age t are
+
+```equation
+m_l(t) = integral_0^t lambda_l(s) ds
+P(locus l unmutated at age t) = exp( -m_l(t) )
+```
+
+> **RESULT 14.5 — CONSTANT INTENSITY GIVES EXPONENTIAL SURVIVAL, NOT A LINEAR ONE**
+>
+> If lambda_l(s) = lambda_l is constant, then m_l(t) = lambda_l t and the probability that locus l has acquired at least one somatic mutation by age t is 1 - exp(-lambda_l t).
+>
+> For lambda_l t << 1 this is approximately lambda_l t, which is why counts look linear in age in the data. The linear appearance is the small-argument regime of an exponential, not evidence that the underlying probability is linear, and the two diverge at large lambda_l t.
+
+A single mutation is often insufficient. The classical multistage argument supposes that a cell must complete k independent rare steps, and derives an incidence rising as a power of age; fitting non-endocrine carcinoma incidence gave approximately a sixth-power dependence, with the log-log slope interpreted as the number of required stages minus one. [29]
+
+> **RESULT 14.6 — MULTISTAGE HAZARD AND ITS AGE POWER**
+>
+> Let each of k stages occur independently at small constant rate. The probability that all k are complete by age t is of order (c t)^k / k!, so the incidence hazard is
+>
+> ```equation
+> h(t) = d/dt [ (c t)^k / k! ] = c^k t^(k-1) / (k-1)!
+> ```
+>
+> A log-log plot of hazard against age therefore has slope k-1, which is what makes k estimable from incidence curves alone.
+
+This is a hazard for a multi-hit somatic process. It is not a model of Mendelian inheritance and must not be substituted into the transmission kernel. Its place in this proposal is as the correct functional form for age-of-onset, once a genotype has been inherited.
+
+The general form covering both, and the standard vocabulary for it, is a hazard factorised into a baseline function of time and a covariate term, which is exactly the structure of proportional-hazards regression. [30] Writing x for covariates including genotype dosage:
+
+```equation
+h_l(t | x) = h_0(t) * exp( gamma^T x )
+```
+
+## 14.6 The epigenetic route: a reversible two-state process
+
+Methylation is categorically different from mutation, and the difference is mathematical before it is biological.
+
+DNA methylation acts in a context-dependent way at promoters, gene bodies and regulatory elements, with promoter-island methylation associated with transcriptional repression, and the relationship between methylation and transcription is explicitly not a simple switch. [31] Histone modifications, acetylation among them, regulate chromatin as a responsive scaffold with mark-specific transcriptional consequences. [32]
+
+Model a single CpG site as a two-state continuous-time Markov chain with methylation rate alpha and demethylation rate beta. Writing P_M(t) for the probability the site is methylated:
+
+```equation
+dP_M/dt = alpha (1 - P_M) - beta P_M
+```
+
+> **RESULT 14.7 — EXPONENTIAL APPROACH TO AN EQUILIBRIUM METHYLATION LEVEL**
+>
+> Rearranging, dP_M/dt = alpha - (alpha + beta) P_M. This is linear with constant coefficients, so with P_M(0) given,
+>
+> ```equation
+> P_M(t) = alpha/(alpha+beta) + [ P_M(0) - alpha/(alpha+beta) ] * exp( -(alpha+beta) t )
+> ```
+>
+> The methylation fraction approaches the equilibrium alpha/(alpha+beta) with time constant 1/(alpha+beta), monotonically, from whichever side it starts.
+>
+> Verification: at t=0 the bracket cancels the equilibrium term and returns P_M(0); as t grows the exponential vanishes and leaves the equilibrium; substituting back reproduces the differential equation.
+
+Averaging over the sites of a locus gives the observable m_l(t) of the notation table. Methylation state carries enough reproducible age information to build multi-tissue age predictors: one such predictor was constructed from approximately 8,000 samples spanning 51 healthy tissues and cell types [33], and a quantitative ageing model over more than 450,000 CpG markers in whole blood from 656 individuals aged 19 to 101 measured individual differences in methylome ageing rate and characterised epigenetic drift [34]. That such clocks work is evidence that m_l(t) is a real, measurable, age-structured signal. It is not evidence that methylation causes ageing, and neither study licenses that reading.
+
+> **OBSERVATION 14.8 — MUTATION IS ABSORBING; METHYLATION IS ERGODIC**
+>
+> A mutation, once fixed in a lineage of cells, does not spontaneously revert at a comparable rate: the process has an effectively absorbing state and P(unmutated) decreases monotonically towards zero.
+>
+> Methylation has strictly positive rates in both directions: the chain is ergodic, has a stationary distribution, and P_M(t) approaches a level strictly inside (0,1) rather than an absorbing endpoint.
+>
+> Consequence: an intervention can in principle reverse an epigenetic silencing and cannot reverse a mutation. Any model that represents both with the same operator has thrown away that distinction, and with it the only clinically actionable difference between them.
+
+## 14.7 The expression gate: weights, bias and age-dependent penetrance
+
+The three routes now combine into a single scalar per locus. This is the construction the section exists to propose.
+
+Collect everything known about locus l in individual i at age t into a feature vector, and score it linearly:
+
+> **RESULT 14.9 — THE EXPRESSION GATE**
+>
+> ```equation
+> z_l(t) = b_l + w_age * t + w_met * m_l(t) + w_ac * h_l(t) + w_dos * g_l + sum_c w_c x_c
+> pi_l(t) = sigma( z_l(t) ) = 1 / (1 + exp(-z_l(t)))
+> ```
+>
+> pi_l(t) is the probability that locus l is transcriptionally competent in that individual at that age. The bias b_l is the log-odds of expression for a reference individual: reference age, reference epigenetic state, reference genotype dosage. It is the locus's baseline propensity to be expressed, and it is the parameter that carries everything the covariates do not explain.
+
+The linear-then-link structure is a generalised linear model with a binomial response and a logit link, and the estimation machinery for that class is standard. [35] The score is nonlinear in age through m_l(t) and h_l(t), which are themselves nonlinear in t by Result 14.7, but it is linear in the parameters w. That single structural property determines everything in Section 14.8, exactly as it does in any linear-in-parameters model.
+
+The signs of two weights are constrained in advance by biology, which makes them a falsification test rather than free parameters:
+
+| Weight | Predicted sign | Basis | If fitting returns the other sign |
+|---|---|---|---|
+| w_met | negative | Promoter-island methylation associated with repression [31] | Either the model is wrong, the sites are gene-body rather than promoter, or the annotation is misassigned |
+| w_ac | positive | Activating acetylation marks open chromatin [32] | Same three candidate explanations, in the same order |
+| w_age | unconstrained | Residual age effect after m and h are accounted for | A large value indicates the epigenetic covariates are not capturing the age dependence |
+
+The last row is the diagnostic one. If m_l(t) and h_l(t) genuinely mediate the effect of age, then conditioning on them should leave w_age near zero. A large surviving w_age says the mediation story is incomplete, and that is worth knowing.
+
+> **RESULT 14.10 — AGE-DEPENDENT EFFECTIVE PENETRANCE**
+>
+> Let the phenotype require a functional product from at least one allele at locus l, and let each inherited allele be independently competent with probability pi_l(t). For an individual carrying c_l functional alleles by inheritance,
+>
+> ```equation
+> P(phenotype expressed | c_l functional alleles, age t) = 1 - (1 - pi_l(t))^(c_l)
+> ```
+>
+> Penetrance is therefore a function of age and epigenetic state, not a constant of the genotype. A heterozygote whose single functional allele is silenced behaves, at that locus and that age, as though it carried none.
+
+That last sentence is the biologically interesting consequence and the one most in need of restraint. It is a consequence of the stated model. It is not a claim that any particular carrier of any particular variant will develop any particular condition, and this section provides no evidence for such a claim.
+
+## 14.8 Estimation: objective, gradient, convexity, step size
+
+Suppose paired observations are available: for sample i, an age t_i, measured methylation and acetylation, a genotype, and a binary expression label y_i. Write x_i for the assembled feature vector and pi_i = sigma(w^T x_i).
+
+The objective is the mean negative log-likelihood of the labels under the Bernoulli model, that is, cross-entropy:
+
+```equation
+J(w) = -(1/M) sum_i [ y_i log pi_i + (1 - y_i) log(1 - pi_i) ]
+```
+
+Squared error is not used. Under a binary response it is non-convex in w after composition with the logistic link and it penalises confident correct predictions unhelpfully; cross-entropy is the log-likelihood of the assumed response distribution and is the canonical choice for this link. [35]
+
+> **RESULT 14.11 — GRADIENT OF THE CROSS-ENTROPY OBJECTIVE**
+>
+> The logistic function satisfies sigma'(z) = sigma(z)(1 - sigma(z)). Differentiating the contribution of one sample with respect to w:
+>
+> ```equation
+> (1)  d/dw [ -y log pi - (1-y) log(1-pi) ]  =  [ -(y/pi) + (1-y)/(1-pi) ] * dpi/dw
+> (2)  dpi/dw = pi (1 - pi) x
+> (3)  substituting:  [ -(y/pi) + (1-y)/(1-pi) ] * pi(1-pi) x
+> (4)  = [ -y(1-pi) + (1-y) pi ] x
+> (5)  = ( pi - y ) x
+> ```
+>
+> Summing and averaging,
+>
+> ```equation
+> grad J(w) = (1/M) sum_i ( pi_i - y_i ) x_i = (1/M) X^T ( pi - y )
+> ```
+
+The gradient is the feature matrix applied to the residual vector: each weight is adjusted in proportion to how strongly its own feature correlates with the remaining error. The factors pi(1-pi) cancel exactly at step (4), which is the property that makes the logit link canonical for this response.
+
+> **RESULT 14.12 — THE OBJECTIVE IS CONVEX**
+>
+> Differentiating Result 14.11 once more, with S = diag( pi_i (1 - pi_i) ):
+>
+> ```equation
+> H = grad^2 J(w) = (1/M) X^T S X
+> ```
+>
+> For any vector v, v^T H v = (1/M) (X v)^T S (X v) = (1/M) sum_i pi_i(1-pi_i) (x_i^T v)^2 >= 0, since each pi_i(1-pi_i) > 0. So H is positive semi-definite and J is convex: every stationary point is a global minimum.
+>
+> The minimum is unique when X has full column rank. Unlike the linear case, H depends on w, so the curvature is not constant and no closed-form minimiser exists; estimation is necessarily iterative.
+
+> **RESULT 14.13 — A STEP-SIZE BOUND FOLLOWS FROM THE CURVATURE BOUND**
+>
+> The scalar pi(1-pi) attains its maximum 1/4 at pi = 1/2. Hence for a single sample the Hessian satisfies
+>
+> ```equation
+> lambda_max( x x^T * pi(1-pi) ) <= ||x||^2 / 4
+> ```
+>
+> Gradient descent on a convex function with Lipschitz-continuous gradient of constant L converges for step sizes 0 < eta < 2/L. Taking L = ||x||^2/4 gives
+>
+> ```equation
+> 0 < eta < 8 / ||x||^2
+> ```
+>
+> This is a bound derived before any computation, and it is falsifiable in exactly the way the analogous bound for a linear model is: step sizes below it should not diverge and step sizes far above it should.
+
+An online form, consuming one individual at a time and discarding them, follows immediately from Result 14.11 with M = 1:
+
+```equation
+w <- w - eta ( pi_i - y_i ) x_i
+```
+
+Adding a ridge penalty (lambda/2)||w||^2 makes J strongly convex, bounds the condition number of H away from infinity, and is the standard remedy for the identifiability problem of the next subsection. It biases the estimate towards zero, which is a cost and not a free improvement.
+
+## 14.9 Predictions and their failure modes
+
+| Proposition | Derived from | Would be falsified by |
+|---|---|---|
+| Germline de novo count rises linearly with paternal age at roughly 1.5 per year | 14.4.1, anchored to [27] | A trio cohort with a materially different or nonlinear slope |
+| A positive mutation rate makes the kernel structurally dense | Result 14.4 | Nothing; it is a counting argument. Its practical severity is measurable |
+| CSR loses its payload advantage once mutation is enabled | Result 14.4 with Section 7.2 | A benchmark showing CSR still wins, which would mean eps was effectively zero |
+| Methylation fraction approaches an equilibrium exponentially, not linearly | Result 14.7 | Methylation tracking a straight line across a wide age range with no curvature |
+| w_met is negative at promoter islands | 14.7, from [31] | A fitted positive coefficient on correctly annotated promoter sites |
+| Conditioning on m and h shrinks w_age towards zero | 14.7 | A large surviving age coefficient, indicating unmodelled mediation |
+| Age-of-onset hazard has log-log slope k-1 for a k-stage process | Result 14.6, from [29] | An incidence curve whose slope is inconsistent with any integer k |
+
+## 14.10 Identifiability: age is the hardest covariate there is
+
+The proposal has one serious statistical weakness, and it is structural rather than incidental.
+
+By Result 14.7, m_l(t) is a deterministic function of age up to noise. The design matrix therefore contains a column t and a column m_l(t) which is a smooth monotone transform of it. Over a narrow age range, exp(-(alpha+beta)t) is close to linear in t, so the two columns are close to collinear.
+
+The consequence is standard and severe. Near-collinearity makes X^T S X near-singular; the estimator's covariance, which scales with the inverse of that matrix, becomes enormous in the direction of the offending combination; and the fitted weights w_age and w_met become individually meaningless while their sum remains well determined. Crucially, the objective value does not deteriorate. The model fits, and the coefficients that were the entire point of building it are noise.
+
+No diagnostic computed from the fit alone distinguishes this case from a well-conditioned one. The defences must be structural and must be chosen before fitting:
+
+- **Check the conditioning of the design before estimating anything.** The smallest eigenvalue of X^T S X, or the condition number, is computable in advance and is the quantity that decides whether the fit can answer the question.
+- **Require within-age variation in methylation.** If every 40-year-old in the sample has the same m_l, the coefficient is not identified at any sample size. Sampling must be designed to break the collinearity, not merely enlarged.
+- **Adjust for cell composition.** Bulk-tissue methylation changes with age partly because the mixture of cell types changes with age. Unadjusted, that confound is attributed to the locus.
+- **Do not read causation from the sign.** Transcriptional state can drive methylation as well as follow it. A regression fixes no arrow, and this design cannot orient one.
+
+## 14.11 Boundaries, numerical hazards, and the minimal next step
+
+**Not implemented.** No code, no test, no dataset, no figure in this repository corresponds to any equation in this section. The artifact manifest of Appendix B lists what has been executed, and none of it is this.
+
+**Not validated.** The parameters beta_f, beta_m and the ~40-per-year somatic rate are quoted from published cohorts, not estimated here, and their transfer to another population is an assumption. No value of w, b_l, alpha or beta has been estimated at all.
+
+**Not clinical.** Result 14.10 describes a model in which penetrance varies with age and epigenetic state. It makes no prediction about any individual, and the restraint stated throughout Sections 8 to 11 applies here with more force, not less, because the model is now more suggestive and less tested.
+
+**Numerically hazardous in a way this project has already met.** With eps_l of order 1e-8, the previously structural zeros become entries of order 1e-8 per mutated locus, and products across many loci fall below binary64 range quickly. The adversarial review already records that population updates refuse detected zero underflows rather than returning silent zeros, and that log-space population inference is not implemented. Enabling mutation would make that refusal path routine rather than exceptional. A log-domain population update is therefore a prerequisite for this extension, not an optional refinement.
+
+**The minimal next step is small and worth doing.** Result 14.2 requires no new mechanism: `mutation(allele_frequencies, transition)` already accepts a validated row-stochastic matrix. Constructing that matrix from Result 14.2 with a stated eps_l, running the existing allele-copy oracle against the composed map, and measuring what Result 14.4 predicts about CSR occupancy on the existing benchmark harness would test the computational half of this section using apparatus that already exists. It would establish nothing about human biology, and it would settle the representation question the rest of the paper is about.
+
+The epigenetic half cannot be approached that way. It needs paired methylation, acetylation, expression and age measurements in matched tissue, with cell-composition adjustment and a conditioning check performed before any coefficient is reported. Until that data is in hand, Sections 14.6 to 14.10 remain a derivation with the correct shape and no evidence.
 
 <!-- pagebreak -->
 
@@ -545,3 +884,23 @@ The checks above concern delivered evidence. They do not assert that MATLAB was 
 [24] SciPy developers. scipy.stats.kstest. [https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html) Accessed 2026-09-05.
 
 [25] Loic Yengo, Sailaja Vedantam, Eirini Marouli, and colleagues. A saturated map of common genetic variants associated with human height. 2022. Nature 610:704-712. DOI: 10.1038/s41586-022-05275-y. [https://www.nature.com/articles/s41586-022-05275-y](https://www.nature.com/articles/s41586-022-05275-y) Accessed 2026-09-05.
+
+[26] Augustine Kong, Michael L. Frigge, Gisli Masson, and colleagues. Rate of de novo mutations and the importance of father's age to disease risk. 2012. Nature 488:471-475. DOI: 10.1038/nature11396. [https://www.nature.com/articles/nature11396](https://www.nature.com/articles/nature11396) Accessed 2026-09-05.
+
+[27] Hakon Jonsson, Patrick Sulem, Birte Kehr, and colleagues. Parental influence on human germline de novo mutations in 1,548 trios from Iceland. 2017. Nature 549:519-522. DOI: 10.1038/nature24018. [https://www.nature.com/articles/nature24018](https://www.nature.com/articles/nature24018) Accessed 2026-09-05.
+
+[28] Francis Blokzijl, Joep de Ligt, Myrthe Jager, and colleagues. Tissue-specific mutation accumulation in human adult stem cells during life. 2016. Nature 538:260-264. DOI: 10.1038/nature19768. [https://www.nature.com/articles/nature19768](https://www.nature.com/articles/nature19768) Accessed 2026-09-05.
+
+[29] Peter Armitage, Richard Doll. The Age Distribution of Cancer and a Multi-stage Theory of Carcinogenesis. 1954. British Journal of Cancer 8(1):1-12. DOI: 10.1038/bjc.1954.1. [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2007940/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2007940/) Accessed 2026-09-05.
+
+[30] David R. Cox. Regression Models and Life-Tables. 1972. Journal of the Royal Statistical Society Series B 34(2):187-220. DOI: 10.1111/j.2517-6161.1972.tb00899.x. [https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1972.tb00899.x](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1972.tb00899.x) Accessed 2026-09-05.
+
+[31] Peter A. Jones. Functions of DNA methylation: islands, start sites, gene bodies and beyond. 2012. Nature Reviews Genetics 13:484-492. DOI: 10.1038/nrg3230. [https://www.nature.com/articles/nrg3230](https://www.nature.com/articles/nrg3230) Accessed 2026-09-05.
+
+[32] Andrew J. Bannister, Tony Kouzarides. Regulation of chromatin by histone modifications. 2011. Cell Research 21:381-395. DOI: 10.1038/cr.2011.22. [https://www.nature.com/articles/cr201122](https://www.nature.com/articles/cr201122) Accessed 2026-09-05.
+
+[33] Steve Horvath. DNA methylation age of human tissues and cell types. 2013. Genome Biology 14:R115. DOI: 10.1186/gb-2013-14-10-r115. [https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-10-r115](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-10-r115) Accessed 2026-09-05.
+
+[34] Gregory Hannum, Justin Guinney, Ling Zhao, and colleagues. Genome-wide methylation profiles reveal quantitative views of human aging rates. 2013. Molecular Cell 49(2):359-367. DOI: 10.1016/j.molcel.2012.10.016. [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780611/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780611/) Accessed 2026-09-05.
+
+[35] John A. Nelder, Robert W. M. Wedderburn. Generalized Linear Models. 1972. Journal of the Royal Statistical Society Series A 135(3):370-384. DOI: 10.2307/2344614. [https://academic.oup.com/jrsssa/article/135/3/370/7110572](https://academic.oup.com/jrsssa/article/135/3/370/7110572) Accessed 2026-09-05.

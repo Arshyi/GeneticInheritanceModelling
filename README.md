@@ -71,6 +71,30 @@ No predictive-accuracy claim is made anywhere — population coverage is never c
 accuracy. An [adversarial review](version2/research/adversarial_review.md) records
 four numerical defects found and fixed, plus the limits that remain open.
 
+**Section 14 — where age enters (derivation only, nothing implemented).** Both versions
+have carried the same gap: neither model has a clock. Version I named it — "random mutations
+can occur in an individual before they breed." Section 14 separates the two routes by which
+age acts, which are routinely conflated. The *germline* route (parental age at conception →
+de novo mutation) modifies the transmission kernel and is heritable; the *somatic and
+epigenetic* route (an individual's own age → mutation load, DNA methylation, histone
+acetylation) modifies whether an inherited genotype is expressed, and is not.
+
+It derives an age-parameterised gamete operator that drops into the existing `mutation()`
+interface, an expression gate `pi = sigma(b + w_age·t + w_met·m(t) + w_ac·h(t) + ...)` with
+its cross-entropy loss, gradient, convexity proof and step-size bound, and a two-state
+methylation chain solved to an exponential approach to equilibrium. Anchored to measured
+slopes: 1.51 de novo mutations per year of paternal age, 0.37 maternal, ~40 somatic
+mutations per year in adult stem cells.
+
+Two results are worth the section on their own. **Mutation destroys the sparsity the whole
+architecture rests on** — with any positive mutation rate every structural zero becomes
+positive, the kernel goes from 381,250 to 7,213,978 stored entries at five loci, and CSR
+becomes strictly worse than dense. And **age is collinear with its own mediators**, so
+`w_age` and `w_met` are individually unidentifiable while the fit still looks fine — the
+conditioning has to be checked before fitting, never inferred from the residual afterwards.
+
+Nothing in Section 14 is implemented, tested or validated, and it says so on every page.
+
 ```bash
 cd version2
 python -m pip install -r requirements.txt

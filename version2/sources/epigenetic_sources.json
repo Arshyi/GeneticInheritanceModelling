@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "accessed_utc_date": "2026-09-05",
+  "sources": [
+    {
+      "id": "kong2012paternal",
+      "type": "primary_research",
+      "authors": [
+        "Augustine Kong",
+        "Michael L. Frigge",
+        "Gisli Masson",
+        "and colleagues"
+      ],
+      "title": "Rate of de novo mutations and the importance of father's age to disease risk",
+      "year": 2012,
+      "venue": "Nature 488:471-475",
+      "doi": "10.1038/nature11396",
+      "url": "https://www.nature.com/articles/nature11396",
+      "access_status": "Bibliographic record and headline quantitative findings confirmed by web search 2026-09-05; publisher full text not re-read in this session.",
+      "supports": [
+        "Whole-genome sequencing of 78 Icelandic parent-offspring trios",
+        "Average de novo mutation rate 1.20e-8 per nucleotide per generation at mean paternal age 29.7",
+        "Approximately two additional de novo mutations per year of paternal age"
+      ],
+      "does_not_establish": [
+        "Any per-locus mutation probability used in this section",
+        "That the affine age model proposed here is the correct functional form",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "jonsson2017trios",
+      "type": "primary_research",
+      "authors": [
+        "Hakon Jonsson",
+        "Patrick Sulem",
+        "Birte Kehr",
+        "and colleagues"
+      ],
+      "title": "Parental influence on human germline de novo mutations in 1,548 trios from Iceland",
+      "year": 2017,
+      "venue": "Nature 549:519-522",
+      "doi": "10.1038/nature24018",
+      "url": "https://www.nature.com/articles/nature24018",
+      "access_status": "Bibliographic record and headline quantitative findings confirmed by web search 2026-09-05; publisher full text not re-read in this session.",
+      "supports": [
+        "1,548 parent-offspring trios and 108,778 high-quality de novo mutations",
+        "Mean 70.3 de novo mutations per trio",
+        "Maternal slope 0.37 and paternal slope 1.51 de novo mutations per year of parental age"
+      ],
+      "does_not_establish": [
+        "Transferability of Icelandic slopes to other populations",
+        "Locus-specific mutation probabilities",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "blokzijl2016somatic",
+      "type": "primary_research",
+      "authors": [
+        "Francis Blokzijl",
+        "Joep de Ligt",
+        "Myrthe Jager",
+        "and colleagues"
+      ],
+      "title": "Tissue-specific mutation accumulation in human adult stem cells during life",
+      "year": 2016,
+      "venue": "Nature 538:260-264",
+      "doi": "10.1038/nature19768",
+      "url": "https://www.nature.com/articles/nature19768",
+      "access_status": "Bibliographic record and headline quantitative findings confirmed by web search 2026-09-05; publisher full text not re-read in this session.",
+      "supports": [
+        "Adult stem cells of liver, colon and small intestine accumulate mutations throughout life",
+        "Approximately 40 novel mutations per year, approximately linear in age",
+        "Tissue-specific mutation spectra despite similar accumulation rates"
+      ],
+      "does_not_establish": [
+        "That somatic accumulation is exactly linear at all ages or in all tissues",
+        "Any link between somatic burden and an inherited phenotype prediction",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "armitage1954multistage",
+      "type": "primary_research",
+      "authors": [
+        "Peter Armitage",
+        "Richard Doll"
+      ],
+      "title": "The Age Distribution of Cancer and a Multi-stage Theory of Carcinogenesis",
+      "year": 1954,
+      "venue": "British Journal of Cancer 8(1):1-12",
+      "doi": "10.1038/bjc.1954.1",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2007940/",
+      "access_status": "Bibliographic record and headline findings confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Multistage model in which incidence rises as a power of age",
+        "Reported approximately sixth-power age dependence for several non-endocrine carcinomas",
+        "Log-log incidence slope interpreted as number of required stages minus one"
+      ],
+      "does_not_establish": [
+        "That the multistage form applies to the Mendelian loci modelled in this paper",
+        "Any parameter value used in this section",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "horvath2013clock",
+      "type": "primary_research",
+      "authors": [
+        "Steve Horvath"
+      ],
+      "title": "DNA methylation age of human tissues and cell types",
+      "year": 2013,
+      "venue": "Genome Biology 14:R115",
+      "doi": "10.1186/gb-2013-14-10-r115",
+      "url": "https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-10-r115",
+      "access_status": "Bibliographic record and headline findings confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Multi-tissue DNA methylation age predictor built from approximately 8,000 samples",
+        "Coverage of 51 healthy tissues and cell types across 82 array datasets",
+        "Evidence that methylation state carries reproducible age information"
+      ],
+      "does_not_establish": [
+        "That methylation causes the age association it measures",
+        "Any gene-level expression gate proposed in this section",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "hannum2013aging",
+      "type": "primary_research",
+      "authors": [
+        "Gregory Hannum",
+        "Justin Guinney",
+        "Ling Zhao",
+        "and colleagues"
+      ],
+      "title": "Genome-wide methylation profiles reveal quantitative views of human aging rates",
+      "year": 2013,
+      "venue": "Molecular Cell 49(2):359-367",
+      "doi": "10.1016/j.molcel.2012.10.016",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780611/",
+      "access_status": "Bibliographic record and headline findings confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Quantitative aging model over more than 450,000 CpG markers",
+        "Whole blood from 656 individuals aged 19 to 101",
+        "Individual differences in methylome ageing rate and epigenetic drift"
+      ],
+      "does_not_establish": [
+        "Tissue transferability of blood-derived methylation rates",
+        "Separation of ageing from cell-composition change",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "jones2012methylation",
+      "type": "authoritative_review",
+      "authors": [
+        "Peter A. Jones"
+      ],
+      "title": "Functions of DNA methylation: islands, start sites, gene bodies and beyond",
+      "year": 2012,
+      "venue": "Nature Reviews Genetics 13:484-492",
+      "doi": "10.1038/nrg3230",
+      "url": "https://www.nature.com/articles/nrg3230",
+      "access_status": "Bibliographic record and scope confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Context dependence of DNA methylation at promoters, gene bodies and regulatory elements",
+        "Association of promoter-island methylation with transcriptional repression",
+        "Statement that the methylation-transcription relationship is not a simple switch"
+      ],
+      "does_not_establish": [
+        "A quantitative repression coefficient for any specific locus",
+        "The sign or magnitude of any weight proposed in this section",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "bannister2011histone",
+      "type": "authoritative_review",
+      "authors": [
+        "Andrew J. Bannister",
+        "Tony Kouzarides"
+      ],
+      "title": "Regulation of chromatin by histone modifications",
+      "year": 2011,
+      "venue": "Cell Research 21:381-395",
+      "doi": "10.1038/cr.2011.22",
+      "url": "https://www.nature.com/articles/cr201122",
+      "access_status": "Bibliographic record and scope confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Histone modifications including acetylation as regulators of chromatin state",
+        "Genomic locations and transcriptional consequences of specific marks",
+        "Chromatin as a responsive scaffold rather than a static structure"
+      ],
+      "does_not_establish": [
+        "A quantitative activation coefficient for any specific locus",
+        "That acetylation level is measurable as a single scalar per gene",
+        "Any implemented result in this repository"
+      ]
+    },
+    {
+      "id": "cox1972hazard",
+      "type": "primary_research",
+      "authors": [
+        "David R. Cox"
+      ],
+      "title": "Regression Models and Life-Tables",
+      "year": 1972,
+      "venue": "Journal of the Royal Statistical Society Series B 34(2):187-220",
+      "doi": "10.1111/j.2517-6161.1972.tb00899.x",
+      "url": "https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1972.tb00899.x",
+      "access_status": "Bibliographic record and scope confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Hazard function expressed as a baseline function of time multiplied by a covariate term",
+        "Separation of an arbitrary unknown time dependence from regression coefficients"
+      ],
+      "does_not_establish": [
+        "That the proportional-hazards form is correct for mutation at a genetic locus",
+        "Any estimated coefficient in this section"
+      ]
+    },
+    {
+      "id": "nelder1972glm",
+      "type": "primary_research",
+      "authors": [
+        "John A. Nelder",
+        "Robert W. M. Wedderburn"
+      ],
+      "title": "Generalized Linear Models",
+      "year": 1972,
+      "venue": "Journal of the Royal Statistical Society Series A 135(3):370-384",
+      "doi": "10.2307/2344614",
+      "url": "https://academic.oup.com/jrsssa/article/135/3/370/7110572",
+      "access_status": "Bibliographic record and scope confirmed by web search 2026-09-05; full text not re-read in this session.",
+      "supports": [
+        "Linear predictor combined with a link function and an exponential-family response",
+        "Binomial response with a logit link as a member of that family",
+        "Maximum-likelihood estimation by iterative weighted linear regression"
+      ],
+      "does_not_establish": [
+        "That a logistic gate is the correct model of gene expression",
+        "Any estimated coefficient in this section"
+      ]
+    }
+  ]
+}

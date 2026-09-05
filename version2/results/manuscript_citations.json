@@ -24,7 +24,17 @@
     "brown_linkage_2002",
     "nist_wilson",
     "scipy_kstest",
-    "yengo2022height"
+    "yengo2022height",
+    "kong2012paternal",
+    "jonsson2017trios",
+    "blokzijl2016somatic",
+    "armitage1954multistage",
+    "cox1972hazard",
+    "jones2012methylation",
+    "bannister2011histone",
+    "horvath2013clock",
+    "hannum2013aging",
+    "nelder1972glm"
   ],
-  "total": 25
+  "total": 35
 }
