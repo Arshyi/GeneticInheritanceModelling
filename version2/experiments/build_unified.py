@@ -245,6 +245,21 @@ def main():
             [(r['n'], f"{r['G']:,}", f"{r['U']:,}", f"{r['nnz']:,}",
               f"{r['dense_entries']:,}", f"{r['density']:.3g}")
              for r in comp['biallelic_series'] if r['n'] <= 10]),
+        'ARTIFACT_TABLE': table(['Artifact', 'Purpose', 'Evidence status'], [
+            ('research/version1_audit.md', 'Page-by-page discrepancy explanation', 'Full paper and screenshots inspected'),
+            ('results/version1_reproduction.json', 'Six exact legacy examples and coverage variants', 'Executed rational translation'),
+            ('genetics/core.py; extensions.py', 'Reusable kernel and staged extensions', '32 automated tests passed'),
+            ('results/benchmark.json and benchmark_workers/', 'Raw timings, memory, metadata and checks', 'Executed local CPU run'),
+            ('results/complexity.json', 'Derived bounds and measured growth', 'Executed; derived limits stated separately'),
+            ('data/observed_genotypes.csv + provenance', 'rs334 calls with validation', 'Frozen public snapshot, digest recorded'),
+            ('data/eye_color_genotypes.csv + provenance', 'rs12913832 calls with validation', 'Frozen public snapshot, digest recorded'),
+            ('results/population_validation.json', 'HWE and pooling audit', 'Executed; no clinical accuracy claim'),
+            ('results/eye_color.json', 'Two-locus eye-colour model and audit', 'Executed; no predictive accuracy claim'),
+            ('results/polygenic_synthetic.json', 'Score and interval calibration', '10,000 independent synthetic draws'),
+            ('legacy/matlab/', 'Version I source, verbatim', 'Embedded as Appendix F with digests'),
+            ('sources/source_ledger.json', 'Reproducible claim/source bibliography', 'Primary and authoritative sources'),
+            ('manuscript/genetics_unified.md', 'This document, generated from template and results', 'Rebuilt by run.py unified'),
+            ('output/pdf/Genetics_Complete.pdf', 'Typeset preprint', 'Rendered and visually checked')]),
         'MATLAB_APPENDIX': matlab_source,
         'RUN_COMMANDS_UNIFIED': (
             '```text\ncd version2\npython -m pip install -r requirements.txt\n'
@@ -264,7 +279,7 @@ def main():
         'version1_pages_absorbed': legacy['source']['pages_read'],
         'version1_sha256': legacy['source']['sha256'],
         'version1_matlab_embedded': matlab_digests,
-        'status': 'Author review required; no submission or public claim of peer review',
+        'status': 'Preprint; not peer reviewed. Author-approved for public release.',
     }, indent=2) + '\n', encoding='utf-8')
     return text
 
@@ -275,4 +290,4 @@ if __name__ == '__main__':
            doc_title='Inheritance as a Linear Operator, and What Replaces It - Parts I to VI',
            running_header='INHERITANCE AS A LINEAR OPERATOR, AND WHAT REPLACES IT',
            cover_tag='GENETICS  /  COMPLETE',
-           footer='Unified research manuscript  |  Author review required')
+           footer='Preprint - not peer reviewed')

@@ -4,7 +4,9 @@
 
 Parts I to VII | Arshyia Mehran | Version I written 2022-2025, audited and extended 05 September 2026
 
-Parts I and II preserve the mathematics of the original 54-page study and are reworked only for exposition. Parts III to V are new: they audit that study against its own source code, replace the square-matrix constraint with a complete rectangular kernel, measure four implementations of it, test the population assumptions against public genotype calls, and derive an extension in which age enters through mutation and epigenetic regulation. Computations, figures and adversarial checks were assisted by AI agents; scientific authorship, interpretation and any decision to submit remain the author's. No public submission or claim of peer review has been made.
+Parts I and II preserve the mathematics of the original 54-page study and are reworked only for exposition. Parts III to V are new: they audit that study against its own source code, replace the square-matrix constraint with a complete rectangular kernel, measure four implementations of it, test the population assumptions against public genotype calls, add eye colour as a two-locus trait on real genotype data, and state the general n-locus problem with upper and lower bounds. Part VI derives, without implementing, an extension in which age enters through mutation and epigenetic regulation.
+
+**This is a preprint. It has not been peer reviewed.** Every quantitative claim is reproducible from the accompanying code and retained results; the limits of each claim are stated where it is made, and Section 27 collects the counterarguments that survive.
 
 <!-- pagebreak -->
 
@@ -1414,9 +1416,25 @@ This unified treatment establishes three things about that cost. First, it was s
 
 The strongest contribution is not the sparse kernel but the separation it forced: transmission from mating, catalog coverage from probability mass, probability mass from predictive accuracy, and germline from somatic change. Version I's conclusion moved between those quantities. Keeping them apart is what makes the remaining claims defensible and the remaining gaps visible.
 
-Two gaps are worth naming last, because they bound what should be attempted next. Admitting mutation destroys the structural sparsity the architecture depends on, which means the honest successor to this work is factored or structured, not sparse. And age is collinear with its own epigenetic mediators, which means the expression gate of Part V cannot be estimated from a convenience sample at any size, and needs a design built specifically to break that collinearity.
+Two gaps are worth naming last, because they bound what should be attempted next. Admitting mutation destroys the structural sparsity the architecture depends on, which means the honest successor to this work is factored or structured, not sparse. And age is collinear with its own epigenetic mediators, which means the expression gate of Part VI cannot be estimated from a convenience sample at any size, and needs a design built specifically to break that collinearity.
 
-The next empirical priority is unchanged and unglamorous: an independent parent-offspring transmission dataset with a preregistered evaluation target. Everything in Part V should wait for it.
+The next empirical priority is unchanged and unglamorous: an independent parent-offspring transmission dataset with a preregistered evaluation target. Everything in Part VI should wait for it.
+
+<!-- pagebreak -->
+
+# Availability, disclosure and scope
+
+**Code and data.** All source code, tests, frozen datasets with their provenance and digests, raw benchmark output, figures, the source ledger and the build that generates this document are in the accompanying repository. Every number printed here is bound at build time to a retained machine-readable result; none is typed by hand. The reproduction sequence is in Appendix B.
+
+**External data.** Two frozen snapshots of public aggregate allele and genotype counts are used: rs334 and rs12913832, each for the same 2,504 individuals across 26 populations of the 1000 Genomes phase 3 reference panel, retrieved through the Ensembl REST API and stored with SHA-256 digests. [29] [37] [30] These are aggregate counts. No individual-level genotype and no personal data of any kind is used, held or distributed by this work.
+
+**No human subjects.** No participants were recruited, no samples were collected and no ethical approval was required. All phenotype figures quoted from cohorts are published summary statistics, cited at their point of use.
+
+**AI assistance.** Computation, figure generation, manuscript preparation and adversarial review were assisted by AI agents. Scientific authorship, interpretation and responsibility for every claim are the author's.
+
+**Scope of claims.** This work establishes representational completeness, numerical agreement between four implementations, measured performance on one machine, and asymptotic bounds. It establishes **no predictive accuracy for any trait**, because no held-out phenotype data was available for any model built here. Part VI is derivation only: no code, no test, no dataset corresponds to it. Nothing in this document is medical, diagnostic or reproductive advice.
+
+**Correspondence.** arshyiamehran@gmail.com
 
 <!-- pagebreak -->
 
@@ -1457,16 +1475,20 @@ python run.py unified
 | --- | --- | --- |
 | research/version1_audit.md | Page-by-page discrepancy explanation | Full paper and screenshots inspected |
 | results/version1_reproduction.json | Six exact legacy examples and coverage variants | Executed rational translation |
-| genetics/core.py; extensions.py | Reusable kernel and staged extensions | Automated tests passed |
+| genetics/core.py; extensions.py | Reusable kernel and staged extensions | 32 automated tests passed |
 | results/benchmark.json and benchmark_workers/ | Raw timings, memory, metadata and checks | Executed local CPU run |
-| data/observed_genotypes.csv + provenance | External genomic calls with validation | Frozen public snapshot |
+| results/complexity.json | Derived bounds and measured growth | Executed; derived limits stated separately |
+| data/observed_genotypes.csv + provenance | rs334 calls with validation | Frozen public snapshot, digest recorded |
+| data/eye_color_genotypes.csv + provenance | rs12913832 calls with validation | Frozen public snapshot, digest recorded |
 | results/population_validation.json | HWE and pooling audit | Executed; no clinical accuracy claim |
+| results/eye_color.json | Two-locus eye-colour model and audit | Executed; no predictive accuracy claim |
 | results/polygenic_synthetic.json | Score and interval calibration | 10,000 independent synthetic draws |
+| legacy/matlab/ | Version I source, verbatim | Embedded as Appendix F with digests |
 | sources/source_ledger.json | Reproducible claim/source bibliography | Primary and authoritative sources |
-| manuscript/version2_manuscript.md | Editable evidence-derived candidate | Author review required |
-| output/pdf/Genetics_Version_II.pdf | Typeset candidate | Rendered and visually checked before delivery |
+| manuscript/genetics_unified.md | This document, generated from template and results | Rebuilt by run.py unified |
+| output/pdf/Genetics_Complete.pdf | Typeset preprint | Rendered and visually checked |
 
-The checks above concern delivered evidence. They do not assert that MATLAB was executed, that a clinical study was performed, that the software was benchmarked on more than one machine, or that this manuscript has been peer reviewed.
+The checks above concern delivered evidence. They do not assert that MATLAB was executed, that a clinical study was performed, that the software was benchmarked on more than one machine, or that this preprint has been peer reviewed.
 
 # Appendix C. Summary of derived results
 

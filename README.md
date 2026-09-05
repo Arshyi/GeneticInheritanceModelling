@@ -23,8 +23,11 @@ against each other.
 **Version I**: evidence to be audited, not ground truth. The original PDFs, MATLAB and
 Python are untouched.
 
+> **Status:** preprint, author-approved for release, not peer reviewed. Availability, AI-assistance
+> disclosure and the scope of claims are stated in the paper's front matter.
+
 **The single unified paper is [`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)**
-(74 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
+(75 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
 and Version II into one document, in six parts: the original biology and matrix algebra with
 every derivation preserved; sickle cell, then ABO, then ABO x Rh, each given its Version I
 treatment and then audited; the combinatorial theorem and the complete kernel that replaces
