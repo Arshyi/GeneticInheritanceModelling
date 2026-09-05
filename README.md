@@ -238,6 +238,26 @@ generation count; run them from the `matlab/` directory.
 - Selection is modelled only as complete reproductive exclusion of HbS/HbS. Partial
   fitness costs would be a more realistic and more general formulation.
 
+## Citing and licence
+
+> **Preprint** — author-approved for release, not peer reviewed. A DOI will be minted on
+> publication; see [`PUBLISHING.md`](PUBLISHING.md) for the steps and
+> [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
+
+Dual-licensed, see [`LICENSE`](LICENSE):
+
+- **Written work and figures** — CC BY 4.0. Reuse and adapt freely with attribution.
+- **Source code** — MIT.
+- **Frozen genotype datasets** in `version2/data/` are aggregate counts from the 1000 Genomes
+  phase 3 panel via Ensembl. They keep the terms of their originating projects and are **not**
+  relicensed here. No third-party figure is reproduced anywhere in this repository.
+
+Build the full research package (paper, code, data, results, figures) with:
+
+```bash
+cd version2 && python run.py package
+```
+
 ## Provenance
 
 Consolidated in August 2026 from four separate repositories

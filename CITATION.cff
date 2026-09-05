@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Inheritance as a Linear Operator, and What Replaces It: From Punnett squares to a complete probabilistic kernel"
+abstract: >-
+  A unified, audited and extended treatment of Mendelian inheritance modelling.
+  An earlier linear-algebra formulation of sickle-cell, ABO and ABO x Rh
+  inheritance is preserved and then audited against its own source code, which
+  shows that the original programs already enumerated every parental pair and
+  that the reported coverage figures describe the prose rather than the executed
+  model. The square-matrix constraint is replaced by a complete rectangular
+  transmission kernel, implemented in four representations that agree to
+  6.94e-17 and benchmarked. Combinatorial growth is proved by induction, and
+  output-size lower bounds show that materialising the complete kernel is
+  Omega(15^n) for any implementation while the factored single-child query is
+  Theta(n) and therefore optimal. Population assumptions are tested against
+  public rs334 and rs12913832 genotype calls for 2,504 individuals across 26
+  populations. Eye colour is added as a two-locus epistatic trait on real data
+  and compared against published cohorts. A final part derives, without
+  implementing, an extension in which age enters through germline mutation and
+  epigenetic regulation. No predictive accuracy is established for any trait.
+type: software
+authors:
+  - family-names: Mehran
+    given-names: Arshyia
+    email: arshyiamehran@gmail.com
+repository-code: "https://github.com/Arshyi/GeneticInheritanceModelling"
+license: CC-BY-4.0
+version: "2.0.0"
+date-released: "2026-09-05"
+keywords:
+  - Mendelian inheritance
+  - transition matrix
+  - sparse representation
+  - combinatorial growth
+  - Hardy-Weinberg equilibrium
+  - computational complexity
+  - model audit
+  - reproducibility
+  - bioinformatics

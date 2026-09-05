@@ -1247,6 +1247,8 @@ The next empirical priority is unchanged and unglamorous: an independent parent-
 
 **Scope of claims.** This work establishes representational completeness, numerical agreement between four implementations, measured performance on one machine, and asymptotic bounds. It establishes **no predictive accuracy for any trait**, because no held-out phenotype data was available for any model built here. Part VI is derivation only: no code, no test, no dataset corresponds to it. Nothing in this document is medical, diagnostic or reproductive advice.
 
+**Licence.** The written work and its figures are licensed CC BY 4.0; the accompanying software is MIT licensed. The frozen aggregate genotype datasets remain subject to the terms of their originating projects and are not relicensed here. No third-party figure is reproduced in this document.
+
 **Correspondence.** arshyiamehran@gmail.com
 
 <!-- pagebreak -->

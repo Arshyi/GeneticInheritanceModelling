@@ -1,0 +1,55 @@
+This repository is dual-licensed.
+
+================================================================================
+1. SOFTWARE  -  MIT License
+================================================================================
+Applies to all source code: version2/genetics/, version2/experiments/,
+version2/tests/, version2/run.py, python/, matlab/, and the build scripts.
+
+MIT License
+
+Copyright (c) 2026 Arshyia Mehran
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+2. WRITTEN WORK AND FIGURES  -  Creative Commons Attribution 4.0 International
+================================================================================
+Applies to the manuscripts and their figures: version2/manuscript/,
+version2/figures/, version2/output/pdf/, report/, and this README.
+
+Copyright (c) 2026 Arshyia Mehran
+
+Licensed under CC BY 4.0. You are free to share and adapt this material for any
+purpose, including commercially, provided you give appropriate credit, link to
+the licence, and indicate if changes were made.
+
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+================================================================================
+3. THIRD-PARTY MATERIAL  -  NOT relicensed by this repository
+================================================================================
+The frozen datasets in version2/data/ are aggregate allele and genotype counts
+retrieved from the Ensembl REST API for the 1000 Genomes Project phase 3
+reference panel. They remain subject to the terms of their originating projects
+and are redistributed here only as aggregate counts with recorded provenance
+and digests. Nothing in sections 1 and 2 above grants any right over them.
+
+No third-party figures are reproduced anywhere in this repository. Works cited
+in the manuscripts are cited only, which this licence does not extend to.
