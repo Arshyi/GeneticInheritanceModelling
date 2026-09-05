@@ -568,7 +568,7 @@ This matters because it means the extension does not invalidate the verification
 >
 > If eps_l > 0 and Q has full support, then every allele is reachable from every allele in one transmission. Every structural zero of the kernel becomes a positive number of order eps_l per mutated locus. The nonzero count rises from (15^n + 5^n)/2 to G*U exactly.
 >
-> At five biallelic loci that is a rise from 381,250 to 7,213,978 stored entries, and CSR becomes strictly worse than dense: it pays index overhead on a matrix with no zeros.
+> At five biallelic loci that is a rise from 381,250 to 7,203,978 stored entries, and CSR becomes strictly worse than dense: it pays index overhead on a matrix with no zeros.
 
 This is the most consequential thing in the section and it was not anticipated when the architecture was chosen. The measured 12.59-fold CSR payload advantage of Section 7.2 is an advantage over a mutation-free model. Introduce biologically realistic mutation and the advantage does not shrink; it inverts.
 

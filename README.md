@@ -88,7 +88,7 @@ mutations per year in adult stem cells.
 
 Two results are worth the section on their own. **Mutation destroys the sparsity the whole
 architecture rests on** — with any positive mutation rate every structural zero becomes
-positive, the kernel goes from 381,250 to 7,213,978 stored entries at five loci, and CSR
+positive, the kernel goes from 381,250 to 7,203,978 stored entries at five loci, and CSR
 becomes strictly worse than dense. And **age is collinear with its own mediators**, so
 `w_age` and `w_met` are individually unidentifiable while the fit still looks fine — the
 conditioning has to be checked before fitting, never inferred from the residual afterwards.
