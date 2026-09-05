@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 *.asv
+
+# The Version II PDF is superseded by Genetics_Complete.pdf and is not shipped.
+version2/output/pdf/Genetics_Version_II.pdf

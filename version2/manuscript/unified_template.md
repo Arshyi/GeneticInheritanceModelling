@@ -1325,7 +1325,9 @@ The checks above concern delivered evidence. They do not assert that MATLAB was 
 
 # Appendix D. Version I artefacts preserved
 
-The original 54-page study and its DOCX source are retained unedited alongside this work. Its SHA-256 digest before the extension was EE3CB04CE28D4734669D5822FDDBDF03C176FD5C2F5FF3760CB82A4BD1145ECD. [version1_local]
+The original 54-page study and its DOCX source are retained unedited by the author and are **not redistributed with this document**. Its SHA-256 digest before the extension was EE3CB04CE28D4734669D5822FDDBDF03C176FD5C2F5FF3760CB82A4BD1145ECD, recorded here so that the source this audit rests on remains identifiable to anyone holding a copy. [version1_local]
+
+Nothing in the audit depends on the reader having that file. Every quantity taken from it is reproduced in Parts I and II, every displayed example it reports is reconstructed in exact rational arithmetic in Sections 4.4 and 6.3, and the five MATLAB programs it describes are printed verbatim in Appendix F.
 
 Preserved without alteration: the six sickle-cell Punnett squares and the six-column parental table; the reduced three-column table and its linear system; the eigenvalues 1, 1/2, 1/4 with their eigenvectors and the diagonalisation M = S D S^-1; the ABO allele-weight scheme and genotype scores; the Hardy-Weinberg derivation of the ABO allele frequencies and the enumeration of all 21 pairings; the ranked top-six table and the 6 x 6 offspring matrix; the Rh model and the ranked top-18 joint table; and the 18 x 18 displayed matrix.
 

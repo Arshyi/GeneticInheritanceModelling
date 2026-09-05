@@ -9,7 +9,7 @@ yours to do; nothing in this repository logs in or uploads on your behalf.
 |---|---|---|
 | Preprint PDF, 75 pages | `version2/output/pdf/Genetics_Complete.pdf` | ready |
 | Markdown source | `version2/manuscript/genetics_unified.md` | ready |
-| Full research package, 190 files | `version2/output/Genetics_Version_II_Research_Package.zip` | ready, ~24 MB |
+| Full research package, 187 files | `version2/output/Genetics_Research_Package.zip` | ready, 2.4 MB |
 | Zenodo metadata | `.zenodo.json` | ready |
 | Citation metadata | `CITATION.cff` | ready |
 | Licence, dual | `LICENSE` | CC BY 4.0 (writing) + MIT (code) |
@@ -25,8 +25,8 @@ disclosure, the scope of claims and the licence.
    no institutional affiliation is required.
 2. **New upload**.
 3. Drag in `Genetics_Complete.pdf`. Optionally also drag in
-   `Genetics_Version_II_Research_Package.zip` so the code, data and results are
-   archived with the paper under the same DOI.
+   `Genetics_Research_Package.zip` so the code, data and results are archived with
+   the paper under the same DOI. It is 2.4 MB and contains exactly one PDF.
 4. Fill the form using `.zenodo.json` as the source of truth:
    - **Upload type**: Publication → Preprint
    - **Title**: copy the `title` field
@@ -74,9 +74,10 @@ handles them as separate records.
 - [ ] Decide whether to include your ORCID. Recommended.
 - [ ] Confirm you are happy with CC BY 4.0. It permits commercial reuse with
       attribution and is effectively irreversible once people rely on it.
-- [ ] The 54-page Version I PDF and the Extended Essay are in this repository and
-      in the release zip. If either was submitted for academic credit, check your
-      institution's rules on publishing coursework before including them.
+- [ ] Nothing else of yours ships. The 54-page Version I write-up and the Extended
+      Essay are not in the repository and not in the release zip; only their
+      mathematics, their MATLAB and a SHA-256 digest are carried forward inside the
+      paper itself.
 
 ## After publishing
 

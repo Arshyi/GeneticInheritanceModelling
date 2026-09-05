@@ -7,15 +7,14 @@ expressed as a linear-algebra problem.
 Implemented independently in **Python** and **MATLAB** so the two can be checked
 against each other.
 
-### Write-ups
+### The paper
 
-- [`report/IB-Mathematics-Extended-Essay.pdf`](report/IB-Mathematics-Extended-Essay.pdf)
-  (29 pages) — the mathematical derivation. Sets up the problem, develops the matrix
-  formulation, and covers the linear algebra it needs (matrix inverses, determinants,
-  eigenvalues). This is where the modelling argument is actually made.
-- [`report/Bioinformatics-Arshyia-Mehran.pdf`](report/Bioinformatics-Arshyia-Mehran.pdf)
-  (54 pages) — the computational write-up: implementation, simulation results and
-  discussion.
+**[`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)** —
+75 pages, the single current write-up. It absorbs and supersedes two earlier documents: a
+29-page mathematical derivation and a 54-page computational write-up. Neither earlier PDF is
+redistributed here. Their mathematics is preserved in full in Parts I and II of the paper, their
+MATLAB is reproduced verbatim in Appendix F, and the SHA-256 digest of the 54-page source is
+recorded in Appendix D so the audit's primary source remains identifiable.
 
 ## Version II — removing the square-matrix constraint
 
@@ -59,9 +58,9 @@ audits, so the finding can be checked against the code rather than a description
 own bibliography is now carried in the ledger and cited at point of use; its two secondary population
 summaries are named as the origin of the phenotype inputs behind the coverage figures.
 
-The [Version II review manuscript](version2/output/pdf/Genetics_Version_II.pdf)
-([source](version2/manuscript/version2_manuscript.md)) remains as the standalone audit.
-The research question:
+A standalone Version II audit is still generated as
+[Markdown](version2/manuscript/version2_manuscript.md) by `run.py manuscript`, but it is not
+shipped as a second PDF. The research question:
 
 > Can sparse and dynamically allocated data structures overcome the combinatorial
 > limitations of dense transition matrices in probabilistic genetic inheritance

@@ -16,6 +16,7 @@ from scipy.stats import binom, kstest
 from genetics.core import InheritanceModel, hwe, select, mutation, migrate
 from genetics.extensions import additive_pmf, mixture_cdf, hwe_exact, linked_gametes, linked_cross, linkage_equilibrium_update
 from experiments.reproduce_version1 import legacy_sickle
+from experiments.build_manuscript import version1_digest
 
 ROOT=Path(__file__).resolve().parents[1]
 RESULTS=ROOT/'results'; FIGURES=ROOT/'figures'
@@ -201,7 +202,7 @@ def run():
     for fn in [population_validation,generation_scenarios,epistasis_and_linkage,polygenic]:
         outputs[fn.__name__]=fn();print(fn.__name__+' complete',flush=True)
     dump('science_metadata.json',dict(completed_at_utc=datetime.now(timezone.utc).isoformat(),seed=SEED,
-         numpy=np.__version__,input_pdf_sha256=hashlib.sha256((ROOT.parent/'Bioinformatics-Arshyia Mehran.pdf').read_bytes()).hexdigest(),
+         numpy=np.__version__,input_pdf_sha256=version1_digest(),
          status='Executed local deterministic computations and seeded synthetic validation'))
     print('All science experiments completed.')
 

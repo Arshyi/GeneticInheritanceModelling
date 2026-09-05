@@ -25,6 +25,26 @@ RES=ROOT/'results'; MAN=ROOT/'manuscript'; OUT=ROOT/'output/pdf'
 PALETTE={'dense':'#293c61','csr':'#136f79','hash':'#d18a25','streamed_kernel':'#b44949'}
 
 
+VERSION1_PDF='Bioinformatics-Arshyia Mehran.pdf'
+VERSION1_SHA256='ee3cb04ce28d4734669d5822fddbdf03c176fd5c2f5ff3760cb82a4bd1145ecd'
+
+
+def version1_digest():
+    """Recorded digest of the Version I source, verified against the file when present.
+
+    The Version I PDF is the author's and is not redistributed, so a clone will
+    not contain it. The digest is therefore recorded; when the file IS present the
+    recorded value is checked against it and a mismatch fails the build.
+    """
+    local=ROOT.parent/VERSION1_PDF
+    if local.is_file():
+        actual=hashlib.sha256(local.read_bytes()).hexdigest()
+        if actual!=VERSION1_SHA256:
+            raise ValueError('Version I PDF digest mismatch: '+actual)
+        return actual
+    return VERSION1_SHA256
+
+
 def read(name):return json.loads((RES/name).read_text(encoding='utf-8'))
 def table(header,rows):
     return '| '+' | '.join(header)+' |\n| '+' | '.join(['---']*len(header))+' |\n'+'\n'.join('| '+' | '.join(map(str,row))+' |' for row in rows)
@@ -40,7 +60,7 @@ def sources():
             merged[source['id']]=source
     merged['version1_local']={'id':'version1_local','type':'user_provided_local_source','authors':['Arshyia Mehran'],
         'title':'Linear Algebra in Bioinformatics and Computational Biology: Modeling the Generational Decay of Sickle Cell Anemia and Changes in Generational Blood Types Using MATLAB',
-        'url':'','local_file':'../Bioinformatics-Arshyia Mehran.pdf','pages':54,'sha256':hashlib.sha256((ROOT.parent/'Bioinformatics-Arshyia Mehran.pdf').read_bytes()).hexdigest()}
+        'url':'','local_file':'../Bioinformatics-Arshyia Mehran.pdf','pages':54,'sha256':version1_digest()}
     (ROOT/'sources/source_ledger.json').write_text(json.dumps({'schema_version':'1.0','sources':list(merged.values())},indent=2)+'\n',encoding='utf-8')
     return merged
 
