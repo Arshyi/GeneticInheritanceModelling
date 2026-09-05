@@ -893,6 +893,248 @@
       "accessed_date": "2026-09-05"
     },
     {
+      "id": "he_petoukhov_2011",
+      "type": "primary_textbook",
+      "authors": [
+        "Matthew He",
+        "Sergey Petoukhov"
+      ],
+      "title": "Mathematics of Bioinformatics: Theory, Methods and Applications",
+      "year": 2011,
+      "venue": "John Wiley and Sons, Wiley Series in Bioinformatics. ISBN 978-0-470-40443-0. Cited in Version I as 'Theory, Practice, and Applications', the title used by the Nova Southeastern University listing",
+      "url": "https://www.wiley.com/en-us/Mathematics+of+Bioinformatics:+Theory,+Methods+and+Applications-p-9780470404430",
+      "access_status": "Carried forward from Version I's bibliography, where it is the stated origin of the matrix formulation. Publication details independently confirmed by web search 2026-09-05; full text not consulted in this session.",
+      "supports": [
+        "Version I's method of recording a Punnett grid as a matrix and raising it to a power",
+        "The diagonalisation approach used throughout Part I"
+      ],
+      "does_not_establish": [
+        "That a square operator is the correct representation of random mating",
+        "Any result derived in Parts III to VI"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "hartl_clark_2007",
+      "type": "primary_textbook",
+      "authors": [
+        "Daniel L. Hartl",
+        "Andrew G. Clark"
+      ],
+      "title": "Principles of Population Genetics",
+      "year": 2007,
+      "venue": "4th edition, Sinauer Associates. ISBN 978-0-878-93308-2",
+      "url": "https://global.oup.com/ushe/product/principles-of-population-genetics-9780197778739",
+      "access_status": "Carried forward from Version I's bibliography, where it is the stated source of the Hardy-Weinberg allele-frequency formulas. Publication details independently confirmed by web search 2026-09-05; full text not consulted in this session.",
+      "supports": [
+        "The Hardy-Weinberg genotype-frequency relations used to convert ABO phenotype shares into allele frequencies",
+        "Standard population-genetic vocabulary used in Part IV"
+      ],
+      "does_not_establish": [
+        "That Hardy-Weinberg assumptions hold for any pooled worldwide sample",
+        "The exact-test construction of Section 11.3, which is separately cited"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "mcgonegal_2014_biology",
+      "type": "secondary_textbook",
+      "authors": [
+        "Randy McGonegal",
+        "Patricia Tosto"
+      ],
+      "title": "Pearson Baccalaureate Biology Higher Level, 2nd edition",
+      "year": 2014,
+      "venue": "Pearson Education Limited, Harlow",
+      "access_status": "Transcribed from Version I's bibliography as cited by the author; not independently re-verified in this session.",
+      "supports": [
+        "Version I's biological denotations: dominance, recessiveness, genotype and phenotype",
+        "Punnett-square construction as taught at that level"
+      ],
+      "does_not_establish": [
+        "Molecular detail of the ABO, Rh or HBB systems"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "haese_2014_furthermaths",
+      "type": "secondary_textbook",
+      "authors": [
+        "Michael Haese"
+      ],
+      "title": "Haese Further Mathematics HL",
+      "year": 2014,
+      "venue": "Haese and Harris Publications, Marleston",
+      "access_status": "Transcribed from Version I's bibliography as cited by the author; not independently re-verified in this session.",
+      "supports": [
+        "The eigenvalue, eigenvector and diagonalisation procedures restated in Section 3"
+      ],
+      "does_not_establish": [
+        "Any claim about which operator is biologically appropriate"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "kognity_alleles_2022",
+      "type": "educational_resource",
+      "organization": "Kognity",
+      "title": "Kognity 3.1.1: Chromosomes, genes and alleles; and sickle-cell disease material",
+      "year": 2022,
+      "venue": "Kognity online learning platform, retrieved June and July 2022",
+      "url": "https://kognity.com/",
+      "access_status": "Transcribed from Version I's bibliography as cited by the author. Subscription platform; content not re-checked in this session.",
+      "supports": [
+        "Version I's account of homozygous and heterozygous genotypes",
+        "Version I's description of the HbA and HbS codon change and its consequence for haemoglobin"
+      ],
+      "does_not_establish": [
+        "Clinical detail of sickle-cell disease, for which a primary reference is cited separately"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "froedtert_sickle_2022",
+      "type": "clinical_information_page",
+      "organization": "Froedtert and the Medical College of Wisconsin",
+      "title": "Sickle Cell Disease: Symptoms",
+      "year": 2022,
+      "venue": "Froedtert and the Medical College of Wisconsin, retrieved 24 June 2022",
+      "url": "https://www.froedtert.com/sickle-cell-disease/symptoms",
+      "access_status": "Transcribed from Version I's bibliography. Source of a figure in Version I comparing normal and sickled red blood cells; that figure is cited here and not reproduced.",
+      "supports": [
+        "Version I's illustration of red-blood-cell morphology in sickle-cell disease"
+      ],
+      "does_not_establish": [
+        "Any quantitative parameter used in this work"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "britannica_sickle_2022",
+      "type": "encyclopaedia",
+      "organization": "Encyclopaedia Britannica",
+      "title": "Sickle-cell anemia: regional malaria cases and HbS allele frequency",
+      "year": 2022,
+      "venue": "Encyclopaedia Britannica, retrieved 24 June 2022",
+      "url": "https://www.britannica.com/science/sickle-cell-anemia",
+      "access_status": "Transcribed from Version I's bibliography. Source of a figure in Version I mapping malaria incidence against HbS frequency; that figure is cited here and not reproduced.",
+      "supports": [
+        "Version I's statement of a geographic association between malaria and HbS frequency"
+      ],
+      "does_not_establish": [
+        "A causal claim about heterozygote advantage, which requires primary evidence",
+        "Any allele frequency used in a calculation"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "britannica_rh_2025",
+      "type": "encyclopaedia",
+      "organization": "Encyclopaedia Britannica",
+      "title": "Rh Blood Group System",
+      "year": 2025,
+      "venue": "Encyclopaedia Britannica, accessed 4 May 2025",
+      "url": "https://www.britannica.com/science/Rh-blood-group-system",
+      "access_status": "Transcribed from Version I's bibliography as cited by the author; not independently re-verified in this session.",
+      "supports": [
+        "Version I's simplified dominant D / recessive d model of the Rh locus",
+        "The one-quarter Rh-negative outcome for two Dd parents"
+      ],
+      "does_not_establish": [
+        "Full RHD and RHCE variation, which the simplified model omits"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "medicalchannelasia_abo_2023",
+      "type": "secondary_population_summary",
+      "organization": "Medical Channel Asia",
+      "title": "Blood Types: Revealing ABO Groups' Global Impact and Importance",
+      "year": 2023,
+      "venue": "Medical Channel Asia",
+      "access_status": "Transcribed from Version I's bibliography. This is a secondary summary, not a primary population survey, and it is the stated origin of the ABO phenotype percentages that drive Version I's coverage figures.",
+      "supports": [
+        "Version I's worldwide ABO phenotype shares of approximately O 44%, A 42%, B 10%, AB 4%"
+      ],
+      "does_not_establish": [
+        "A sampling frame, sample size, or uncertainty for those percentages",
+        "That the pooled worldwide figures describe any single Hardy-Weinberg population"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "statista_bloodtype_2023",
+      "type": "secondary_population_summary",
+      "organization": "Statista",
+      "title": "Chart: How Blood Type Prevalence Varies Around the World",
+      "year": 2023,
+      "venue": "Statista, accessed 4 May 2025",
+      "url": "https://www.statista.com/chart/28156/blood-type-by-region/",
+      "access_status": "Transcribed from Version I's bibliography. Secondary aggregator; it is the stated origin of the Rh phenotype split used in Version I's joint calculation.",
+      "supports": [
+        "Version I's Rh-positive 93% and Rh-negative 7% phenotype split"
+      ],
+      "does_not_establish": [
+        "A sampling frame or uncertainty for that split",
+        "That a single global Rh frequency applies to any specific population"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "wikipedia_bloodtype_2024",
+      "type": "tertiary_reference",
+      "organization": "Wikipedia contributors",
+      "title": "Blood type",
+      "year": 2024,
+      "venue": "Wikipedia, October 2024",
+      "url": "https://en.wikipedia.org/wiki/Blood_type",
+      "access_status": "Transcribed from Version I's bibliography. Tertiary source, used in Version I for orientation rather than for a quantitative input.",
+      "supports": [
+        "Version I's general description of ABO codominance and O recessiveness"
+      ],
+      "does_not_establish": [
+        "Any frequency, molecular detail, or clinical claim relied upon here"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "isogg_generation_2016",
+      "type": "community_reference",
+      "authors": [
+        "Donn Devine"
+      ],
+      "title": "How long is a generation? Science provides an answer",
+      "year": 2016,
+      "venue": "International Society of Genetic Genealogy Wiki, 16 November 2016",
+      "url": "https://isogg.org/wiki/How_long_is_a_generation%3F_Science_provides_an_answer",
+      "access_status": "Transcribed from Version I's bibliography as cited by the author; not independently re-verified in this session.",
+      "supports": [
+        "Version I's use of roughly 25 years as an average generation interval when converting generation counts into calendar years"
+      ],
+      "does_not_establish": [
+        "That a fixed generation interval applies across populations or eras",
+        "The calendar-year projections in Version I's conclusion, which Result 4.2 supersedes on separate grounds"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "desmos_2022",
+      "type": "software_tool",
+      "organization": "Desmos Studio",
+      "title": "Desmos graphing calculator",
+      "year": 2022,
+      "venue": "Desmos, retrieved 29 September 2022",
+      "url": "https://www.desmos.com/",
+      "access_status": "Transcribed from Version I's bibliography as cited by the author.",
+      "supports": [
+        "The tool used to plot Version I's genotype-decay curves"
+      ],
+      "does_not_establish": [
+        "Any numerical result; the figures in this unified document are regenerated from retained output"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
       "id": "version1_local",
       "type": "user_provided_local_source",
       "authors": [

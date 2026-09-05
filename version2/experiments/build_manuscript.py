@@ -124,7 +124,7 @@ def apply_citations(text,ledger,citations_name='manuscript_citations.json'):
     refs=[]
     for index,key in enumerate(used,1):
         s=ledger[key];authors=s.get('authors',s.get('author',[]));authors=', '.join(authors) if isinstance(authors,list) else str(authors)
-        link=f' [{s["url"]}]({s["url"]})' if s.get('url') else ' Local user-supplied PDF, 54 pages.'
+        link=f' [{s["url"]}]({s["url"]})' if s.get('url') else (' Local user-supplied PDF, 54 pages.' if key=='version1_local' else '')
         if not authors:
             authors=s.get('organization','SciPy developers' if key.startswith('scipy_') else 'Python Software Foundation' if key.startswith('python_') else '')
         parts=[str(value).strip().rstrip('.') for value in (authors,s['title'],s.get('year'),s.get('venue')) if value]

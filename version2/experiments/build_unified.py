@@ -5,11 +5,36 @@ Version II supplies the audit, the complete kernel, the measured comparisons,
 and the age extension. All numeric bindings come from retained machine-readable
 results, exactly as in build_manuscript.py; nothing here is typed by hand.
 """
+import hashlib
 import json
 
 from experiments.build_manuscript import (
-    MAN, RES, apply_citations, bindings, read, render, table,
+    MAN, RES, ROOT, apply_citations, bindings, read, render, table,
 )
+
+# Version I's own MATLAB, in the order the paper introduces the models.
+LEGACY_MATLAB = [
+    ('sickle_cell_model.m',
+     'The sickle-cell model of Part I. Generation one is computed from the parental pair by '
+     'Punnett logic; generations two onward apply the 3 x 3 transition matrix of Section 4.1. '
+     'The line `X_next(3) = 0;` is the operation audited in Section 4.4: the affected class is '
+     'zeroed before the next multiplication and the vector is not renormalised, which is why the '
+     'displayed generation-three output sums to 93.75% rather than to one.'),
+    ('abo_simulation.m',
+     'The single-locus ABO offspring computation. It derives offspring genotype probabilities '
+     'from parental genotypes directly rather than from the retained six-column table.'),
+    ('abo_run.m',
+     'The ABO driver. This is the listing that settles Section 5.5: it loops over the full set of '
+     'ordered parental genotype pairs and weights each cross by the current frequencies, so the '
+     'executed model is a complete random-mating calculation over all 36 ordered pairs, not the '
+     'six retained columns of the displayed table.'),
+    ('bloodgroup18_simulation.m',
+     'The joint ABO x Rh offspring computation, combining independent transmission at the two '
+     'loci to give the 18-entry combined catalog.'),
+    ('aborh_run.m',
+     'The ABO x Rh driver, and the listing behind Result 6.2. It enumerates all 324 ordered '
+     'parental pairs. The displayed 18 x 18 table is therefore not what this program iterates.'),
+]
 
 
 def coverage_tables(legacy):
@@ -69,6 +94,20 @@ def legacy_sickle_table(legacy):
     return table(['Generation', 'AA, AS, SS (%) as displayed', 'Total mass'], rows[:5])
 
 
+def matlab_appendix():
+    """Version I's MATLAB, embedded verbatim from legacy/matlab, with digests."""
+    blocks, digests = [], {}
+    for name, lead in LEGACY_MATLAB:
+        path = ROOT / 'legacy' / 'matlab' / name
+        source = path.read_text(encoding='utf-8').replace('\r\n', '\n').rstrip('\n')
+        digests[name] = {
+            'sha256': hashlib.sha256(source.encode('utf-8')).hexdigest(),
+            'lines': source.count('\n') + 1,
+        }
+        blocks.append(f'## {name}\n\n{lead}\n\n```text\n{source}\n```')
+    return '\n\n'.join(blocks), digests
+
+
 def main():
     ledger, values = bindings()
     legacy = read('version1_reproduction.json')
@@ -77,6 +116,7 @@ def main():
     checks = legacy['displayed_matrix_checks']
 
     variants_table, top6, top18, exact = coverage_tables(legacy)
+    matlab_source, matlab_digests = matlab_appendix()
 
     values.update({
         'V1_COVERAGE_VARIANTS': variants_table,
@@ -107,6 +147,7 @@ def main():
             f"standard deviation {poly['residual_sd']:.1f}, seed {poly['seed']}, and {poly['independent_synthetic_draws']:,} independent draws, "
             f"{poly['observed_interval_coverage']*100:.2f}% fall inside the nominal {poly['nominal_interval_mass']*100:.0f}% interval. The "
             f"probability-integral-transform KS statistic is {poly['pit_KS_statistic']:.5f}."),
+        'MATLAB_APPENDIX': matlab_source,
         'RUN_COMMANDS_UNIFIED': (
             '```text\ncd version2\npython -m pip install -r requirements.txt\n'
             'python run.py test -q\npython run.py reproduce\npython run.py fetch\n'
@@ -124,6 +165,7 @@ def main():
         'pdf': 'output/pdf/Genetics_Complete.pdf',
         'version1_pages_absorbed': legacy['source']['pages_read'],
         'version1_sha256': legacy['source']['sha256'],
+        'version1_matlab_embedded': matlab_digests,
         'status': 'Author review required; no submission or public claim of peer review',
     }, indent=2) + '\n', encoding='utf-8')
     return text

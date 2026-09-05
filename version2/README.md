@@ -18,6 +18,9 @@ A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchang
   strictly worse than dense - it pays index overhead on a matrix with no zeros. The measured
   12.59x payload advantage is an advantage over a mutation-free model. This argues for the factored
   representation or a structured low-rank correction; neither is implemented.
+- Version I's bibliography is carried into the ledger in full. Its two **secondary population summaries** are
+  identified as the origin of the ABO phenotype shares and the Rh split that drive the coverage figures - neither
+  states a sampling frame or an uncertainty.
 - **LIMITATION - age is collinear with its own mediators.** In the proposed expression gate the
   methylation fraction is itself a smooth deterministic function of age, so the design carries two
   nearly collinear columns. The age and methylation weights become individually unidentifiable
@@ -61,6 +64,8 @@ Fetch defaults to offline validation against the frozen provenance. Use `python 
 | `experiments/science.py` | HWE, synthetic dynamics, MNS, ABO/FUT1, linkage and quantitative-trait checks |
 | `experiments/build_unified.py` | Unified Version I + II manuscript and PDF, bound to retained results |
 | `manuscript/unified_template.md` | Source of the unified paper; edit here, not the generated file |
+| `legacy/matlab/` | Version I's five MATLAB programs, verbatim; embedded as Appendix F and digested in the manifest |
+| `sources/version1_sources.json` | Version I's own bibliography, each entry marked with its role and its limits |
 | `data/` | Frozen aggregate calls and provenance, no personal patient data |
 | `results/` | Machine-readable outputs, tests, raw benchmark workers, metadata |
 | `figures/` | PNG and SVG figures |

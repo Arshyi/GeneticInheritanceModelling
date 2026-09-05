@@ -66,7 +66,7 @@ Version I's insight was to stop treating a Punnett square as a diagram and start
 X(n) = M X(n-1)      so      X(n) = M^n X(0)
 ```
 
-An exponentially branching process collapses into a matrix power, and everything linear algebra knows about such operators becomes available. [version1_local]
+An exponentially branching process collapses into a matrix power, and everything linear algebra knows about such operators becomes available. Version I attributes this move to a bioinformatics textbook that records a Punnett grid as a matrix and raises it to a power to obtain the genotype ratios of a later generation. [he_petoukhov_2011] [version1_local]
 
 The original research question was whether linear algebra could prove that non-sex-linked traits such as sickle-cell anaemia and blood group have the potential to decay across generations. That question is answered in Parts I and II. It also produced a limitation which Version I stated plainly: as more alleles and genes are added, maintaining a square, diagonalisable matrix forces the model to represent a smaller share of the population.
 
@@ -80,13 +80,13 @@ Each qualifying word carries weight. Completeness without a declared catalog is 
 
 ## 2.1 Alleles, genotype and phenotype
 
-Humans are diploid at autosomal loci: one copy of each gene is inherited from each parent. Two copies of the same allele make a homozygous genotype; two different alleles make a heterozygous one. The pair of alleles carried is the **genotype**; the observable consequence is the **phenotype**.
+Humans are diploid at autosomal loci: one copy of each gene is inherited from each parent. Two copies of the same allele make a homozygous genotype; two different alleles make a heterozygous one. The pair of alleles carried is the **genotype**; the observable consequence is the **phenotype**. [mcgonegal_2014_biology]
 
-A dominant allele, conventionally written with a capital letter, masks the effect of a recessive allele. For a disease carried on a recessive allele, only the homozygous recessive individual is affected, while the heterozygote is an unaffected carrier who can still transmit the allele. This asymmetry between what is expressed and what is transmitted is the reason genotype, not phenotype, must be the state variable of the model. Part V returns to it, because expression turns out to depend on more than the allele pair.
+A dominant allele, conventionally written with a capital letter, masks the effect of a recessive allele. For a disease carried on a recessive allele, only the homozygous recessive individual is affected, while the heterozygote is an unaffected carrier who can still transmit the allele. This asymmetry between what is expressed and what is transmitted is the reason genotype, not phenotype, must be the state variable of the model. [kognity_alleles_2022] Part V returns to it, because expression turns out to depend on more than the allele pair.
 
 ## 2.2 Sickle-cell anaemia
 
-Sickle-cell anaemia results from inheriting two copies of the HbS allele. The normal HbA allele carries GAG at the sixth codon of the beta-globin coding sequence; HbS carries GTG. The transcribed messenger codons are therefore GAG and GUG, which translate to glutamic acid and valine respectively. Glutamic acid is hydrophilic; valine is hydrophobic, and the substitution distorts haemoglobin polymerisation and hence red-cell shape, reducing oxygen-carrying capacity and causing vaso-occlusion. [{{CLINVAR_SOURCE}}]
+Sickle-cell anaemia results from inheriting two copies of the HbS allele. The normal HbA allele carries GAG at the sixth codon of the beta-globin coding sequence; HbS carries GTG. The transcribed messenger codons are therefore GAG and GUG, which translate to glutamic acid and valine respectively. Glutamic acid is hydrophilic; valine is hydrophobic, and the substitution distorts haemoglobin polymerisation and hence red-cell shape, reducing oxygen-carrying capacity and causing vaso-occlusion. [{{CLINVAR_SOURCE}}] [kognity_alleles_2022] Version I illustrates the morphology with a clinical figure and the geographic association with a distribution map; both are third-party images, and this document cites them rather than reproducing them. [froedtert_sickle_2022] [britannica_sickle_2022]
 
 The three genotypes of the simplified two-allele model are:
 
@@ -96,7 +96,7 @@ The three genotypes of the simplified two-allele model are:
 | HbA HbS | Carrier | Confers a degree of malaria resistance |
 | HbS HbS | Affected | Sickle-cell anaemia |
 
-The heterozygote advantage in malarial regions is the standard explanation for the allele's persistence, and it is the assumption that would have to be dropped to model those regions correctly. [{{SCD_SOURCE}}]
+The heterozygote advantage in malarial regions is the standard explanation for the allele's persistence, and it is the assumption that would have to be dropped to model those regions correctly. [{{SCD_SOURCE}}] [britannica_sickle_2022]
 
 *Scope note, revised in Part I of this unified treatment.* AA/AS/SS is an educational abstraction, not a catalog of HBB disease. Compound heterozygous forms involving other HBB variants also cause disease. Carrier status does not mean half of circulating red cells are permanently sickled. And a universal assumption that affected individuals do not reproduce is not supported; Version I's own conclusion estimated roughly 10% worldwide reproduction among affected individuals, which is small but not zero. Version II therefore treats reproductive weights as declared model parameters and does not forecast eradication dates.
 
@@ -117,7 +117,7 @@ Each row is a valid conditional distribution over offspring and sums to one.
 
 # 3. The matrix algebra Version I requires
 
-This section states the linear algebra used later. Nothing outside it is assumed.
+This section states the linear algebra used later, at the level at which Version I developed it. [haese_2014_furthermaths] Nothing outside it is assumed.
 
 **Identity matrix.** The n by n identity I has ones on the main diagonal and zeros elsewhere, and satisfies A A^-1 = I.
 
@@ -185,7 +185,7 @@ The algebra is correct. Its interpretation requires care, and this is the first 
 
 ## 4.4 Audit: the displayed program does not conserve probability
 
-The MATLAB listing displayed in Version I performs one further operation. After recording each generation it sets the SS component to zero before the next multiplication, without renormalising. Reconstructing that algorithm in exact rational arithmetic from the AS x AS cross reproduces the displayed screenshot exactly, and also exposes what it costs:
+The MATLAB listing displayed in Version I performs one further operation. After recording each generation it sets the SS component to zero before the next multiplication, without renormalising. The listing is reproduced verbatim in Appendix F, where the operation is the single line `X_next(3) = 0;` immediately after the generation is recorded. Reconstructing that algorithm in exact rational arithmetic from the AS x AS cross reproduces the displayed screenshot exactly, and also exposes what it costs:
 
 {{V1_LEGACY_SICKLE_TABLE}}
 
@@ -207,9 +207,11 @@ q' = q / (1 + q),     hence     q_t = 1 / (t + 2)   starting from q = 1/2
 >
 > Under complete reproductive exclusion of affected individuals in an otherwise neutral randomly mating population, the deleterious allele frequency declines as 1/t, not geometrically. At the third offspring generation the SS birth probability is 1/16 under this model, whereas the displayed legacy algorithm has already set it to zero.
 >
-> The practical consequence: Version I's projection that the disease approximately disappears within four generations and carriers within eight does not follow from a correctly normalised model. Recessive alleles persist in carriers, which is precisely why recessive disease is hard to eliminate.
+> The practical consequence: Version I's projection that the disease approximately disappears within four generations and carriers within eight - converted there into calendar years using an average generation interval of about 25 years [isogg_generation_2016] - does not follow from a correctly normalised model. Recessive alleles persist in carriers, which is precisely why recessive disease is hard to eliminate.
 
 ![Generational dynamics and the normalisation audit](../figures/generation_models.png)
+
+*A note on figures.* Version I's decay curves were plotted with an online graphing tool [desmos_2022]; every figure in this document is instead regenerated from retained machine-readable output, so that no plotted value is independent of the recorded results. Version I's two biological illustrations are third-party images and are cited at their point of use rather than reproduced here, since this document is distributed publicly. Its screenshots of MATLAB source and program output are superseded by Appendix F, which carries the source verbatim, and by the exact reconstruction of the displayed outputs in Section 6.3.
 
 <!-- pagebreak -->
 
@@ -219,7 +221,7 @@ q' = q / (1 + q),     hence     q_t = 1 / (t + 2)   starting from q = 1/2
 
 ## 5.1 Alleles, weights and genotypes
 
-The ABO locus carries three alleles: I^A, I^B and i. A and B are codominant, and both are dominant to O. [{{SCD_SOURCE}}] Version I introduced a weighting scheme to score genotypes, assigning full expressive weight to the antigen-producing alleles and none to the recessive one:
+The ABO locus carries three alleles: I^A, I^B and i. A and B are codominant, and both are dominant to O. [dean_abo_2005] [wikipedia_bloodtype_2024] Version I introduced a weighting scheme to score genotypes, assigning full expressive weight to the antigen-producing alleles and none to the recessive one:
 
 | Allele | Weight w |
 |---|---|
@@ -245,7 +247,7 @@ Version I states 15 on page 30 and then correctly enumerates 21 pairings on page
 
 ## 5.3 From phenotype frequencies to genotype frequencies
 
-Version I takes worldwide phenotype shares of approximately O 44%, A 42%, B 10%, AB 4%, and applies the Hardy-Weinberg relations to recover allele frequencies p_A = 0.26, p_B = 0.077, p_O = 0.663, which sum to one. [{{HWE_SOURCE}}] Genotype probabilities follow as
+Version I takes worldwide phenotype shares of approximately O 44%, A 42%, B 10%, AB 4% from a secondary summary of global blood-group prevalence [medicalchannelasia_abo_2023], and applies the Hardy-Weinberg relations as given in a standard population-genetics text to recover allele frequencies p_A = 0.26, p_B = 0.077, p_O = 0.663, which sum to one. [hartl_clark_2007] [{{HWE_SOURCE}}] Genotype probabilities follow as
 
 ```equation
 P(AA) = p_A^2,  P(AO) = 2 p_A p_O,  P(BB) = p_B^2,
@@ -254,7 +256,7 @@ P(BO) = 2 p_B p_O,  P(AB) = 2 p_A p_B,  P(OO) = p_O^2
 
 Under independent random mating, an unordered parental pair has probability x_i^2 when the genotypes are equal and 2 x_i x_j when they differ.
 
-*Identifiability note.* Converting phenotype frequencies into allele frequencies already assumes the genotype-phenotype map and population equilibrium. These frequencies are therefore useful as declared inputs for reproduction, but they are not independent validation data for a model derived from them. Predicting them back would reuse the answer.
+*Identifiability note.* The phenotype shares are drawn from a secondary aggregator rather than a primary survey, and carry no stated sampling frame or uncertainty; Section 11.4 shows why pooling them across populations is consequential rather than cosmetic. Converting phenotype frequencies into allele frequencies additionally assumes the genotype-phenotype map and population equilibrium. These frequencies are therefore useful as declared inputs for reproduction, but they are not independent validation data for a model derived from them. Predicting them back would reuse the answer.
 
 ## 5.4 The six leading crosses, and where 83.62% comes from
 
@@ -287,11 +289,11 @@ These are model-based pair probabilities under chosen allele frequencies. They a
 
 ## 6.1 The Rh locus
 
-The RHD gene encodes the D antigen. In the simplified model used here, D is dominant and d recessive, giving genotypes DD, Dd and dd and phenotypes positive, positive and negative. Two Rh-positive parents who are both Dd have a one-quarter chance of a dd child. [{{RH_SOURCE}}]
+The RHD gene encodes the D antigen. In the simplified model used here, D is dominant and d recessive, giving genotypes DD, Dd and dd and phenotypes positive, positive and negative. Two Rh-positive parents who are both Dd have a one-quarter chance of a dd child. [{{RH_SOURCE}}] [britannica_rh_2025]
 
 *Scope note.* The full Rh system involves RHD and RHCE variation and many variants not captured by a single dominant/recessive pair. The one-quarter statement is valid for Dd x Dd, not for every pair of positive parents.
 
-Version I takes Rh-negative phenotype frequency 0.07.
+Version I takes Rh-negative phenotype frequency 0.07, from a secondary chart of regional blood-type prevalence. [statista_bloodtype_2023]
 
 > **RESULT 6.1 - THE ALLELE FREQUENCY IS THE SQUARE ROOT**
 >
@@ -1038,6 +1040,8 @@ The original 54-page study and its DOCX source are retained unedited alongside t
 
 Preserved without alteration: the six sickle-cell Punnett squares and the six-column parental table; the reduced three-column table and its linear system; the eigenvalues 1, 1/2, 1/4 with their eigenvectors and the diagonalisation M = S D S^-1; the ABO allele-weight scheme and genotype scores; the Hardy-Weinberg derivation of the ABO allele frequencies and the enumeration of all 21 pairings; the ranked top-six table and the 6 x 6 offspring matrix; the Rh model and the ranked top-18 joint table; and the 18 x 18 displayed matrix.
 
+Version I's own bibliography is carried into the source ledger in full, with each entry marked by the role it played and by what it does not establish; its two secondary population summaries are identified as the origin of the phenotype inputs that drive the coverage figures. Its five MATLAB programs are reproduced verbatim in Appendix F.
+
 Revised, with the original retained for comparison: the interpretation of eigenvalue decay (Result 4.1); the normalisation of the generational algorithm (Section 4.4); the pair count 15 versus 21 (Result 5.1); the provenance of the coverage percentages (Section 5.5); and the description of the 18 x 18 table (Section 6.3).
 
 # Appendix E. Protocol for adding a trait
@@ -1053,6 +1057,12 @@ An addition to the scaffold of Section 13.4 is accepted when it supplies, in ord
 7. **Oracle.** An independent enumeration or closed form for at least one small case, so the implementation can be checked without trusting itself.
 
 A trait that cannot supply items 4 to 6 may still be added as a *derivational* section, clearly marked as Part V is, but may not report fitted coefficients or accuracy.
+
+# Appendix F. Version I source listings
+
+The five MATLAB programs of Version I, reproduced verbatim from `legacy/matlab/` with no edit of any kind. They are the evidence on which Sections 4.4, 5.5 and 6.3 rest, and they are printed here so that the audit can be checked against the code rather than against a description of it. SHA-256 digests of the embedded text are recorded in `results/unified_manifest.json`. Lines longer than the page width are wrapped by the typesetter; the files themselves are unmodified. A Python reimplementation of the same models is held separately in `python/` and was not used for the reconstruction, which is an independent exact-rational translation described in Section 6.3.
+
+{{MATLAB_APPENDIX}}
 
 # References
 

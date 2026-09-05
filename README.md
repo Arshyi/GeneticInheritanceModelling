@@ -24,13 +24,17 @@ against each other.
 Python are untouched.
 
 **The single unified paper is [`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)**
-(42 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
+(60 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
 and Version II into one document, in six parts: the original biology and matrix algebra with
 every derivation preserved; sickle cell, then ABO, then ABO x Rh, each given its Version I
 treatment and then audited; the combinatorial theorem and the complete kernel that replaces
 the square matrix; real-data evidence and an explicit comparison against the original
 square-matrix baseline; age, mutation and epigenetic regulation; then evaluation.
-Appendix E reserves a documented slot for further polygenic traits.
+Appendix E reserves a documented slot for further polygenic traits, and **Appendix F reproduces
+Version I's five MATLAB programs verbatim** - including the `X_next(3) = 0;` line that Section 4.4
+audits, so the finding can be checked against the code rather than a description of it. Version I's
+own bibliography is now carried in the ledger and cited at point of use; its two secondary population
+summaries are named as the origin of the phenotype inputs behind the coverage figures.
 
 The [Version II review manuscript](version2/output/pdf/Genetics_Version_II.pdf)
 ([source](version2/manuscript/version2_manuscript.md)) remains as the standalone audit.

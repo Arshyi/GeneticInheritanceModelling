@@ -3,5 +3,27 @@
   "pdf": "output/pdf/Genetics_Complete.pdf",
   "version1_pages_absorbed": 54,
   "version1_sha256": "ee3cb04ce28d4734669d5822fddbdf03c176fd5c2f5ff3760cb82a4bd1145ecd",
+  "version1_matlab_embedded": {
+    "sickle_cell_model.m": {
+      "sha256": "b4befad6e60536803c5fa758cc942b91808a5e13b39639cbed69ceeae3342cb9",
+      "lines": 74
+    },
+    "abo_simulation.m": {
+      "sha256": "af51dccb73bbc0012f962176e76f5fe361d22b8f216d8f7ec23f58568026bbd6",
+      "lines": 108
+    },
+    "abo_run.m": {
+      "sha256": "da56715feb617af13abf81e39abf65dc6ebdc58a3f571e5827b96238f000d3d5",
+      "lines": 171
+    },
+    "bloodgroup18_simulation.m": {
+      "sha256": "5faa12d7c665f511a1a732432716319084e7782b8460aacfd6cf2c9e850b7d17",
+      "lines": 126
+    },
+    "aborh_run.m": {
+      "sha256": "c6a980f97b9ddc5504b4906832f30cea5b34f6316c481dfddac4ea295322f65e",
+      "lines": 273
+    }
+  },
   "status": "Author review required; no submission or public claim of peer review"
 }

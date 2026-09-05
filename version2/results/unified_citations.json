@@ -1,10 +1,24 @@
 {
   "references_in_order": [
+    "he_petoukhov_2011",
     "version1_local",
+    "mcgonegal_2014_biology",
+    "kognity_alleles_2022",
     "clinvar_rs334_15333_v7",
+    "froedtert_sickle_2022",
+    "britannica_sickle_2022",
     "bender_carlberg_scd_2025",
+    "haese_2014_furthermaths",
+    "isogg_generation_2016",
+    "desmos_2022",
+    "dean_abo_2005",
+    "wikipedia_bloodtype_2024",
+    "medicalchannelasia_abo_2023",
+    "hartl_clark_2007",
     "hardy_1908",
     "dean_rh_2005",
+    "britannica_rh_2025",
+    "statista_bloodtype_2023",
     "brown_linkage_2002",
     "kschischang2001sumproduct",
     "dechter1999bucket",
@@ -34,5 +48,5 @@
     "hannum2013aging",
     "nelder1972glm"
   ],
-  "total": 33
+  "total": 47
 }
