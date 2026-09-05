@@ -1,0 +1,98 @@
+[
+  {
+    "workload": "one_conditional_log_probability_query",
+    "loci": 10,
+    "query_seconds": {
+      "median": 1.180300023406744e-05,
+      "minimum": 1.1485000140964984e-05,
+      "maximum": 1.3615998905152082e-05,
+      "mean": 1.2144000003380435e-05,
+      "stdev": 7.629444770407977e-07
+    },
+    "model_construction_seconds": {
+      "median": 1.4299992471933365e-05,
+      "minimum": 1.4199875295162201e-05,
+      "maximum": 2.3800181224942207e-05,
+      "mean": 1.7433349664012592e-05,
+      "stdev": 5.514065102645076e-06
+    },
+    "calls_per_timed_batch": 100,
+    "repetitions": 7,
+    "log_probability": -13.862943611198906,
+    "absolute_log_error": 0.0,
+    "full_output_enumerated": false,
+    "tracemalloc_peak_bytes": 12425
+  },
+  {
+    "workload": "one_conditional_log_probability_query",
+    "loci": 50,
+    "query_seconds": {
+      "median": 4.937800113111734e-05,
+      "minimum": 4.817199893295765e-05,
+      "maximum": 5.835999734699726e-05,
+      "mean": 5.053457072270768e-05,
+      "stdev": 3.524938126093793e-06
+    },
+    "model_construction_seconds": {
+      "median": 3.890017978847027e-05,
+      "minimum": 3.6300159990787506e-05,
+      "maximum": 5.439994856715202e-05,
+      "mean": 4.320009611546993e-05,
+      "stdev": 9.78608946115212e-06
+    },
+    "calls_per_timed_batch": 50,
+    "repetitions": 7,
+    "log_probability": -69.31471805599446,
+    "absolute_log_error": 7.105427357601002e-14,
+    "full_output_enumerated": false,
+    "tracemalloc_peak_bytes": 24609
+  },
+  {
+    "workload": "one_conditional_log_probability_query",
+    "loci": 100,
+    "query_seconds": {
+      "median": 0.00010559000074863433,
+      "minimum": 0.00010282000293955207,
+      "maximum": 0.00011546999448910355,
+      "mean": 0.00010712499996381146,
+      "stdev": 4.608364673971587e-06
+    },
+    "model_construction_seconds": {
+      "median": 7.54001084715128e-05,
+      "minimum": 6.630015559494495e-05,
+      "maximum": 8.340016938745975e-05,
+      "mean": 7.50334778179725e-05,
+      "stdev": 8.555900388219561e-06
+    },
+    "calls_per_timed_batch": 20,
+    "repetitions": 7,
+    "log_probability": -138.62943611198918,
+    "absolute_log_error": 1.1368683772161603e-13,
+    "full_output_enumerated": false,
+    "tracemalloc_peak_bytes": 38801
+  },
+  {
+    "workload": "one_conditional_log_probability_query",
+    "loci": 1000,
+    "query_seconds": {
+      "median": 0.0012464599683880806,
+      "minimum": 0.0012116400059312582,
+      "maximum": 0.0021894400008022783,
+      "mean": 0.001377388568861144,
+      "stdev": 0.00035918210897156977
+    },
+    "model_construction_seconds": {
+      "median": 0.0006332001648843288,
+      "minimum": 0.0006264999974519014,
+      "maximum": 0.0007170999888330698,
+      "mean": 0.0006589333837231001,
+      "stdev": 5.048503266731647e-05
+    },
+    "calls_per_timed_batch": 5,
+    "repetitions": 7,
+    "log_probability": -1386.2943611198643,
+    "absolute_log_error": 2.6147972675971687e-11,
+    "full_output_enumerated": false,
+    "tracemalloc_peak_bytes": 266069
+  }
+]

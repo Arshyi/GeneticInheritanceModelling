@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-09-05T13:17:58.534811+00:00",
+  "pdf_sha256": "288d565098af145badd06408b223bc52851f8b8c0ab165da90fdb1c0ce2ad67a",
+  "pages": 24,
+  "method": "All pages inspected in rendered contact sheets; cover, dense result pages, figures and bibliography inspected at full rendered resolution. Final bibliography and command edits re-rendered and inspected.",
+  "checked": [
+    "page flow and heading placement",
+    "no clipped text or overlapping blocks",
+    "figure labels and captions",
+    "table wrapping",
+    "reference readability",
+    "cover spacing"
+  ],
+  "renderer": "Poppler pdftoppm; embedded Georgia/Arial; Symbol/ArialUnicode fallback configuration warnings did not correspond to observed missing glyphs"
+}

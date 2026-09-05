@@ -1,0 +1,10 @@
+{
+  "created_at_utc": "2026-09-05T13:18:07.172798+00:00",
+  "archive": "output\\Genetics_Version_II_Research_Package.zip",
+  "files": 163,
+  "bytes": 22548615,
+  "sha256": "536a7f1eb1f7dc39b6fbba40a045a2c4b1504840bc569d60901c7d2235eee1fa",
+  "zip_crc_validation": "passed",
+  "originals_match_live_preserved_files": true,
+  "dependencies_included": false
+}

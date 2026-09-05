@@ -1,0 +1,162 @@
+{
+  "verified_at_utc": "2026-09-05T13:18:04.924995+00:00",
+  "original_pdf_unchanged": true,
+  "original_pdf_sha256": "ee3cb04ce28d4734669d5822fddbdf03c176fd5c2f5ff3760cb82a4bd1145ecd",
+  "original_docx_sha256": "df75a60a592282895ffec8ab2682bb9aa8ae2c259b137b507cd8c01acbe84ab2",
+  "benchmark_status": "passed",
+  "core_and_harness_match_benchmarked_source": true,
+  "automated_tests": 32,
+  "errors_or_failures": 0,
+  "manuscript_pages": 24,
+  "manuscript_sha256": "288d565098af145badd06408b223bc52851f8b8c0ab165da90fdb1c0ce2ad67a",
+  "pdf_text_boundary_check_passed": true,
+  "placeholder_check_passed": true,
+  "page_statistics": [
+    {
+      "page": 1,
+      "words": 94,
+      "images": 0,
+      "nonempty_chars": 583
+    },
+    {
+      "page": 2,
+      "words": 486,
+      "images": 0,
+      "nonempty_chars": 3297
+    },
+    {
+      "page": 3,
+      "words": 450,
+      "images": 0,
+      "nonempty_chars": 2639
+    },
+    {
+      "page": 4,
+      "words": 494,
+      "images": 0,
+      "nonempty_chars": 2689
+    },
+    {
+      "page": 5,
+      "words": 425,
+      "images": 0,
+      "nonempty_chars": 2555
+    },
+    {
+      "page": 6,
+      "words": 410,
+      "images": 0,
+      "nonempty_chars": 2322
+    },
+    {
+      "page": 7,
+      "words": 373,
+      "images": 0,
+      "nonempty_chars": 2125
+    },
+    {
+      "page": 8,
+      "words": 393,
+      "images": 0,
+      "nonempty_chars": 2561
+    },
+    {
+      "page": 9,
+      "words": 535,
+      "images": 0,
+      "nonempty_chars": 3261
+    },
+    {
+      "page": 10,
+      "words": 492,
+      "images": 0,
+      "nonempty_chars": 3191
+    },
+    {
+      "page": 11,
+      "words": 316,
+      "images": 0,
+      "nonempty_chars": 2045
+    },
+    {
+      "page": 12,
+      "words": 174,
+      "images": 0,
+      "nonempty_chars": 886
+    },
+    {
+      "page": 13,
+      "words": 289,
+      "images": 1,
+      "nonempty_chars": 1749
+    },
+    {
+      "page": 14,
+      "words": 457,
+      "images": 0,
+      "nonempty_chars": 2847
+    },
+    {
+      "page": 15,
+      "words": 230,
+      "images": 1,
+      "nonempty_chars": 1233
+    },
+    {
+      "page": 16,
+      "words": 381,
+      "images": 1,
+      "nonempty_chars": 2383
+    },
+    {
+      "page": 17,
+      "words": 456,
+      "images": 0,
+      "nonempty_chars": 2779
+    },
+    {
+      "page": 18,
+      "words": 335,
+      "images": 1,
+      "nonempty_chars": 2026
+    },
+    {
+      "page": 19,
+      "words": 323,
+      "images": 1,
+      "nonempty_chars": 2134
+    },
+    {
+      "page": 20,
+      "words": 456,
+      "images": 0,
+      "nonempty_chars": 2955
+    },
+    {
+      "page": 21,
+      "words": 258,
+      "images": 0,
+      "nonempty_chars": 1655
+    },
+    {
+      "page": 22,
+      "words": 316,
+      "images": 0,
+      "nonempty_chars": 2310
+    },
+    {
+      "page": 23,
+      "words": 306,
+      "images": 0,
+      "nonempty_chars": 2908
+    },
+    {
+      "page": 24,
+      "words": 135,
+      "images": 0,
+      "nonempty_chars": 1270
+    }
+  ],
+  "visual_review_current": true,
+  "visual_review": "See visual_review.json for recorded visual inspection; text checks alone do not certify layout."
+}

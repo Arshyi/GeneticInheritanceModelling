@@ -1,0 +1,8 @@
+{
+  "evidence": "Read-only Get-CimInstance Win32_Processor after final benchmark",
+  "cpu_name": "12th Gen Intel(R) Core(TM) i7-12850HX",
+  "physical_cores": 16,
+  "logical_processors": 24,
+  "queried_max_clock_speed_mhz": 2100,
+  "clock_caveat": "Inventory field, not a measured operating or turbo frequency"
+}

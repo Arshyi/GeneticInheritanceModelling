@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "scope": "Algorithmic and benchmark sources for version2/research/architecture_theory.md",
+  "accessed_utc_date": "2026-09-05",
+  "notes": "Primary papers, author-maintained educational references, and official implementation documentation. New inheritance support-count derivations in the architecture note are original mathematical deductions, not claims attributed to these papers. Mutable documentation versions must be distinguished from locally measured software versions.",
+  "sources": [
+    {
+      "id": "kschischang2001sumproduct",
+      "type": "primary_research",
+      "authors": ["Frank R. Kschischang", "Brendan J. Frey", "Hans-Andrea Loeliger"],
+      "title": "Factor Graphs and the Sum-Product Algorithm",
+      "year": 2001,
+      "venue": "IEEE Transactions on Information Theory 47(2):498-519",
+      "doi": "10.1109/18.910572",
+      "url": "https://haloeliger.github.io/papers/2001FG.pdf",
+      "discovery_url": "https://haloeliger.github.io/FG.html",
+      "access_status": "Full primary PDF retrieved through author-maintained page",
+      "supports": ["Local factor representation", "Sum-product marginalization and reuse of intermediate results", "Exact cycle-free factor graph inference and caveats for cycles"],
+      "does_not_establish": ["Accuracy of any biological inheritance assumptions", "Performance of this repository", "Exact arbitrary loopy inference"]
+    },
+    {
+      "id": "dechter1999bucket",
+      "type": "primary_research",
+      "authors": ["Rina Dechter"],
+      "title": "Bucket elimination: A unifying framework for reasoning",
+      "year": 1999,
+      "venue": "Artificial Intelligence 113(1-2):41-85",
+      "doi": "10.1016/S0004-3702(99)00059-4",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0004370299000594",
+      "access_status": "Publisher bibliographic page and abstract retrieved",
+      "supports": ["Elimination complexity exponential in induced width", "Conditioning and elimination time-space tradeoffs"],
+      "does_not_establish": ["A polynomial guarantee for arbitrary genetic dependency graphs"]
+    },
+    {
+      "id": "dechter1996bucket",
+      "type": "primary_research",
+      "authors": ["Rina Dechter"],
+      "title": "Bucket Elimination: A Unifying Framework for Several Probabilistic Inference",
+      "year": 1996,
+      "venue": "Proceedings of UAI 1996, pp. 211-219",
+      "arxiv_id": "1302.3572",
+      "url": "https://arxiv.org/abs/1302.3572",
+      "full_text_url": "https://arxiv.org/pdf/1302.3572",
+      "access_status": "Primary nine-page PDF retrieved; 2013 is the arXiv deposit year, not original conference year",
+      "supports": ["Probabilistic variable-elimination framework", "Relationship to dynamic programming and structural complexity"]
+    },
+    {
+      "id": "bryant1986bdd",
+      "type": "primary_research",
+      "authors": ["Randal E. Bryant"],
+      "title": "Graph-Based Algorithms for Boolean Function Manipulation",
+      "year": 1986,
+      "venue": "IEEE Transactions on Computers C-35(8):677-691",
+      "doi": "10.1109/TC.1986.1676819",
+      "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf",
+      "access_status": "Author-hosted electronic version with later annotations retrieved",
+      "supports": ["Equivalent-subgraph sharing in reduced decision DAGs", "Variable-order sensitivity", "Exponential worst-case graph size"],
+      "does_not_establish": ["A measured advantage for genotype data", "Direct equivalence to weighted multi-valued inheritance DAGs"]
+    },
+    {
+      "id": "grossi2011compressedtries",
+      "type": "primary_research",
+      "authors": ["Roberto Grossi", "Giuseppe Ottaviano"],
+      "title": "Fast Compressed Tries through Path Decompositions",
+      "year": 2011,
+      "arxiv_id": "1111.5220v2",
+      "url": "https://arxiv.org/abs/1111.5220",
+      "access_status": "Author-submitted abstract and bibliographic record retrieved",
+      "supports": ["Succinct path-decomposed trie candidates for compressed string dictionaries"],
+      "does_not_establish": ["A genetics benchmark", "Universal trie superiority", "Polynomial-size full inheritance models"]
+    },
+    {
+      "id": "scipy_csr_array",
+      "type": "official_documentation",
+      "organization": "SciPy",
+      "title": "scipy.sparse.csr_array",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_array.html",
+      "access_status": "Official reference page retrieved",
+      "supports": ["data/indices/indptr storage", "CSR arithmetic and row access", "Expensive structural changes and slow column slicing", "nnz can include explicitly stored zeros"],
+      "does_not_establish": ["Local installed SciPy version", "Measured process memory"]
+    },
+    {
+      "id": "sedgewickwayne_hash",
+      "type": "author_educational_reference",
+      "authors": ["Robert Sedgewick", "Kevin Wayne"],
+      "title": "Algorithms, 4th edition: 3.4 Hash Tables",
+      "url": "https://algs4.cs.princeton.edu/34hash/",
+      "access_status": "Author-maintained Princeton booksite retrieved",
+      "supports": ["Hash key computation", "Collision handling and assumptions underlying expected performance"]
+    },
+    {
+      "id": "sedgewickwayne_tries",
+      "type": "author_educational_reference",
+      "authors": ["Robert Sedgewick", "Kevin Wayne"],
+      "title": "Algorithms, 4th edition: 5.2 Tries",
+      "url": "https://algs4.cs.princeton.edu/52trie/",
+      "access_status": "Author-maintained Princeton booksite retrieved",
+      "supports": ["Trie prefix sharing", "Prefix and wildcard query semantics"]
+    },
+    {
+      "id": "python_heapq",
+      "type": "official_documentation",
+      "organization": "Python Software Foundation",
+      "title": "heapq: Heap queue algorithm",
+      "url": "https://docs.python.org/3/library/heapq.html",
+      "access_status": "Official heapq reference retrieved through search",
+      "supports": ["Heap invariant", "Priority-queue implementation and tie-breaking"],
+      "does_not_establish": ["A priority queue as a complete probability representation"]
+    },
+    {
+      "id": "python_timeit",
+      "type": "official_documentation",
+      "organization": "Python Software Foundation",
+      "title": "timeit: Measure execution time of small code snippets",
+      "url": "https://docs.python.org/3/library/timeit.html",
+      "access_status": "Official reference page retrieved",
+      "supports": ["Repeated timing", "Setup exclusion", "Monotonic performance counter", "Minimum as a low-interference timing bound"],
+      "does_not_establish": ["Statistical significance of small benchmark differences", "Representativeness of one laptop"]
+    },
+    {
+      "id": "scipy_convolve",
+      "type": "official_documentation",
+      "organization": "SciPy",
+      "title": "scipy.signal.convolve",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html",
+      "access_status": "Official reference page retrieved",
+      "supports": ["Direct and FFT convolution implementation choices"],
+      "does_not_establish": ["Calibrated phenotype prediction", "Independence of real genetic effects"]
+    }
+  ]
+}

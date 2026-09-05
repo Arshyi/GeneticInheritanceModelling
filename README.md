@@ -17,6 +17,75 @@ against each other.
   (54 pages) — the computational write-up: implementation, simulation results and
   discussion.
 
+## Version II — removing the square-matrix constraint
+
+[`version2/`](version2/) is a 2026 research extension that treats everything above as
+**Version I**: evidence to be audited, not ground truth. The original PDFs, MATLAB and
+Python are untouched.
+
+Read [`version2/output/pdf/Genetics_Version_II.pdf`](version2/output/pdf/Genetics_Version_II.pdf)
+(or its [Markdown source](version2/manuscript/version2_manuscript.md)) for the full
+argument. The research question:
+
+> Can sparse and dynamically allocated data structures overcome the combinatorial
+> limitations of dense transition matrices in probabilistic genetic inheritance
+> modelling, while preserving a greater proportion of biologically possible outcomes?
+
+The honest answer turned out to be more interesting than the expected one.
+
+**The audit changed the premise.** An exact-rational reconstruction reproduces six of
+Version I's displayed examples — and finds that the ABO and ABO × Rh MATLAB listings
+already loop over *every* parental pair (36 and 324 ordered pairs). The 83.62% and
+67.83% figures describe the prose's truncated tables, not what the code executed. So
+Version II cannot claim to restore coverage those programs never lost. It measures
+better representations of the complete operation instead.
+
+**What the numbers actually are.** The paper's exact allele frequencies give
+83.4764828157% top-six ABO pair mass; the 83.62% figure comes from coarse inputs
+summing to 1.001. The joint top-18 mass is 67.8347334921%. The legacy sickle-cell
+generation-three output is reproducible but sums to 93.75% — it zeroes SS without
+renormalising, which is the defect the corrected population model separates into
+selection, mating and normalisation.
+
+**The combinatorics, proved.** G = 3ⁿ genotypes by induction, U = G(G+1)/2 unordered
+parental pairs, and exactly (15ⁿ + 5ⁿ)/2 supported transitions — generalised to
+arbitrary allele counts. Density falls, but the nonzero count is still exponential,
+so sparsity is not a solution to polygenic enumeration.
+
+**Four representations, measured.** Dense, CSR, hash adjacency and streamed, all
+sharing one transmission kernel. At five loci CSR holds 4,575,976 payload bytes
+against dense's 57,631,824 (12.59×), with median validated updates of 9.535 ms and
+12.560 ms. Every implementation agreed to within 6.94e-17. Raw per-worker timings and
+hardware metadata are retained — these are one-machine results, not universal claims.
+
+**Biology, staged.** rs334 calls for 2,504 samples across 26 populations drive an
+exact Hardy-Weinberg and pooling audit (pooled expectation 1.874 rare homozygotes vs
+7.600 fitted per-population). Then simplified M/N, ABO-FUT1 epistasis, phased
+two-locus recombination, and a 200-locus additive score whose nominal 90% interval
+covered 90.03% of 10,000 simulated draws. None of this is clinical prediction, and
+the manuscript says so repeatedly.
+
+**What it deliberately does not claim.** Tries, DAGs, priority queues and general
+factor-graph inference are documented as candidates, not delivered implementations.
+No predictive-accuracy claim is made anywhere — population coverage is never called
+accuracy. An [adversarial review](version2/research/adversarial_review.md) records
+four numerical defects found and fixed, plus the limits that remain open.
+
+```bash
+cd version2
+python -m pip install -r requirements.txt
+python run.py test -q          # 32 tests
+python run.py reproduce        # exact-rational Version I reconstruction
+python run.py science          # HWE, epistasis, linkage, polygenic score
+python run.py benchmark        # dense / CSR / hash / streamed
+```
+
+Version II addresses three limitations listed below: mutation and migration now exist
+as explicit operators, and selection is a general fitness weighting rather than
+complete reproductive exclusion. Drift, genuine polygenic prediction and an
+independent parent-offspring validation cohort remain open.
+
+
 ## The idea
 
 A Punnett square answers a one-generation question: given two parent genotypes, what

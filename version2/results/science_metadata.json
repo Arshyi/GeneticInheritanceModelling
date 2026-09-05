@@ -1,0 +1,7 @@
+{
+  "completed_at_utc": "2026-09-05T12:27:42.437301+00:00",
+  "seed": 20260905,
+  "numpy": "2.5.2",
+  "input_pdf_sha256": "ee3cb04ce28d4734669d5822fddbdf03c176fd5c2f5ff3760cb82a4bd1145ecd",
+  "status": "Executed local deterministic computations and seeded synthetic validation"
+}

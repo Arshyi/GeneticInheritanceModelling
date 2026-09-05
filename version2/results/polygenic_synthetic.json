@@ -1,0 +1,25 @@
+{
+  "n_loci": 200,
+  "genotype_catalog": "265613988875874769338781322035779626829233452653394495974574961739092490901302182994384699044001",
+  "score_bins": 401,
+  "pmf_bytes": 3208,
+  "construction_seconds_single_observation": 0.003066900186240673,
+  "score_mean": 200.0,
+  "score_variance": 100.0,
+  "residual_sd": 10.0,
+  "nominal_interval_mass": 0.9,
+  "interval": [
+    176.73790076849733,
+    223.26209923150265
+  ],
+  "independent_synthetic_draws": 10000,
+  "seed": 20260905,
+  "observed_interval_coverage": 0.9003,
+  "coverage_wilson_95": [
+    0.8942733571064712,
+    0.906019213797965
+  ],
+  "pit_KS_statistic": 0.005319493923293339,
+  "pit_KS_p": 0.9383197963197586,
+  "predictive_validation_status": "Synthetic only: coefficients, independence, and residual distribution stipulated; no human height predictions"
+}

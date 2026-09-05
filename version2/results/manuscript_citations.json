@@ -1,0 +1,30 @@
+{
+  "references_in_order": [
+    "version1_local",
+    "bender_carlberg_scd_2025",
+    "clinvar_rs334_15333_v7",
+    "dean_abo_2005",
+    "dean_rh_2005",
+    "scipy_csr_array",
+    "sedgewickwayne_tries",
+    "sedgewickwayne_hash",
+    "grossi2011compressedtries",
+    "bryant1986bdd",
+    "python_heapq",
+    "kschischang2001sumproduct",
+    "dechter1999bucket",
+    "python_timeit",
+    "hardy_1908",
+    "ensembl_rs334_phase3_20260905",
+    "1000genomes_2015",
+    "wigginton_hwe_2005",
+    "holm1979",
+    "dean_mns_2005",
+    "dean_hh_2005",
+    "brown_linkage_2002",
+    "nist_wilson",
+    "scipy_kstest",
+    "yengo2022height"
+  ],
+  "total": 25
+}

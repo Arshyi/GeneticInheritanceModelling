@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "accessed_utc_date": "2026-09-05",
+  "sources": [
+    {"id":"yengo2022height","type":"primary_research","authors":["Loic Yengo","Sailaja Vedantam","Eirini Marouli","and colleagues"],"title":"A saturated map of common genetic variants associated with human height","year":2022,"venue":"Nature 610:704-712","doi":"10.1038/s41586-022-05275-y","url":"https://www.nature.com/articles/s41586-022-05275-y","access_status":"Full primary article content retrieved by web search; direct open later redirected to publisher identity endpoint. Also accessible at PMC9605867.","supports":["5.4 million participants and 12111 associated independent SNPs","Need for ancestry-specific evaluation and LD-aware interpretation"],"does_not_establish":["Any human height performance of this repository"]},
+    {"id":"alberts2002meiosis","type":"authoritative_textbook","authors":["Bruce Alberts","Alexander Johnson","Julian Lewis","Martin Raff","Keith Roberts","Peter Walter"],"title":"Meiosis, Molecular Biology of the Cell, 4th edition","year":2002,"url":"https://www.ncbi.nlm.nih.gov/books/NBK26840/","supports":["Meiotic recombination and genetic linkage","Independent segregation of different chromosomes"],"does_not_establish":["Recombination rates used in synthetic examples as empirical values"]},
+    {"id":"nist_wilson","type":"official_method_reference","authors":["NIST/SEMATECH"],"title":"e-Handbook of Statistical Methods: 7.2.4.1 Confidence intervals","url":"https://itl.nist.gov/div898/handbook/prc/section2/prc241.htm","supports":["Wilson interval for a binomial proportion"],"does_not_establish":["Clinical calibration from synthetic experiments"]},
+    {"id":"holm1979","type":"primary_research","authors":["Sture Holm"],"title":"A Simple Sequentially Rejective Multiple Test Procedure","year":1979,"venue":"Scandinavian Journal of Statistics 6(2):65-70","url":"https://www.jstor.org/stable/4615733","supports":["Step-down family-wise multiple testing adjustment"]},
+    {"id":"scipy_kstest","type":"official_implementation_documentation","authors":["SciPy developers"],"title":"scipy.stats.kstest","url":"https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html","supports":["One-sample Kolmogorov-Smirnov test implementation for continuous distributions"]}
+  ]
+}

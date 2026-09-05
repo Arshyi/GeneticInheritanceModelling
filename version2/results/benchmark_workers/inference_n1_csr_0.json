@@ -1,0 +1,96 @@
+{
+  "job": {
+    "phase": "inference",
+    "loci": 1,
+    "method": "csr",
+    "repeats": 7
+  },
+  "core_sha256": "e8d31c104cf96f069ff8cf885ee987e2a90023d5d020dffa812cf722865ebd95",
+  "harness_sha256": "76b796e4e8cd317fefe35f0a5a35259d119a9db4b499c64f1ff4c17de0601c93",
+  "result": {
+    "phase": "inference",
+    "loci": 1,
+    "method": "csr",
+    "metadata": {
+      "utc": "2026-09-05T12:55:05Z",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "python_executable": "C:\\Users\\DELL\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+      "processor_identifier": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+      "logical_cpu_count": 24,
+      "physical_memory": {
+        "total_physical_bytes": 137108377600,
+        "available_physical_bytes": 119054495744,
+        "memory_load_percent": 13
+      },
+      "numpy": "2.5.2",
+      "numpy_path": "C:\\Users\\DELL\\Desktop\\GENETICS\\version2\\.deps\\numpy\\__init__.py",
+      "scipy": "1.18.1",
+      "scipy_path": "C:\\Users\\DELL\\Desktop\\GENETICS\\version2\\.deps\\scipy\\__init__.py",
+      "threadpoolctl": "3.6.0",
+      "threadpools": [
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "filepath": "C:\\Users\\DELL\\Desktop\\GENETICS\\version2\\.deps\\numpy.libs\\libscipy_openblas64_-327b2e0bcffce2882e0dc04cdeb4eaa6.dll",
+          "version": "0.3.34.0.0",
+          "threading_layer": "pthreads",
+          "architecture": "Haswell"
+        }
+      ],
+      "core_sha256": "e8d31c104cf96f069ff8cf885ee987e2a90023d5d020dffa812cf722865ebd95",
+      "harness_sha256": "76b796e4e8cd317fefe35f0a5a35259d119a9db4b499c64f1ff4c17de0601c93",
+      "pid": 10516,
+      "gc_enabled": true
+    },
+    "genotype_states": 3,
+    "unordered_pair_columns": 6,
+    "theoretical_nnz": 10,
+    "budget_bytes": 268435456,
+    "input_seed": 20260906,
+    "input_sha256": "e8cd557ea8bed09c661acf3fde528b73be1219fc903a39f0df03b058e7b44679",
+    "input_support": 3,
+    "guard_estimate_bytes": 496,
+    "full_dense_entries": 18,
+    "density": 0.5555555555555556,
+    "status": "measured",
+    "raw_seconds": [
+      6.109988316893578e-05,
+      4.520011134445667e-05,
+      3.660004585981369e-05,
+      3.620004281401634e-05,
+      3.7800054997205734e-05,
+      3.50000336766243e-05,
+      3.460003063082695e-05
+    ],
+    "warmup_updates": 1,
+    "timed_operation": "one full next_generation including pair-weight formation and input validation",
+    "local_cross_cache": "warm from construction and untimed update",
+    "output": [
+      0.2724322544511797,
+      0.49903635698707866,
+      0.22853138856174143
+    ],
+    "output_mass": 0.9999999999999998,
+    "footprint": {
+      "numeric_array_payload_bytes": 136,
+      "array_payload_detail_bytes": {
+        "data": 80,
+        "indices": 40,
+        "indptr": 16
+      },
+      "array_dtypes": {
+        "data": "float64",
+        "indices": "int32",
+        "indptr": "int32"
+      },
+      "hash_recursive_python_object_bytes": null,
+      "stored_entries": 10
+    },
+    "worker_wall_seconds_including_startup": 0.3835934998933226
+  }
+}

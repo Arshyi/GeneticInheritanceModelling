@@ -1,0 +1,79 @@
+{
+  "ABO_FUT1_simplified": {
+    "parents": [
+      "AO/Hh",
+      "BO/Hh"
+    ],
+    "phenotype_probabilities": {
+      "AB": 0.1875,
+      "O-like (hh masked)": 0.25,
+      "A": 0.1875,
+      "B": 0.1875,
+      "O (ABO OO)": 0.1875
+    },
+    "G": 18,
+    "U": 171
+  },
+  "MNS_simplified": {
+    "parents": [
+      "MN",
+      "MN"
+    ],
+    "offspring": {
+      "MM": 0.25,
+      "MN": 0.5,
+      "NN": 0.25
+    }
+  },
+  "linkage": [
+    {
+      "r": 0,
+      "phase_total_variation": 1.0,
+      "coupling": {
+        "00": 0.5,
+        "11": 0.5
+      }
+    },
+    {
+      "r": 0.01,
+      "phase_total_variation": 0.98,
+      "coupling": {
+        "00": 0.495,
+        "11": 0.495,
+        "01": 0.005,
+        "10": 0.005
+      }
+    },
+    {
+      "r": 0.1,
+      "phase_total_variation": 0.8,
+      "coupling": {
+        "00": 0.45,
+        "11": 0.45,
+        "01": 0.05,
+        "10": 0.05
+      }
+    },
+    {
+      "r": 0.25,
+      "phase_total_variation": 0.5,
+      "coupling": {
+        "00": 0.375,
+        "11": 0.375,
+        "01": 0.125,
+        "10": 0.125
+      }
+    },
+    {
+      "r": 0.5,
+      "phase_total_variation": 0.0,
+      "coupling": {
+        "00": 0.25,
+        "11": 0.25,
+        "01": 0.25,
+        "10": 0.25
+      }
+    }
+  ],
+  "status": "Exact predictions within simplified models; no independent trait phenotype cohort validation"
+}

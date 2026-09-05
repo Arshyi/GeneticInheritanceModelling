@@ -1,0 +1,591 @@
+{
+  "source_sha256": "2006b6af4722df8ea0d712c3f67d6cb97634a28584a12ed6a03aab82077d9e4a",
+  "component_populations": [
+    {
+      "population": "ACB",
+      "scope": "component population",
+      "n": 96,
+      "counts": [
+        87,
+        9,
+        0
+      ],
+      "q": 0.046875,
+      "expected": [
+        87.2109375,
+        8.578125,
+        0.2109375
+      ],
+      "heterozygote_residual": 0.421875,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.00439453125,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "ASW",
+      "scope": "component population",
+      "n": 61,
+      "counts": [
+        59,
+        2,
+        0
+      ],
+      "q": 0.01639344262295082,
+      "expected": [
+        59.01639344262295,
+        1.9672131147540983,
+        0.01639344262295082
+      ],
+      "heterozygote_residual": 0.032786885245901676,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0005374899220639809,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "BEB",
+      "scope": "component population",
+      "n": 86,
+      "counts": [
+        86,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        86.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "SAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "CDX",
+      "scope": "component population",
+      "n": 93,
+      "counts": [
+        93,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        93.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "CEU",
+      "scope": "component population",
+      "n": 99,
+      "counts": [
+        99,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        99.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EUR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "CHB",
+      "scope": "component population",
+      "n": 103,
+      "counts": [
+        103,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        103.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "CHS",
+      "scope": "component population",
+      "n": 105,
+      "counts": [
+        105,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        105.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "CLM",
+      "scope": "component population",
+      "n": 94,
+      "counts": [
+        92,
+        2,
+        0
+      ],
+      "q": 0.010638297872340425,
+      "expected": [
+        92.01063829787235,
+        1.9787234042553192,
+        0.010638297872340425
+      ],
+      "heterozygote_residual": 0.02127659574468077,
+      "hwe_exact_p": 0.9999999999999907,
+      "fitted_frequency_total_variation": 0.00022634676324134235,
+      "superpopulation": "AMR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "ESN",
+      "scope": "component population",
+      "n": 99,
+      "counts": [
+        75,
+        24,
+        0
+      ],
+      "q": 0.12121212121212122,
+      "expected": [
+        76.45454545454545,
+        21.09090909090909,
+        1.4545454545454548
+      ],
+      "heterozygote_residual": 2.90909090909091,
+      "hwe_exact_p": 0.34970306818162317,
+      "fitted_frequency_total_variation": 0.02938475665748392,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "FIN",
+      "scope": "component population",
+      "n": 99,
+      "counts": [
+        99,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        99.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EUR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "GBR",
+      "scope": "component population",
+      "n": 91,
+      "counts": [
+        91,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        91.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EUR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "GIH",
+      "scope": "component population",
+      "n": 103,
+      "counts": [
+        103,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        103.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "SAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "GWD",
+      "scope": "component population",
+      "n": 113,
+      "counts": [
+        87,
+        26,
+        0
+      ],
+      "q": 0.11504424778761062,
+      "expected": [
+        88.49557522123895,
+        23.008849557522126,
+        1.495575221238938
+      ],
+      "heterozygote_residual": 2.991150442477874,
+      "hwe_exact_p": 0.35469629307706363,
+      "fitted_frequency_total_variation": 0.02647035789803435,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "IBS",
+      "scope": "component population",
+      "n": 107,
+      "counts": [
+        107,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        107.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EUR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "ITU",
+      "scope": "component population",
+      "n": 102,
+      "counts": [
+        102,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        102.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "SAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "JPT",
+      "scope": "component population",
+      "n": 104,
+      "counts": [
+        104,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        104.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "KHV",
+      "scope": "component population",
+      "n": 99,
+      "counts": [
+        99,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        99.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "LWK",
+      "scope": "component population",
+      "n": 99,
+      "counts": [
+        79,
+        20,
+        0
+      ],
+      "q": 0.10101010101010101,
+      "expected": [
+        80.01010101010101,
+        17.97979797979798,
+        1.01010101010101
+      ],
+      "heterozygote_residual": 2.0202020202020208,
+      "hwe_exact_p": 0.5912669354033695,
+      "fitted_frequency_total_variation": 0.020406081012141607,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "MSL",
+      "scope": "component population",
+      "n": 85,
+      "counts": [
+        64,
+        21,
+        0
+      ],
+      "q": 0.12352941176470589,
+      "expected": [
+        65.29705882352941,
+        18.405882352941177,
+        1.2970588235294118
+      ],
+      "heterozygote_residual": 2.594117647058823,
+      "hwe_exact_p": 0.3495748300923856,
+      "fitted_frequency_total_variation": 0.03051903114186854,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "MXL",
+      "scope": "component population",
+      "n": 64,
+      "counts": [
+        64,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        64.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "AMR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "PEL",
+      "scope": "component population",
+      "n": 85,
+      "counts": [
+        85,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        85.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "AMR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "PJL",
+      "scope": "component population",
+      "n": 96,
+      "counts": [
+        96,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        96.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "SAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "PUR",
+      "scope": "component population",
+      "n": 104,
+      "counts": [
+        101,
+        3,
+        0
+      ],
+      "q": 0.014423076923076924,
+      "expected": [
+        101.02163461538463,
+        2.9567307692307696,
+        0.021634615384615388
+      ],
+      "heterozygote_residual": 0.04326923076923039,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0004160502958580743,
+      "superpopulation": "AMR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "STU",
+      "scope": "component population",
+      "n": 102,
+      "counts": [
+        102,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        102.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "SAS",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "TSI",
+      "scope": "component population",
+      "n": 107,
+      "counts": [
+        107,
+        0,
+        0
+      ],
+      "q": 0.0,
+      "expected": [
+        107.0,
+        0.0,
+        0.0
+      ],
+      "heterozygote_residual": 0.0,
+      "hwe_exact_p": 1.0,
+      "fitted_frequency_total_variation": 0.0,
+      "superpopulation": "EUR",
+      "holm_adjusted_p_26_tests": 1
+    },
+    {
+      "population": "YRI",
+      "scope": "component population",
+      "n": 108,
+      "counts": [
+        78,
+        30,
+        0
+      ],
+      "q": 0.1388888888888889,
+      "expected": [
+        80.08333333333334,
+        25.833333333333336,
+        2.0833333333333335
+      ],
+      "heterozygote_residual": 4.166666666666664,
+      "hwe_exact_p": 0.2137921863561563,
+      "fitted_frequency_total_variation": 0.03858024691358031,
+      "superpopulation": "AFR",
+      "holm_adjusted_p_26_tests": 1
+    }
+  ],
+  "pooled": {
+    "population": "ALL (pooled)",
+    "scope": "pooled diagnostic only",
+    "n": 2504,
+    "counts": [
+      2367,
+      137,
+      0
+    ],
+    "q": 0.027356230031948883,
+    "expected": [
+      2368.8739017571884,
+      133.25219648562302,
+      1.8739017571884986
+    ],
+    "heterozygote_residual": 3.747803514376983,
+    "hwe_exact_p": 0.2609738386903788,
+    "fitted_frequency_total_variation": 0.0014967266431217562
+  },
+  "african_pool": {
+    "population": "AFR (pooled)",
+    "scope": "pooled diagnostic only",
+    "n": 661,
+    "counts": [
+      529,
+      132,
+      0
+    ],
+    "q": 0.09984871406959153,
+    "expected": [
+      535.590015128593,
+      118.81996974281394,
+      6.590015128593041
+    ],
+    "heterozygote_residual": 13.180030257186061,
+    "hwe_exact_p": 0.0015903189562754348,
+    "fitted_frequency_total_variation": 0.019939531402702004
+  },
+  "stratified_expected_rare_homozygotes": 7.600217698628055,
+  "interpretation": "Fitted HWE compatibility audit of sampled genomic calls; no clinical labels, world prevalence, or predictive accuracy."
+}

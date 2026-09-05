@@ -1,0 +1,2039 @@
+{
+  "evidence_status": "Executed Python translation of visually inspected MATLAB screenshots; MATLAB not executed.",
+  "source": {
+    "filename": "Bioinformatics-Arshyia Mehran.pdf",
+    "pages_read": 54,
+    "sha256": "ee3cb04ce28d4734669d5822fddbdf03c176fd5c2f5ff3760cb82a4bd1145ecd",
+    "bytes": 3282612
+  },
+  "sickle_p28": {
+    "parents": [
+      "AS",
+      "AS"
+    ],
+    "genotype_order": [
+      "AA",
+      "AS",
+      "SS"
+    ],
+    "source_code_pages": [
+      26,
+      27
+    ],
+    "screenshot_generation": 3,
+    "screenshot_percent": [
+      75,
+      18.75,
+      0
+    ],
+    "history_exact_fractions": [
+      [
+        "1/4",
+        "1/2",
+        "1/4"
+      ],
+      [
+        "9/16",
+        "3/8",
+        "1/16"
+      ],
+      [
+        "3/4",
+        "3/16",
+        "0"
+      ],
+      [
+        "27/32",
+        "3/32",
+        "0"
+      ],
+      [
+        "57/64",
+        "3/64",
+        "0"
+      ],
+      [
+        "117/128",
+        "3/128",
+        "0"
+      ],
+      [
+        "237/256",
+        "3/256",
+        "0"
+      ],
+      [
+        "477/512",
+        "3/512",
+        "0"
+      ]
+    ],
+    "history_percent": [
+      [
+        25.0,
+        50.0,
+        25.0
+      ],
+      [
+        56.25,
+        37.5,
+        6.25
+      ],
+      [
+        75.0,
+        18.75,
+        0.0
+      ],
+      [
+        84.375,
+        9.375,
+        0.0
+      ],
+      [
+        89.0625,
+        4.6875,
+        0.0
+      ],
+      [
+        91.40625,
+        2.34375,
+        0.0
+      ],
+      [
+        92.578125,
+        1.171875,
+        0.0
+      ],
+      [
+        93.1640625,
+        0.5859375,
+        0.0
+      ]
+    ],
+    "history_mass": [
+      1.0,
+      1.0,
+      0.9375,
+      0.9375,
+      0.9375,
+      0.9375,
+      0.9375,
+      0.9375
+    ],
+    "matrix_without_removal_history_percent": [
+      [
+        25.0,
+        50.0,
+        25.0
+      ],
+      [
+        56.25,
+        37.5,
+        6.25
+      ],
+      [
+        76.5625,
+        21.875,
+        1.5625
+      ],
+      [
+        87.890625,
+        11.71875,
+        0.390625
+      ],
+      [
+        93.84765625,
+        6.0546875,
+        0.09765625
+      ],
+      [
+        96.8994140625,
+        3.076171875,
+        0.0244140625
+      ],
+      [
+        98.443603515625,
+        1.55029296875,
+        0.006103515625
+      ],
+      [
+        99.22027587890625,
+        0.7781982421875,
+        0.00152587890625
+      ]
+    ],
+    "screenshot_matches": true
+  },
+  "screenshot_examples": [
+    {
+      "id": "abo_p35",
+      "page": 35,
+      "parents": [
+        "AA",
+        "OO"
+      ],
+      "generation": 3,
+      "genotype_order": [
+        "AA",
+        "AO",
+        "BB",
+        "BO",
+        "AB",
+        "OO"
+      ],
+      "computed_genotype_percent": [
+        25.0,
+        50.0,
+        0.0,
+        0.0,
+        0.0,
+        25.0
+      ],
+      "screenshot_genotype_percent": [
+        25,
+        50,
+        0,
+        0,
+        0,
+        25
+      ],
+      "computed_phenotype_percent": [
+        75.0,
+        0.0,
+        0.0,
+        25.0
+      ],
+      "screenshot_phenotype_percent": [
+        75,
+        0,
+        0,
+        25
+      ],
+      "phenotype_order": [
+        "A",
+        "B",
+        "AB",
+        "O"
+      ],
+      "matches_screenshot_within_display_rounding": true,
+      "history_mass": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "history_exact_fractions": [
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/4",
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "1/4"
+        ],
+        [
+          "1/4",
+          "1/2",
+          "0",
+          "0",
+          "0",
+          "1/4"
+        ]
+      ]
+    },
+    {
+      "id": "abo_p36",
+      "page": 36,
+      "parents": [
+        "AO",
+        "BO"
+      ],
+      "generation": 4,
+      "genotype_order": [
+        "AA",
+        "AO",
+        "BB",
+        "BO",
+        "AB",
+        "OO"
+      ],
+      "computed_genotype_percent": [
+        6.25,
+        25.0,
+        6.25,
+        25.0,
+        12.5,
+        25.0
+      ],
+      "screenshot_genotype_percent": [
+        6.25,
+        25,
+        6.25,
+        25,
+        12.5,
+        25
+      ],
+      "computed_phenotype_percent": [
+        31.25,
+        31.25,
+        12.5,
+        25.0
+      ],
+      "screenshot_phenotype_percent": [
+        31.25,
+        31.25,
+        12.5,
+        25
+      ],
+      "phenotype_order": [
+        "A",
+        "B",
+        "AB",
+        "O"
+      ],
+      "matches_screenshot_within_display_rounding": true,
+      "history_mass": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "history_exact_fractions": [
+        [
+          "0",
+          "1/4",
+          "0",
+          "1/4",
+          "1/4",
+          "1/4"
+        ],
+        [
+          "1/16",
+          "1/4",
+          "1/16",
+          "1/4",
+          "1/8",
+          "1/4"
+        ],
+        [
+          "1/16",
+          "1/4",
+          "1/16",
+          "1/4",
+          "1/8",
+          "1/4"
+        ],
+        [
+          "1/16",
+          "1/4",
+          "1/16",
+          "1/4",
+          "1/8",
+          "1/4"
+        ]
+      ]
+    },
+    {
+      "id": "aborh_p49",
+      "page": 49,
+      "parents": [
+        "AO/Dd",
+        "AO/Dd"
+      ],
+      "generation": 3,
+      "genotype_order": [
+        "AA/DD",
+        "AA/Dd",
+        "AA/dd",
+        "AO/DD",
+        "AO/Dd",
+        "AO/dd",
+        "BB/DD",
+        "BB/Dd",
+        "BB/dd",
+        "BO/DD",
+        "BO/Dd",
+        "BO/dd",
+        "AB/DD",
+        "AB/Dd",
+        "AB/dd",
+        "OO/DD",
+        "OO/Dd",
+        "OO/dd"
+      ],
+      "computed_genotype_percent": [
+        6.25,
+        12.5,
+        6.25,
+        12.5,
+        25.0,
+        12.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        6.25,
+        12.5,
+        6.25
+      ],
+      "screenshot_genotype_percent": [
+        6.25,
+        12.5,
+        6.25,
+        12.5,
+        25,
+        12.5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6.25,
+        12.5,
+        6.25
+      ],
+      "computed_phenotype_percent": [
+        56.25,
+        18.75,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        18.75,
+        6.25
+      ],
+      "screenshot_phenotype_percent": [
+        56.25,
+        18.75,
+        0,
+        0,
+        0,
+        0,
+        18.75,
+        6.25
+      ],
+      "phenotype_order": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ],
+      "matches_screenshot_within_display_rounding": true,
+      "history_mass": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "history_exact_fractions": [
+        [
+          "1/16",
+          "1/8",
+          "1/16",
+          "1/8",
+          "1/4",
+          "1/8",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/16",
+          "1/8",
+          "1/16"
+        ],
+        [
+          "1/16",
+          "1/8",
+          "1/16",
+          "1/8",
+          "1/4",
+          "1/8",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/16",
+          "1/8",
+          "1/16"
+        ],
+        [
+          "1/16",
+          "1/8",
+          "1/16",
+          "1/8",
+          "1/4",
+          "1/8",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/16",
+          "1/8",
+          "1/16"
+        ]
+      ]
+    },
+    {
+      "id": "aborh_p50_top",
+      "page": 50,
+      "parents": [
+        "AA/dd",
+        "BO/Dd"
+      ],
+      "generation": 7,
+      "genotype_order": [
+        "AA/DD",
+        "AA/Dd",
+        "AA/dd",
+        "AO/DD",
+        "AO/Dd",
+        "AO/dd",
+        "BB/DD",
+        "BB/Dd",
+        "BB/dd",
+        "BO/DD",
+        "BO/Dd",
+        "BO/dd",
+        "AB/DD",
+        "AB/Dd",
+        "AB/dd",
+        "OO/DD",
+        "OO/Dd",
+        "OO/dd"
+      ],
+      "computed_genotype_percent": [
+        1.5625,
+        9.375,
+        14.0625,
+        1.5625,
+        9.375,
+        14.0625,
+        0.390625,
+        2.34375,
+        3.515625,
+        0.78125,
+        4.6875,
+        7.03125,
+        1.5625,
+        9.375,
+        14.0625,
+        0.390625,
+        2.34375,
+        3.515625
+      ],
+      "screenshot_genotype_percent": [
+        1.56,
+        9.38,
+        14.06,
+        1.56,
+        9.38,
+        14.06,
+        0.39,
+        2.34,
+        3.52,
+        0.78,
+        4.69,
+        7.03,
+        1.56,
+        9.38,
+        14.06,
+        0.39,
+        2.34,
+        3.52
+      ],
+      "computed_phenotype_percent": [
+        21.875,
+        28.125,
+        8.203125,
+        10.546875,
+        10.9375,
+        14.0625,
+        2.734375,
+        3.515625
+      ],
+      "screenshot_phenotype_percent": [
+        21.88,
+        28.12,
+        8.2,
+        10.55,
+        10.94,
+        14.06,
+        2.73,
+        3.52
+      ],
+      "phenotype_order": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ],
+      "matches_screenshot_within_display_rounding": true,
+      "history_mass": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "history_exact_fractions": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/4",
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/4",
+          "1/4",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256"
+        ],
+        [
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256"
+        ],
+        [
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256"
+        ],
+        [
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256"
+        ],
+        [
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256"
+        ],
+        [
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256"
+        ]
+      ]
+    },
+    {
+      "id": "aborh_p50_bottom",
+      "page": 50,
+      "parents": [
+        "AB/dd",
+        "OO/Dd"
+      ],
+      "generation": 8,
+      "genotype_order": [
+        "AA/DD",
+        "AA/Dd",
+        "AA/dd",
+        "AO/DD",
+        "AO/Dd",
+        "AO/dd",
+        "BB/DD",
+        "BB/Dd",
+        "BB/dd",
+        "BO/DD",
+        "BO/Dd",
+        "BO/dd",
+        "AB/DD",
+        "AB/Dd",
+        "AB/dd",
+        "OO/DD",
+        "OO/Dd",
+        "OO/dd"
+      ],
+      "computed_genotype_percent": [
+        0.390625,
+        2.34375,
+        3.515625,
+        1.5625,
+        9.375,
+        14.0625,
+        0.390625,
+        2.34375,
+        3.515625,
+        1.5625,
+        9.375,
+        14.0625,
+        0.78125,
+        4.6875,
+        7.03125,
+        1.5625,
+        9.375,
+        14.0625
+      ],
+      "screenshot_genotype_percent": [
+        0.39,
+        2.34,
+        3.52,
+        1.56,
+        9.38,
+        14.06,
+        0.39,
+        2.34,
+        3.52,
+        1.56,
+        9.38,
+        14.06,
+        0.78,
+        4.69,
+        7.03,
+        1.56,
+        9.38,
+        14.06
+      ],
+      "computed_phenotype_percent": [
+        13.671875,
+        17.578125,
+        13.671875,
+        17.578125,
+        5.46875,
+        7.03125,
+        10.9375,
+        14.0625
+      ],
+      "screenshot_phenotype_percent": [
+        13.67,
+        17.58,
+        13.67,
+        17.58,
+        5.47,
+        7.03,
+        10.94,
+        14.06
+      ],
+      "phenotype_order": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ],
+      "matches_screenshot_within_display_rounding": true,
+      "history_mass": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "history_exact_fractions": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/4",
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/4",
+          "1/4",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ],
+        [
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/256",
+          "3/128",
+          "9/256",
+          "1/64",
+          "3/32",
+          "9/64",
+          "1/128",
+          "3/64",
+          "9/128",
+          "1/64",
+          "3/32",
+          "9/64"
+        ]
+      ]
+    }
+  ],
+  "coverage": {
+    "abo_alleles": {
+      "A": 0.26,
+      "B": 0.077,
+      "O": 0.663
+    },
+    "rh_negative_phenotype": 0.07,
+    "rh_d_allele": 0.2645751311064591,
+    "rh_genotypes": [
+      0.5408497377870819,
+      0.38915026221291815,
+      0.07
+    ],
+    "variants": {
+      "paper_alleles_exact": {
+        "genotype_frequencies": [
+          0.0676,
+          0.34476,
+          0.005929,
+          0.102102,
+          0.04004,
+          0.439569
+        ],
+        "genotype_mass": 1.0,
+        "total_unordered_pair_mass": 1.0,
+        "top6_percent_raw_mass": 83.4764828157,
+        "top6_percent_of_total_pair_mass": 83.4764828157,
+        "top18_joint_percent_raw_mass": 67.83473349212181,
+        "top18_joint_percent_of_total_pair_mass": 67.83473349212181,
+        "top18_joint_sum_of_individually_rounded_percentages": 67.84,
+        "top6": [
+          {
+            "parents": [
+              "AO",
+              "OO"
+            ],
+            "percent": 30.309161688
+          },
+          {
+            "parents": [
+              "OO",
+              "OO"
+            ],
+            "percent": 19.3220905761
+          },
+          {
+            "parents": [
+              "AO",
+              "AO"
+            ],
+            "percent": 11.88594576
+          },
+          {
+            "parents": [
+              "BO",
+              "OO"
+            ],
+            "percent": 8.9761748076
+          },
+          {
+            "parents": [
+              "AO",
+              "BO"
+            ],
+            "percent": 7.040137104
+          },
+          {
+            "parents": [
+              "AA",
+              "OO"
+            ],
+            "percent": 5.94297288
+          }
+        ],
+        "top18_joint": [
+          {
+            "parents": [
+              "AO/DD",
+              "OO/DD"
+            ],
+            "percent": 8.865988660261086
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/Dd"
+            ],
+            "percent": 8.133511034309509
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "OO/Dd"
+            ],
+            "percent": 6.379224340634908
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/DD"
+            ],
+            "percent": 6.379224340634908
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/DD"
+            ],
+            "percent": 5.652067770916442
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/Dd"
+            ],
+            "percent": 5.003313208341105
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 4.589956602420299
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/DD"
+            ],
+            "percent": 3.4768582981416025
+          },
+          {
+            "parents": [
+              "OO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 2.926097334042941
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/DD"
+            ],
+            "percent": 2.625696641692706
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/DD"
+            ],
+            "percent": 2.059369915053103
+          },
+          {
+            "parents": [
+              "BO/Dd",
+              "OO/DD"
+            ],
+            "percent": 1.8892318239572614
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/Dd"
+            ],
+            "percent": 1.889231823957261
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "AO/Dd"
+            ],
+            "percent": 1.799982981341294
+          },
+          {
+            "parents": [
+              "AA/DD",
+              "OO/DD"
+            ],
+            "percent": 1.7384291490708013
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/Dd"
+            ],
+            "percent": 1.481750450162558
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "BO/DD"
+            ],
+            "percent": 1.4817504501625578
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/dd"
+            ],
+            "percent": 1.4630486670214704
+          }
+        ]
+      },
+      "paper_p32_genotype_table": {
+        "genotype_frequencies": [
+          0.0676,
+          0.3448,
+          0.0059,
+          0.1021,
+          0.04,
+          0.4396
+        ],
+        "genotype_mass": 1.0,
+        "total_unordered_pair_mass": 1.0,
+        "top6_percent_raw_mass": 83.489176,
+        "top6_percent_of_total_pair_mass": 83.489176,
+        "top18_joint_percent_raw_mass": 67.84550625006351,
+        "top18_joint_percent_of_total_pair_mass": 67.84550625006351,
+        "top18_joint_sum_of_individually_rounded_percentages": 67.84,
+        "top6": [
+          {
+            "parents": [
+              "AO",
+              "OO"
+            ],
+            "percent": 30.314816
+          },
+          {
+            "parents": [
+              "OO",
+              "OO"
+            ],
+            "percent": 19.324816
+          },
+          {
+            "parents": [
+              "AO",
+              "AO"
+            ],
+            "percent": 11.888704
+          },
+          {
+            "parents": [
+              "BO",
+              "OO"
+            ],
+            "percent": 8.976632
+          },
+          {
+            "parents": [
+              "AO",
+              "BO"
+            ],
+            "percent": 7.040816
+          },
+          {
+            "parents": [
+              "AA",
+              "OO"
+            ],
+            "percent": 5.943392
+          }
+        ],
+        "top18_joint": [
+          {
+            "parents": [
+              "AO/DD",
+              "OO/DD"
+            ],
+            "percent": 8.867642650780178
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/Dd"
+            ],
+            "percent": 8.134658284151678
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "OO/Dd"
+            ],
+            "percent": 6.380414413957003
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/DD"
+            ],
+            "percent": 6.380414413957003
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/DD"
+            ],
+            "percent": 5.652865007660914
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/Dd"
+            ],
+            "percent": 5.00447427191168
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 4.590812879705819
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/DD"
+            ],
+            "percent": 3.4776651342004152
+          },
+          {
+            "parents": [
+              "OO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 2.92651006658741
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/DD"
+            ],
+            "percent": 2.6258303788998147
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/DD"
+            ],
+            "percent": 2.059568504651174
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/Dd"
+            ],
+            "percent": 1.889328050072535
+          },
+          {
+            "parents": [
+              "BO/Dd",
+              "OO/DD"
+            ],
+            "percent": 1.889328050072535
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "AO/Dd"
+            ],
+            "percent": 1.8004006834879052
+          },
+          {
+            "parents": [
+              "AA/DD",
+              "OO/DD"
+            ],
+            "percent": 1.7385517493988978
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/Dd"
+            ],
+            "percent": 1.4818933386374202
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "BO/DD"
+            ],
+            "percent": 1.4818933386374202
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/dd"
+            ],
+            "percent": 1.4632550332937047
+          }
+        ]
+      },
+      "paper_p32_pair_formula_inputs_raw": {
+        "genotype_frequencies": [
+          0.068,
+          0.345,
+          0.006,
+          0.102,
+          0.04,
+          0.44
+        ],
+        "genotype_mass": 1.001,
+        "total_unordered_pair_mass": 1.002001,
+        "top6_percent_raw_mass": 83.6205,
+        "top6_percent_of_total_pair_mass": 83.4535095274356,
+        "top18_joint_percent_raw_mass": 67.93903136120416,
+        "top18_joint_percent_of_total_pair_mass": 67.80335684415901,
+        "top18_joint_sum_of_individually_rounded_percentages": 67.94,
+        "top6": [
+          {
+            "parents": [
+              "AO",
+              "OO"
+            ],
+            "percent": 30.36
+          },
+          {
+            "parents": [
+              "OO",
+              "OO"
+            ],
+            "percent": 19.36
+          },
+          {
+            "parents": [
+              "AO",
+              "AO"
+            ],
+            "percent": 11.9025
+          },
+          {
+            "parents": [
+              "BO",
+              "OO"
+            ],
+            "percent": 8.976
+          },
+          {
+            "parents": [
+              "AO",
+              "BO"
+            ],
+            "percent": 7.038
+          },
+          {
+            "parents": [
+              "AA",
+              "OO"
+            ],
+            "percent": 5.984
+          }
+        ],
+        "top18_joint": [
+          {
+            "parents": [
+              "AO/DD",
+              "OO/DD"
+            ],
+            "percent": 8.880859803921824
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/Dd"
+            ],
+            "percent": 8.14946876498987
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "OO/Dd"
+            ],
+            "percent": 6.389924372548875
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/DD"
+            ],
+            "percent": 6.389924372548875
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/DD"
+            ],
+            "percent": 5.663156976413917
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/Dd"
+            ],
+            "percent": 5.010281610294004
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 4.597655450980427
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/DD"
+            ],
+            "percent": 3.481700718582988
+          },
+          {
+            "parents": [
+              "OO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 2.931838258596214
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/DD"
+            ],
+            "percent": 2.6256455072464524
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/DD"
+            ],
+            "percent": 2.058744772727332
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/Dd"
+            ],
+            "percent": 1.8891950318840154
+          },
+          {
+            "parents": [
+              "BO/Dd",
+              "OO/DD"
+            ],
+            "percent": 1.889195031884015
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "AO/Dd"
+            ],
+            "percent": 1.8024899211230079
+          },
+          {
+            "parents": [
+              "AA/DD",
+              "OO/DD"
+            ],
+            "percent": 1.7504303381643018
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "BO/DD"
+            ],
+            "percent": 1.4813006499999666
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/Dd"
+            ],
+            "percent": 1.4813006499999664
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/dd"
+            ],
+            "percent": 1.4659191292981069
+          }
+        ]
+      },
+      "paper_p32_pair_formula_inputs_normalized": {
+        "genotype_frequencies": [
+          0.06793206793206794,
+          0.34465534465534464,
+          0.005994005994005994,
+          0.1018981018981019,
+          0.03996003996003996,
+          0.43956043956043955
+        ],
+        "genotype_mass": 1.0,
+        "total_unordered_pair_mass": 1.0,
+        "top6_percent_raw_mass": 83.4535095274356,
+        "top6_percent_of_total_pair_mass": 83.4535095274356,
+        "top18_joint_percent_raw_mass": 67.803356844159,
+        "top18_joint_percent_of_total_pair_mass": 67.803356844159,
+        "top18_joint_sum_of_individually_rounded_percentages": 67.81,
+        "top6": [
+          {
+            "parents": [
+              "AO",
+              "OO"
+            ],
+            "percent": 30.299370958711616
+          },
+          {
+            "parents": [
+              "OO",
+              "OO"
+            ],
+            "percent": 19.321338002656685
+          },
+          {
+            "parents": [
+              "AO",
+              "AO"
+            ],
+            "percent": 11.878730659949442
+          },
+          {
+            "parents": [
+              "BO",
+              "OO"
+            ],
+            "percent": 8.958074892140827
+          },
+          {
+            "parents": [
+              "AO",
+              "BO"
+            ],
+            "percent": 7.023945085883148
+          },
+          {
+            "parents": [
+              "AA",
+              "OO"
+            ],
+            "percent": 5.972049928093885
+          }
+        ],
+        "top18_joint": [
+          {
+            "parents": [
+              "AO/DD",
+              "OO/DD"
+            ],
+            "percent": 8.863124691414304
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/Dd"
+            ],
+            "percent": 8.133194243309008
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "OO/Dd"
+            ],
+            "percent": 6.377163668049109
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/DD"
+            ],
+            "percent": 6.377163668049109
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/DD"
+            ],
+            "percent": 5.651847629307673
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/Dd"
+            ],
+            "percent": 5.000276057902142
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 4.588473914677158
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "AO/DD"
+            ],
+            "percent": 3.474747748338562
+          },
+          {
+            "parents": [
+              "OO/Dd",
+              "OO/Dd"
+            ],
+            "percent": 2.925983365881086
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/DD"
+            ],
+            "percent": 2.620402082679012
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/DD"
+            ],
+            "percent": 2.054633451191498
+          },
+          {
+            "parents": [
+              "BO/DD",
+              "OO/Dd"
+            ],
+            "percent": 1.8854223018579979
+          },
+          {
+            "parents": [
+              "BO/Dd",
+              "OO/DD"
+            ],
+            "percent": 1.8854223018579979
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "AO/Dd"
+            ],
+            "percent": 1.7988903415495674
+          },
+          {
+            "parents": [
+              "AA/DD",
+              "OO/DD"
+            ],
+            "percent": 1.746934721786008
+          },
+          {
+            "parents": [
+              "AO/Dd",
+              "BO/DD"
+            ],
+            "percent": 1.4783424866841117
+          },
+          {
+            "parents": [
+              "AO/DD",
+              "BO/Dd"
+            ],
+            "percent": 1.4783424866841117
+          },
+          {
+            "parents": [
+              "OO/DD",
+              "OO/dd"
+            ],
+            "percent": 1.4629916829405427
+          }
+        ]
+      }
+    },
+    "paper_top6_printed_sum_percent": 83.62,
+    "paper_top18_printed_row_sum_percent": 67.84,
+    "paper_top18_claimed_total_percent": 67.83,
+    "paper_top18_vs_exact": [
+      {
+        "rank": 1,
+        "parents": [
+          "AO/DD",
+          "OO/DD"
+        ],
+        "printed_percent": 8.87,
+        "recomputed_percent": 8.865988660261086,
+        "difference_percentage_points": 0.004011339738912767
+      },
+      {
+        "rank": 2,
+        "parents": [
+          "OO/DD",
+          "OO/Dd"
+        ],
+        "printed_percent": 8.13,
+        "recomputed_percent": 8.133511034309509,
+        "difference_percentage_points": -0.0035110343095077212
+      },
+      {
+        "rank": 3,
+        "parents": [
+          "AO/DD",
+          "OO/Dd"
+        ],
+        "printed_percent": 6.38,
+        "recomputed_percent": 6.379224340634908,
+        "difference_percentage_points": 0.0007756593650922738
+      },
+      {
+        "rank": 4,
+        "parents": [
+          "AO/Dd",
+          "OO/DD"
+        ],
+        "printed_percent": 6.38,
+        "recomputed_percent": 6.3792243406349085,
+        "difference_percentage_points": 0.0007756593650913857
+      },
+      {
+        "rank": 5,
+        "parents": [
+          "OO/DD",
+          "OO/DD"
+        ],
+        "printed_percent": 5.65,
+        "recomputed_percent": 5.652067770916443,
+        "difference_percentage_points": -0.002067770916442946
+      },
+      {
+        "rank": 6,
+        "parents": [
+          "AO/DD",
+          "AO/Dd"
+        ],
+        "printed_percent": 5.0,
+        "recomputed_percent": 5.003313208341105,
+        "difference_percentage_points": -0.003313208341104712
+      },
+      {
+        "rank": 7,
+        "parents": [
+          "AO/Dd",
+          "OO/Dd"
+        ],
+        "printed_percent": 4.59,
+        "recomputed_percent": 4.589956602420299,
+        "difference_percentage_points": 4.339757970051039e-05
+      },
+      {
+        "rank": 8,
+        "parents": [
+          "AO/DD",
+          "AO/DD"
+        ],
+        "printed_percent": 3.48,
+        "recomputed_percent": 3.4768582981416025,
+        "difference_percentage_points": 0.003141701858397461
+      },
+      {
+        "rank": 9,
+        "parents": [
+          "OO/Dd",
+          "OO/Dd"
+        ],
+        "printed_percent": 2.93,
+        "recomputed_percent": 2.926097334042941,
+        "difference_percentage_points": 0.003902665957059348
+      },
+      {
+        "rank": 10,
+        "parents": [
+          "BO/DD",
+          "OO/DD"
+        ],
+        "printed_percent": 2.63,
+        "recomputed_percent": 2.625696641692706,
+        "difference_percentage_points": 0.004303358307293781
+      },
+      {
+        "rank": 11,
+        "parents": [
+          "AO/DD",
+          "BO/DD"
+        ],
+        "printed_percent": 2.06,
+        "recomputed_percent": 2.059369915053103,
+        "difference_percentage_points": 0.0006300849468972025
+      },
+      {
+        "rank": 12,
+        "parents": [
+          "BO/DD",
+          "OO/Dd"
+        ],
+        "printed_percent": 1.89,
+        "recomputed_percent": 1.8892318239572612,
+        "difference_percentage_points": 0.0007681760427387108
+      },
+      {
+        "rank": 13,
+        "parents": [
+          "BO/Dd",
+          "OO/DD"
+        ],
+        "printed_percent": 1.89,
+        "recomputed_percent": 1.8892318239572612,
+        "difference_percentage_points": 0.0007681760427387108
+      },
+      {
+        "rank": 14,
+        "parents": [
+          "AO/Dd",
+          "AO/Dd"
+        ],
+        "printed_percent": 1.8,
+        "recomputed_percent": 1.799982981341294,
+        "difference_percentage_points": 1.7018658706069445e-05
+      },
+      {
+        "rank": 15,
+        "parents": [
+          "AA/DD",
+          "OO/DD"
+        ],
+        "printed_percent": 1.74,
+        "recomputed_percent": 1.738429149070801,
+        "difference_percentage_points": 0.0015708509291989525
+      },
+      {
+        "rank": 16,
+        "parents": [
+          "AO/Dd",
+          "BO/DD"
+        ],
+        "printed_percent": 1.48,
+        "recomputed_percent": 1.4817504501625578,
+        "difference_percentage_points": -0.001750450162557815
+      },
+      {
+        "rank": 17,
+        "parents": [
+          "AO/DD",
+          "BO/Dd"
+        ],
+        "printed_percent": 1.48,
+        "recomputed_percent": 1.4817504501625578,
+        "difference_percentage_points": -0.001750450162557815
+      },
+      {
+        "rank": 18,
+        "parents": [
+          "OO/DD",
+          "OO/dd"
+        ],
+        "printed_percent": 1.46,
+        "recomputed_percent": 1.4630486670214706,
+        "difference_percentage_points": -0.0030486670214706635
+      }
+    ],
+    "exact_abo_implied_phenotype_percent": [
+      41.236,
+      10.8031,
+      4.004,
+      43.9569
+    ]
+  },
+  "state_counts": {
+    "ABO_genotypes": 6,
+    "ABO_ordered_parent_pairs": 36,
+    "ABO_unordered_parent_pairs": 21,
+    "ABO_distinct_only_unordered_pairs": 15,
+    "ABORh_genotypes": 18,
+    "ABORh_ordered_parent_pairs": 324,
+    "ABORh_unordered_parent_pairs": 171
+  },
+  "displayed_matrix_checks": {
+    "joint_table_vs_self_cross_entry_mismatches_of_324": 0,
+    "joint_table_vs_ranked_top18_entry_mismatches_of_324": 114,
+    "joint_table_all_column_sums_one": true,
+    "p49_if_displayed_self_cross_matrix_iterated_gen3_percent": [
+      19.140625,
+      5.46875,
+      19.140625,
+      5.46875,
+      1.5625,
+      5.46875,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      19.140625,
+      5.46875,
+      19.140625
+    ],
+    "p35_if_displayed_abo_matrix_iterated_gen3_percent": [
+      0.0,
+      100.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

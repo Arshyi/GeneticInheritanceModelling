@@ -1,0 +1,656 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "kschischang2001sumproduct",
+      "type": "primary_research",
+      "authors": [
+        "Frank R. Kschischang",
+        "Brendan J. Frey",
+        "Hans-Andrea Loeliger"
+      ],
+      "title": "Factor Graphs and the Sum-Product Algorithm",
+      "year": 2001,
+      "venue": "IEEE Transactions on Information Theory 47(2):498-519",
+      "doi": "10.1109/18.910572",
+      "url": "https://haloeliger.github.io/papers/2001FG.pdf",
+      "discovery_url": "https://haloeliger.github.io/FG.html",
+      "access_status": "Full primary PDF retrieved through author-maintained page",
+      "supports": [
+        "Local factor representation",
+        "Sum-product marginalization and reuse of intermediate results",
+        "Exact cycle-free factor graph inference and caveats for cycles"
+      ],
+      "does_not_establish": [
+        "Accuracy of any biological inheritance assumptions",
+        "Performance of this repository",
+        "Exact arbitrary loopy inference"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "dechter1999bucket",
+      "type": "primary_research",
+      "authors": [
+        "Rina Dechter"
+      ],
+      "title": "Bucket elimination: A unifying framework for reasoning",
+      "year": 1999,
+      "venue": "Artificial Intelligence 113(1-2):41-85",
+      "doi": "10.1016/S0004-3702(99)00059-4",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0004370299000594",
+      "access_status": "Publisher bibliographic page and abstract retrieved",
+      "supports": [
+        "Elimination complexity exponential in induced width",
+        "Conditioning and elimination time-space tradeoffs"
+      ],
+      "does_not_establish": [
+        "A polynomial guarantee for arbitrary genetic dependency graphs"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "dechter1996bucket",
+      "type": "primary_research",
+      "authors": [
+        "Rina Dechter"
+      ],
+      "title": "Bucket Elimination: A Unifying Framework for Several Probabilistic Inference",
+      "year": 1996,
+      "venue": "Proceedings of UAI 1996, pp. 211-219",
+      "arxiv_id": "1302.3572",
+      "url": "https://arxiv.org/abs/1302.3572",
+      "full_text_url": "https://arxiv.org/pdf/1302.3572",
+      "access_status": "Primary nine-page PDF retrieved; 2013 is the arXiv deposit year, not original conference year",
+      "supports": [
+        "Probabilistic variable-elimination framework",
+        "Relationship to dynamic programming and structural complexity"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "bryant1986bdd",
+      "type": "primary_research",
+      "authors": [
+        "Randal E. Bryant"
+      ],
+      "title": "Graph-Based Algorithms for Boolean Function Manipulation",
+      "year": 1986,
+      "venue": "IEEE Transactions on Computers C-35(8):677-691",
+      "doi": "10.1109/TC.1986.1676819",
+      "url": "https://www.cs.cmu.edu/~bryant/pubdir/ieeetc86.pdf",
+      "access_status": "Author-hosted electronic version with later annotations retrieved",
+      "supports": [
+        "Equivalent-subgraph sharing in reduced decision DAGs",
+        "Variable-order sensitivity",
+        "Exponential worst-case graph size"
+      ],
+      "does_not_establish": [
+        "A measured advantage for genotype data",
+        "Direct equivalence to weighted multi-valued inheritance DAGs"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "grossi2011compressedtries",
+      "type": "primary_research",
+      "authors": [
+        "Roberto Grossi",
+        "Giuseppe Ottaviano"
+      ],
+      "title": "Fast Compressed Tries through Path Decompositions",
+      "year": 2011,
+      "arxiv_id": "1111.5220v2",
+      "url": "https://arxiv.org/abs/1111.5220",
+      "access_status": "Author-submitted abstract and bibliographic record retrieved",
+      "supports": [
+        "Succinct path-decomposed trie candidates for compressed string dictionaries"
+      ],
+      "does_not_establish": [
+        "A genetics benchmark",
+        "Universal trie superiority",
+        "Polynomial-size full inheritance models"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "scipy_csr_array",
+      "type": "official_documentation",
+      "organization": "SciPy",
+      "title": "scipy.sparse.csr_array",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_array.html",
+      "access_status": "Official reference page retrieved",
+      "supports": [
+        "data/indices/indptr storage",
+        "CSR arithmetic and row access",
+        "Expensive structural changes and slow column slicing",
+        "nnz can include explicitly stored zeros"
+      ],
+      "does_not_establish": [
+        "Local installed SciPy version",
+        "Measured process memory"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "sedgewickwayne_hash",
+      "type": "author_educational_reference",
+      "authors": [
+        "Robert Sedgewick",
+        "Kevin Wayne"
+      ],
+      "title": "Algorithms, 4th edition: 3.4 Hash Tables",
+      "url": "https://algs4.cs.princeton.edu/34hash/",
+      "access_status": "Author-maintained Princeton booksite retrieved",
+      "supports": [
+        "Hash key computation",
+        "Collision handling and assumptions underlying expected performance"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "sedgewickwayne_tries",
+      "type": "author_educational_reference",
+      "authors": [
+        "Robert Sedgewick",
+        "Kevin Wayne"
+      ],
+      "title": "Algorithms, 4th edition: 5.2 Tries",
+      "url": "https://algs4.cs.princeton.edu/52trie/",
+      "access_status": "Author-maintained Princeton booksite retrieved",
+      "supports": [
+        "Trie prefix sharing",
+        "Prefix and wildcard query semantics"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "python_heapq",
+      "type": "official_documentation",
+      "organization": "Python Software Foundation",
+      "title": "heapq: Heap queue algorithm",
+      "url": "https://docs.python.org/3/library/heapq.html",
+      "access_status": "Official heapq reference retrieved through search",
+      "supports": [
+        "Heap invariant",
+        "Priority-queue implementation and tie-breaking"
+      ],
+      "does_not_establish": [
+        "A priority queue as a complete probability representation"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "python_timeit",
+      "type": "official_documentation",
+      "organization": "Python Software Foundation",
+      "title": "timeit: Measure execution time of small code snippets",
+      "url": "https://docs.python.org/3/library/timeit.html",
+      "access_status": "Official reference page retrieved",
+      "supports": [
+        "Repeated timing",
+        "Setup exclusion",
+        "Monotonic performance counter",
+        "Minimum as a low-interference timing bound"
+      ],
+      "does_not_establish": [
+        "Statistical significance of small benchmark differences",
+        "Representativeness of one laptop"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "scipy_convolve",
+      "type": "official_documentation",
+      "organization": "SciPy",
+      "title": "scipy.signal.convolve",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html",
+      "access_status": "Official reference page retrieved",
+      "supports": [
+        "Direct and FFT convolution implementation choices"
+      ],
+      "does_not_establish": [
+        "Calibrated phenotype prediction",
+        "Independence of real genetic effects"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "dean_abo_2005",
+      "type": "authoritative_reference_chapter",
+      "authors": [
+        "Laura Dean"
+      ],
+      "year": 2005,
+      "title": "The ABO blood group",
+      "container": "Blood Groups and Red Cell Antigens, Chapter 5",
+      "publisher": "National Center for Biotechnology Information (US)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK2267/",
+      "accessed": "2026-09-05",
+      "location": "Background information / History; Basic biochemistry; Molecular information / The H locus (FUT1)",
+      "supports": [
+        "A/B/O is a simplified three-allele model with six diploid genotypes and four common phenotypes",
+        "A and B are codominant over O",
+        "Variant ABO alleles and H-antigen dependence limit the simple phenotype map"
+      ],
+      "does_not_support": [
+        "Universal genotype frequencies inferred from a blood-donor phenotype table",
+        "Complete molecular ABO state coverage or clinical transfusion recommendations"
+      ],
+      "reuse": "Cited paraphrase only; no source illustrations or complete chapter reproduced. Historical chapter is used for stable mechanisms, not current antigen counts.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "dean_rh_2005",
+      "type": "authoritative_reference_chapter",
+      "authors": [
+        "Laura Dean"
+      ],
+      "year": 2005,
+      "title": "The Rh blood group",
+      "container": "Blood Groups and Red Cell Antigens, Chapter 7",
+      "publisher": "National Center for Biotechnology Information (US)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK2269/",
+      "accessed": "2026-09-05",
+      "location": "Introduction; Basic biochemistry / Common Rh phenotypes; Uncommon Rh phenotypes; Molecular information",
+      "supports": [
+        "RHD and RHCE are closely linked and structurally complex",
+        "Deletion, pseudogene and hybrid alleles can yield D-negative phenotypes",
+        "Weak and partial D variants exist"
+      ],
+      "does_not_support": [
+        "D/d is a complete molecular model of the Rh system",
+        "Current antigen inventory or current weak-D clinical practice"
+      ],
+      "reuse": "Cited mechanistic paraphrase only; avoid using dated clinical guidance.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "dean_hh_2005",
+      "type": "authoritative_reference_chapter",
+      "authors": [
+        "Laura Dean"
+      ],
+      "year": 2005,
+      "title": "The Hh blood group",
+      "container": "Blood Groups and Red Cell Antigens, Chapter 6",
+      "publisher": "National Center for Biotechnology Information (US)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK2268/",
+      "accessed": "2026-09-05",
+      "location": "Basic biochemistry; Uncommon H Phenotypes; Molecular information",
+      "supports": [
+        "FUT1 supplies the H-antigen precursor needed for erythrocyte A/B antigen production",
+        "Two inactive FUT1 copies can mask A/B expression",
+        "FUT2 and partial H variants create additional phenotype distinctions"
+      ],
+      "does_not_support": [
+        "An hh O-like red-cell phenotype is clinically interchangeable with ordinary ABO O",
+        "The exact toy 7/16 result is a measured population frequency"
+      ],
+      "reuse": "Cited paraphrase. The 3/16,3/16,3/16,7/16 toy cross is newly derived from explicit independent-locus assumptions.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "dean_mns_2005",
+      "type": "authoritative_reference_chapter",
+      "authors": [
+        "Laura Dean"
+      ],
+      "year": 2005,
+      "title": "The MNS blood group",
+      "container": "Blood Groups and Red Cell Antigens, Chapter 12",
+      "publisher": "National Center for Biotechnology Information (US)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK2274/",
+      "accessed": "2026-09-05",
+      "location": "Antigens of the MNS blood group / Molecular basis; Molecular information / The GYPA locus",
+      "table_url": "https://www.ncbi.nlm.nih.gov/books/NBK2274/table/ch12MNS.T1/",
+      "supports": [
+        "GYPA M and N alleles are codominant",
+        "The wider MNS system includes GYPB, linked loci, recombination and variant alleles"
+      ],
+      "does_not_support": [
+        "The M/N biallelic teaching model covers all MNS phenotypes"
+      ],
+      "reuse": "Cited paraphrase only; do not reuse historical antigen totals as current counts.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "bender_carlberg_scd_2025",
+      "type": "authoritative_reference_chapter",
+      "authors": [
+        "M. A. Bender",
+        "Katie Carlberg"
+      ],
+      "year": 2025,
+      "title": "Sickle Cell Disease",
+      "container": "GeneReviews",
+      "updated": "2025-02-13",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK1377/",
+      "accessed": "2026-09-05",
+      "location": "GeneReview Scope; Diagnosis; Genetic Counseling / Mode of Inheritance and Risk to Family Members",
+      "supports": [
+        "Sickle cell disease includes HbS homozygosity and compound heterozygosity with other HBB pathogenic variants",
+        "A two-allele A/S model cannot encode all sickling disorders",
+        "Genotype transmission alone does not predict clinical severity"
+      ],
+      "reuse": "Cited paraphrase only.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "clinvar_rs334_15333_v7",
+      "type": "authoritative_variant_record",
+      "authors": [
+        "National Center for Biotechnology Information"
+      ],
+      "title": "NM_000518.5(HBB):c.20A>T (p.Glu7Val), ClinVar VCV000015333.7",
+      "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/VCV000015333.7/",
+      "accessed": "2026-09-05",
+      "location": "Variant Details / HGVS, Protein change, Other names, Links",
+      "supports": [
+        "rs334 HbS corresponds to GRCh38 NC_000011.10:g.5227002T>A and HBB c.20A>T",
+        "p.Glu7Val and legacy Glu6Val/E6V nomenclature refer to HbS"
+      ],
+      "does_not_support": [
+        "T at rs334 excludes other pathogenic HBB variants",
+        "The stored reference-panel samples have clinical phenotype labels"
+      ],
+      "reuse": "Variant identifiers and cited summary only.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "wigginton_hwe_2005",
+      "type": "primary_methods_article",
+      "authors": [
+        "Janis E. Wigginton",
+        "David J. Cutler",
+        "Goncalo R. Abecasis"
+      ],
+      "year": 2005,
+      "title": "A Note on Exact Tests of Hardy-Weinberg Equilibrium",
+      "journal": "American Journal of Human Genetics",
+      "volume": "76",
+      "pages": "887-893",
+      "doi": "10.1086/429864",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1199378/",
+      "accessed": "2026-09-05",
+      "location": "Exact probability-ordering test and conditional distribution of heterozygote counts",
+      "supports": [
+        "A conditional exact HWE test is preferable to unqualified asymptotic chi-square testing with rare alleles",
+        "HWE departures can reflect structure, genotyping error or affected-sample ascertainment",
+        "A probability-ordering two-sided P value sums all feasible tables no more probable than the observed table"
+      ],
+      "reuse": "Mathematical method independently implemented; no source code copied. Article is cited, not reproduced.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "hardy_1908",
+      "type": "primary_theory_article",
+      "authors": [
+        "G. H. Hardy"
+      ],
+      "year": 1908,
+      "title": "Mendelian Proportions in a Mixed Population",
+      "journal": "Science",
+      "volume": "28",
+      "issue": "706",
+      "pages": "49-50",
+      "doi": "10.1126/science.28.706.49",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17779291/",
+      "full_text_url": "https://www.jstor.org/stable/1636004",
+      "accessed": "2026-09-05",
+      "location": "Original two-page derivation; bibliographic record independently verified via PubMed",
+      "supports": [
+        "Historical origin of the random-mating genotype-proportion result"
+      ],
+      "reuse": "Bibliographic attribution; equations in the project are freshly derived.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "mcauley_kilifi_2010",
+      "type": "primary_observational_article",
+      "authors": [
+        "Charlotte F. McAuley",
+        "Clare Webb",
+        "Julie Makani",
+        "Alexander Macharia",
+        "Sophie Uyoga",
+        "Daniel H. Opi",
+        "Carolyne Ndila",
+        "Antony Ngatia",
+        "John Anthony G. Scott",
+        "Kevin Marsh",
+        "Thomas N. Williams"
+      ],
+      "year": 2010,
+      "title": "High mortality from Plasmodium falciparum malaria in children living with sickle cell anemia on the coast of Kenya",
+      "journal": "Blood",
+      "volume": "116",
+      "issue": "10",
+      "pages": "1663-1668",
+      "doi": "10.1182/blood-2010-01-265249",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3073423/",
+      "retrieved_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3073423/fullTextXML",
+      "accessed": "2026-09-05",
+      "location": "Table 1 (XML table-wrap id T1); Study participants; Sampling and laboratory methods; Results; Table 3",
+      "supports": [
+        "Genotype-dependent disease associations make constant universal reproductive selection assumptions inappropriate",
+        "The publication's own table/narrative discrepancies require an explicit source audit"
+      ],
+      "observed_counts_status": "Rejected as the clean benchmark CSV: Table 1 controls 1252/218/10,n1480 conflict with narrative n1479; SCA is not exclusively molecularly confirmed HbSS",
+      "reuse": "Article XML states CC BY-NC 3.0 US; cite original and preserve noncommercial license conditions for adapted article material.",
+      "license_url": "https://creativecommons.org/licenses/by-nc/3.0/us/",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "1000genomes_2015",
+      "type": "primary_dataset_article",
+      "authors": [
+        "The 1000 Genomes Project Consortium"
+      ],
+      "year": 2015,
+      "title": "A global reference for human genetic variation",
+      "journal": "Nature",
+      "volume": "526",
+      "pages": "68-74",
+      "doi": "10.1038/nature15393",
+      "url": "https://www.nature.com/articles/nature15393",
+      "accessed": "2026-09-05",
+      "location": "Main text / Human genetic variation in more than 2,500 individuals; Supplementary Table 1 for population descriptions",
+      "supports": [
+        "Phase 3 reference panel contains 2504 individuals from 26 populations",
+        "Sequencing, arrays, genotype inference and statistical phasing generated the calls",
+        "A diversity reference panel is not a census or a clinical prediction validation set"
+      ],
+      "reuse": "Underlying 1000 Genomes data are available without publication embargo; cite project and data provider, subject to IGSR/EMBL-EBI terms.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "ensembl_rs334_phase3_20260905",
+      "type": "live_aggregate_data_snapshot",
+      "authors": [
+        "Ensembl",
+        "The 1000 Genomes Project Consortium"
+      ],
+      "title": "rs334 population genotype and allele counts, 1000GENOMES:phase_3 subset",
+      "url": "https://rest.ensembl.org/variation/human/rs334?population_genotypes=1;pops=1;content-type=application/json",
+      "documentation_url": "https://rest.ensembl.org/documentation/info/variation_id",
+      "accessed": "2026-09-05",
+      "ensembl_release": 116,
+      "location": "JSON population_genotypes and populations arrays; population prefix 1000GENOMES:phase_3:",
+      "supports": [
+        "Frozen CSV contains 26 nonoverlapping component populations and 2504 calls",
+        "Counts are TT2367,TA137,AA0 after denominator-verified zero completion",
+        "Genomic A allele count137 of5008; genomic T4871 of5008"
+      ],
+      "observation_status": "Published aggregate genotype-call counts, not raw reads or independent clinical confirmation. Missing genotype categories are inferred zero only after exact allele-count consistency checks.",
+      "local_data": "data/observed_genotypes.csv",
+      "local_provenance": "data/observed_genotypes.provenance.json",
+      "csv_sha256": "2006b6af4722df8ea0d712c3f67d6cb97634a28584a12ed6a03aab82077d9e4a",
+      "reuse": "1000 Genomes phase 3 public data without publication embargo; cite the 2015 primary publication and Ensembl. Do not infer permission to reidentify individuals; no individual data used.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "igsr_collection_principles",
+      "type": "official_dataset_documentation",
+      "authors": [
+        "International Genome Sample Resource"
+      ],
+      "title": "Sample Collection Principles",
+      "url": "https://www.internationalgenome.org/sample_collection_principles/",
+      "accessed": "2026-09-05",
+      "location": "Consent process; Sampling process",
+      "supports": [
+        "Project sample-collection principles specify adults",
+        "Open genomic use and population comparisons were part of the consent framework",
+        "The dataset is not a clinical phenotype cohort"
+      ],
+      "reuse": "Cited paraphrase only.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "brown_linkage_2002",
+      "type": "authoritative_reference_chapter",
+      "authors": [
+        "T. A. Brown"
+      ],
+      "year": 2002,
+      "title": "Mapping Genomes",
+      "container": "Genomes, 2nd edition, Chapter 5",
+      "publisher": "Wiley-Liss",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK21116/",
+      "accessed": "2026-09-05",
+      "location": "Genetic mapping / The principles of genetic mapping; Figures 5.15-5.18",
+      "supports": [
+        "Parental phase and meiotic recombination determine linked-locus gamete combinations",
+        "Recombination fractions and physical distance are distinct; crossovers are not spatially uniform"
+      ],
+      "does_not_support": [
+        "A supplied synthetic recombination fraction is measured for a real locus pair",
+        "Unlinked segregation proves population-level linkage equilibrium"
+      ],
+      "reuse": "Cited paraphrase; no figures copied.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "igsr_disclaimer_2026",
+      "type": "official_dataset_reuse_policy",
+      "authors": [
+        "International Genome Sample Resource"
+      ],
+      "title": "IGSR Disclaimer",
+      "updated": "2026-01-15",
+      "url": "https://www.internationalgenome.org/IGSR_disclaimer/",
+      "accessed": "2026-09-05",
+      "location": "Disclaimer, paragraphs 2-6",
+      "supports": [
+        "1000 Genomes data are available without embargo after the final project publication",
+        "Data use requires usual citation and attention to third-party terms"
+      ],
+      "reuse": "Policy citation; this does not apply a blanket new license to all IGSR datasets.",
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "yengo2022height",
+      "type": "primary_research",
+      "authors": [
+        "Loic Yengo",
+        "Sailaja Vedantam",
+        "Eirini Marouli",
+        "and colleagues"
+      ],
+      "title": "A saturated map of common genetic variants associated with human height",
+      "year": 2022,
+      "venue": "Nature 610:704-712",
+      "doi": "10.1038/s41586-022-05275-y",
+      "url": "https://www.nature.com/articles/s41586-022-05275-y",
+      "access_status": "Full primary article content retrieved by web search; direct open later redirected to publisher identity endpoint. Also accessible at PMC9605867.",
+      "supports": [
+        "5.4 million participants and 12111 associated independent SNPs",
+        "Need for ancestry-specific evaluation and LD-aware interpretation"
+      ],
+      "does_not_establish": [
+        "Any human height performance of this repository"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "alberts2002meiosis",
+      "type": "authoritative_textbook",
+      "authors": [
+        "Bruce Alberts",
+        "Alexander Johnson",
+        "Julian Lewis",
+        "Martin Raff",
+        "Keith Roberts",
+        "Peter Walter"
+      ],
+      "title": "Meiosis, Molecular Biology of the Cell, 4th edition",
+      "year": 2002,
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK26840/",
+      "supports": [
+        "Meiotic recombination and genetic linkage",
+        "Independent segregation of different chromosomes"
+      ],
+      "does_not_establish": [
+        "Recombination rates used in synthetic examples as empirical values"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "nist_wilson",
+      "type": "official_method_reference",
+      "authors": [
+        "NIST/SEMATECH"
+      ],
+      "title": "e-Handbook of Statistical Methods: 7.2.4.1 Confidence intervals",
+      "url": "https://itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+      "supports": [
+        "Wilson interval for a binomial proportion"
+      ],
+      "does_not_establish": [
+        "Clinical calibration from synthetic experiments"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "holm1979",
+      "type": "primary_research",
+      "authors": [
+        "Sture Holm"
+      ],
+      "title": "A Simple Sequentially Rejective Multiple Test Procedure",
+      "year": 1979,
+      "venue": "Scandinavian Journal of Statistics 6(2):65-70",
+      "url": "https://www.jstor.org/stable/4615733",
+      "supports": [
+        "Step-down family-wise multiple testing adjustment"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "scipy_kstest",
+      "type": "official_implementation_documentation",
+      "authors": [
+        "SciPy developers"
+      ],
+      "title": "scipy.stats.kstest",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html",
+      "supports": [
+        "One-sample Kolmogorov-Smirnov test implementation for continuous distributions"
+      ],
+      "accessed_date": "2026-09-05"
+    },
+    {
+      "id": "version1_local",
+      "type": "user_provided_local_source",
+      "authors": [
+        "Arshyia Mehran"
+      ],
+      "title": "Linear Algebra in Bioinformatics and Computational Biology: Modeling the Generational Decay of Sickle Cell Anemia and Changes in Generational Blood Types Using MATLAB",
+      "url": "",
+      "local_file": "../Bioinformatics-Arshyia Mehran.pdf",
+      "pages": 54,
+      "sha256": "ee3cb04ce28d4734669d5822fddbdf03c176fd5c2f5ff3760cb82a4bd1145ecd"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "job": {
+    "phase": "query_timing",
+    "loci": 50,
+    "repeats": 7,
+    "build_repeats": 3
+  },
+  "core_sha256": "e8d31c104cf96f069ff8cf885ee987e2a90023d5d020dffa812cf722865ebd95",
+  "harness_sha256": "76b796e4e8cd317fefe35f0a5a35259d119a9db4b499c64f1ff4c17de0601c93",
+  "result": {
+    "phase": "query_timing",
+    "loci": 50,
+    "method": "factored_log_query",
+    "metadata": {
+      "utc": "2026-09-05T12:56:20Z",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "python_executable": "C:\\Users\\DELL\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+      "processor_identifier": "Intel64 Family 6 Model 151 Stepping 2, GenuineIntel",
+      "logical_cpu_count": 24,
+      "physical_memory": {
+        "total_physical_bytes": 137108377600,
+        "available_physical_bytes": 119119810560,
+        "memory_load_percent": 13
+      },
+      "numpy": "2.5.2",
+      "numpy_path": "C:\\Users\\DELL\\Desktop\\GENETICS\\version2\\.deps\\numpy\\__init__.py",
+      "scipy": "1.18.1",
+      "scipy_path": "C:\\Users\\DELL\\Desktop\\GENETICS\\version2\\.deps\\scipy\\__init__.py",
+      "threadpoolctl": "3.6.0",
+      "threadpools": [
+        {
+          "user_api": "blas",
+          "internal_api": "openblas",
+          "num_threads": 1,
+          "prefix": "libscipy_openblas",
+          "filepath": "C:\\Users\\DELL\\Desktop\\GENETICS\\version2\\.deps\\numpy.libs\\libscipy_openblas64_-327b2e0bcffce2882e0dc04cdeb4eaa6.dll",
+          "version": "0.3.34.0.0",
+          "threading_layer": "pthreads",
+          "architecture": "Haswell"
+        }
+      ],
+      "core_sha256": "e8d31c104cf96f069ff8cf885ee987e2a90023d5d020dffa812cf722865ebd95",
+      "harness_sha256": "76b796e4e8cd317fefe35f0a5a35259d119a9db4b499c64f1ff4c17de0601c93",
+      "pid": 25508,
+      "gc_enabled": true
+    },
+    "genotype_states": 717897987691852588770249,
+    "unordered_pair_columns": 257688760366005665518230923831804482277348146125,
+    "theoretical_nnz": 31881075010702479345170434754663801868446171283721923828125,
+    "budget_bytes": 268435456,
+    "query": "log probability of all-00 offspring from two all-01 parents",
+    "expected_log_probability": -69.31471805599453,
+    "full_output_enumerated": false,
+    "positive_full_cross_support": 717897987691852588770249,
+    "status": "measured",
+    "warmup_calls": 1,
+    "calls_per_timed_batch": 50,
+    "raw_batch_seconds": [
+      0.002514299936592579,
+      0.0024959000293165445,
+      0.002468900056555867,
+      0.0024343999102711678,
+      0.0024085999466478825,
+      0.002917999867349863,
+      0.0024470000062137842
+    ],
+    "raw_seconds_per_query": [
+      5.028599873185158e-05,
+      4.991800058633089e-05,
+      4.937800113111734e-05,
+      4.868799820542335e-05,
+      4.817199893295765e-05,
+      5.835999734699726e-05,
+      4.894000012427569e-05
+    ],
+    "raw_model_construction_seconds": [
+      5.439994856715202e-05,
+      3.890017978847027e-05,
+      3.6300159990787506e-05
+    ],
+    "log_probability": -69.31471805599446,
+    "absolute_log_error": 7.105427357601002e-14,
+    "worker_wall_seconds_including_startup": 0.41575800022110343
+  }
+}
