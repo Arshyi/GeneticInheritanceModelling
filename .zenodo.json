@@ -6,7 +6,8 @@
   "license": "cc-by-4.0",
   "creators": [
     {
-      "name": "Mehran, Arshyia"
+      "name": "Mehran, Arshyia",
+      "orcid": "0009-0008-7960-2536"
     }
   ],
   "description": "<p><strong>This is a preprint. It has not been peer reviewed.</strong></p><p>A unified, audited and extended treatment of Mendelian inheritance modelling, in seven parts.</p><p>Parts I and II preserve the mathematics of an earlier 54-page study of sickle-cell, ABO and ABO x Rh inheritance as linear algebra, and then audit it against its own MATLAB source. The audit changes the premise: the original programs already looped over all 36 and all 324 ordered parental pairs, so the reported 83.62% and 67.83% coverage figures describe the prose and displayed tables rather than the executed model, and no coverage-restoration claim is available. The displayed sickle-cell trajectory is reproducible but sums to 93.75%, because it zeroes the affected class without renormalising.</p><p>Part III proves G(n) = 3^n by induction, generalises to arbitrary allele counts, derives U = G(G+1)/2 unordered parental pairs and exactly (15^n + 5^n)/2 supported transitions, then replaces the square matrix with a complete rectangular kernel implemented as dense, CSR, hash-adjacency and streamed representations. All four agree to 6.94e-17. At five loci CSR retains 4,575,976 payload bytes against dense's 57,631,824.</p><p>Part IV tests the population assumptions against public rs334 genotype calls for 2,504 individuals across 26 populations, with exact Hardy-Weinberg tests and a Holm adjustment, and compares the new representation against the square-matrix baseline under an explicit taxonomy separating structural coverage, probability mass and predictive accuracy.</p><p>Part V adds eye colour as a two-locus epistatic trait driven by real rs12913832 genotype calls, audits it, and compares it against two published phenotyped cohorts; then treats height; then states P(n), the general n-locus problem, with output-size lower bounds showing that materialising the complete kernel is Omega(15^n) for any implementation, that returning all children of a heterozygous pair is Omega(3^n), and that the implemented factored single-child query is Theta(n) and therefore asymptotically optimal.</p><p>Part VI derives, without implementing, an extension in which parental age enters the transmission kernel through de novo mutation and an individual's age enters the genotype-to-phenotype map through methylation and histone acetylation, including an expression gate with its cross-entropy objective, gradient, convexity proof and step-size bound. Part VII evaluates the whole.</p><p><strong>Scope.</strong> This work establishes representational completeness, numerical agreement between implementations, measured performance on one machine, and asymptotic bounds. It establishes no predictive accuracy for any trait, because no held-out phenotype data was available for any model built here. Part VI is derivation only. Nothing in it is medical, diagnostic or reproductive advice.</p><p><strong>Reproducibility.</strong> Every number in the paper is bound at build time to a retained machine-readable result. Source code, tests, frozen datasets with SHA-256 digests, raw benchmark output, figures and the source ledger are included. The software is MIT licensed; the written work and figures are CC BY 4.0. The included aggregate genotype datasets remain subject to the terms of their originating projects and are not relicensed.</p><p><strong>AI assistance.</strong> Computation, figure generation, manuscript preparation and adversarial review were assisted by AI agents. Scientific authorship, interpretation and responsibility for every claim are the author's.</p>",
@@ -29,8 +30,9 @@
   "related_identifiers": [
     {
       "identifier": "https://github.com/Arshyi/GeneticInheritanceModelling",
-      "relation": "isSupplementTo",
-      "scheme": "url"
+      "relation": "isSupplementedBy",
+      "scheme": "url",
+      "resource_type": "software"
     }
   ]
 }

@@ -1,3 +1,17 @@
+# Published on Zenodo
+
+**Record:** <https://zenodo.org/records/22401515>
+**Cite all versions:** [10.5281/zenodo.22401514](https://doi.org/10.5281/zenodo.22401514)
+**This version (2.0.0):** [10.5281/zenodo.22401515](https://doi.org/10.5281/zenodo.22401515)
+
+Published 5 September 2026 as an open-access preprint under CC BY 4.0, with the 75-page paper
+and the 2.4 MB research package deposited together. Files are now immutable; metadata can still
+be edited on Zenodo, and a new version can be added later without losing the concept DOI.
+
+The checklist that produced it is kept below for the next release.
+
+---
+
 # Publishing checklist — Zenodo
 
 Everything below is prepared. The steps that require signing in to an account are
@@ -81,7 +95,7 @@ handles them as separate records.
 
 ## After publishing
 
-- Add the DOI to `README.md` and `CITATION.cff`.
+- ~~Add the DOI to `README.md` and `CITATION.cff`.~~ Done.
 - If you later pursue arXiv (q-bio.PE or cs.DS), you will need an endorsement from
   an existing arXiv author in that category. Having a Zenodo DOI and a public
   repository first makes that request considerably easier to make.

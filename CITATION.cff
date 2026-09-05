@@ -23,7 +23,17 @@ authors:
   - family-names: Mehran
     given-names: Arshyia
     email: arshyiamehran@gmail.com
+    orcid: "https://orcid.org/0009-0008-7960-2536"
+doi: "10.5281/zenodo.22401514"
 repository-code: "https://github.com/Arshyi/GeneticInheritanceModelling"
+url: "https://zenodo.org/records/22401515"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22401514"
+    description: "Concept DOI, always resolves to the latest version"
+  - type: doi
+    value: "10.5281/zenodo.22401515"
+    description: "DOI of version 2.0.0"
 license: CC-BY-4.0
 version: "2.0.0"
 date-released: "2026-09-05"

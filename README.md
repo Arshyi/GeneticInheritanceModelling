@@ -22,8 +22,14 @@ recorded in Appendix D so the audit's primary source remains identifiable.
 **Version I**: evidence to be audited, not ground truth. The original PDFs, MATLAB and
 Python are untouched.
 
-> **Status:** preprint, author-approved for release, not peer reviewed. Availability, AI-assistance
-> disclosure and the scope of claims are stated in the paper's front matter.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22401514.svg)](https://doi.org/10.5281/zenodo.22401514)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
+
+> **Published** as a preprint on Zenodo: <https://zenodo.org/records/22401515>
+> Cite all versions with **10.5281/zenodo.22401514**; this version is **10.5281/zenodo.22401515**.
+> Not peer reviewed. Availability, AI-assistance disclosure and the scope of claims are stated
+> in the paper's front matter.
 
 **The single unified paper is [`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)**
 (75 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
@@ -239,9 +245,13 @@ generation count; run them from the `matlab/` directory.
 
 ## Citing and licence
 
-> **Preprint** — author-approved for release, not peer reviewed. A DOI will be minted on
-> publication; see [`PUBLISHING.md`](PUBLISHING.md) for the steps and
-> [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
+> **Preprint**, not peer reviewed. Published on Zenodo with DOI [10.5281/zenodo.22401514](https://doi.org/10.5281/zenodo.22401514)
+> (all versions) / [10.5281/zenodo.22401515](https://doi.org/10.5281/zenodo.22401515) (this version).
+> [`CITATION.cff`](CITATION.cff) carries machine-readable citation metadata.
+
+Mehran, A. (2026). *Inheritance as a Linear Operator, and What Replaces It: From Punnett squares
+to a complete probabilistic kernel* (Version 2.0.0) [Preprint]. Zenodo.
+https://doi.org/10.5281/zenodo.22401514
 
 Dual-licensed, see [`LICENSE`](LICENSE):
 
