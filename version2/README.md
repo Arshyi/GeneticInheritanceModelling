@@ -2,7 +2,7 @@
 
 A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchanged in the parent directory. The main result is a reproducible audit and complete probabilistic inheritance engine, with measured dense/CSR/hash/streamed comparisons and explicitly limited biological validation.
 
-Start with [the review manuscript](output/pdf/Genetics_Version_II.pdf), or its [editable Markdown source](manuscript/version2_manuscript.md). Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
+**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (42 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. The [Version II review manuscript](output/pdf/Genetics_Version_II.pdf) ([source](manuscript/version2_manuscript.md)) remains available as the standalone audit. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
 
 ## Findings
 
@@ -12,6 +12,18 @@ Start with [the review manuscript](output/pdf/Genetics_Version_II.pdf), or its [
 - At five biallelic loci, dense payload is **57,631,824 bytes**, CSR **4,575,976 bytes**. Median validated updates were **12.560 ms** and **9.535 ms**, respectively, in the retained local run. All measured implementation results agreed within **6.94e-17**.
 - Public rs334 calls from **26 populations / 2,504 samples** support an HWE and pooling audit. They do not validate clinical prediction or worldwide prevalence.
 - A **200-locus synthetic additive model** has 401 score bins. Its nominal 90% interval covered **90.03%** of 10,000 independent simulated outcomes. It is not a human height predictor.
+- **LIMITATION - mutation destroys the sparsity the architecture rests on.** With any positive
+  per-transmission mutation probability every structural zero becomes positive. At five loci the
+  supported-transition count rises from **381,250 to the full dense 7,203,978**, and CSR becomes
+  strictly worse than dense - it pays index overhead on a matrix with no zeros. The measured
+  12.59x payload advantage is an advantage over a mutation-free model. This argues for the factored
+  representation or a structured low-rank correction; neither is implemented.
+- **LIMITATION - age is collinear with its own mediators.** In the proposed expression gate the
+  methylation fraction is itself a smooth deterministic function of age, so the design carries two
+  nearly collinear columns. The age and methylation weights become individually unidentifiable
+  **while the objective still looks healthy**, and no diagnostic computed from the fit reveals it.
+  Conditioning must be checked before fitting, and the sampling design must supply within-age
+  variation in methylation.
 
 ## Run
 
@@ -28,6 +40,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe run.py benchmark
 .\.venv\Scripts\python.exe run.py test -q --junitxml=results/tests.xml
 .\.venv\Scripts\python.exe run.py manuscript
+.\.venv\Scripts\python.exe run.py unified
 ```
 
 The PDF renderer currently uses Windows Georgia and Arial fonts. Poppler `pdftoppm` was used for final visual review. PDF source extraction used `pypdf`. Tests and computations do not need Word or MATLAB. The package is primarily a Python research implementation, not a MATLAB execution or a C/C++ engine.
@@ -46,6 +59,8 @@ Fetch defaults to offline validation against the frozen provenance. Use `python 
 | `experiments/reproduce_version1.py` | Exact rational reconstruction with legacy state order |
 | `experiments/benchmark.py` | Isolated workers, raw repeated timings, distinct memory metrics |
 | `experiments/science.py` | HWE, synthetic dynamics, MNS, ABO/FUT1, linkage and quantitative-trait checks |
+| `experiments/build_unified.py` | Unified Version I + II manuscript and PDF, bound to retained results |
+| `manuscript/unified_template.md` | Source of the unified paper; edit here, not the generated file |
 | `data/` | Frozen aggregate calls and provenance, no personal patient data |
 | `results/` | Machine-readable outputs, tests, raw benchmark workers, metadata |
 | `figures/` | PNG and SVG figures |

@@ -23,9 +23,18 @@ against each other.
 **Version I**: evidence to be audited, not ground truth. The original PDFs, MATLAB and
 Python are untouched.
 
-Read [`version2/output/pdf/Genetics_Version_II.pdf`](version2/output/pdf/Genetics_Version_II.pdf)
-(or its [Markdown source](version2/manuscript/version2_manuscript.md)) for the full
-argument. The research question:
+**The single unified paper is [`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)**
+(42 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
+and Version II into one document, in six parts: the original biology and matrix algebra with
+every derivation preserved; sickle cell, then ABO, then ABO x Rh, each given its Version I
+treatment and then audited; the combinatorial theorem and the complete kernel that replaces
+the square matrix; real-data evidence and an explicit comparison against the original
+square-matrix baseline; age, mutation and epigenetic regulation; then evaluation.
+Appendix E reserves a documented slot for further polygenic traits.
+
+The [Version II review manuscript](version2/output/pdf/Genetics_Version_II.pdf)
+([source](version2/manuscript/version2_manuscript.md)) remains as the standalone audit.
+The research question:
 
 > Can sparse and dynamically allocated data structures overcome the combinatorial
 > limitations of dense transition matrices in probabilistic genetic inheritance
@@ -93,7 +102,14 @@ becomes strictly worse than dense. And **age is collinear with its own mediators
 `w_age` and `w_met` are individually unidentifiable while the fit still looks fine — the
 conditioning has to be checked before fitting, never inferred from the residual afterwards.
 
-Nothing in Section 14 is implemented, tested or validated, and it says so on every page.
+Nothing in Part V is implemented, tested or validated, and it says so on every page.
+
+**Two limitations are listed in the paper's Findings rather than buried.** A positive mutation
+rate destroys the structural sparsity the architecture depends on: every structural zero becomes
+positive, the five-locus kernel goes from 381,250 to the full dense 7,203,978 entries, and CSR
+becomes strictly worse than dense. And age is collinear with its own epigenetic mediators, so the
+expression gate's weights are individually unidentifiable while the objective still looks healthy
+- conditioning has to be checked before fitting, never inferred from the fit afterwards.
 
 ```bash
 cd version2
@@ -102,6 +118,7 @@ python run.py test -q          # 32 tests
 python run.py reproduce        # exact-rational Version I reconstruction
 python run.py science          # HWE, epistasis, linkage, polygenic score
 python run.py benchmark        # dense / CSR / hash / streamed
+python run.py unified          # rebuild the unified paper + PDF
 ```
 
 Version II addresses three limitations listed below: mutation and migration now exist

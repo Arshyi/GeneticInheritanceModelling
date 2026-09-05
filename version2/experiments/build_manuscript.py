@@ -63,7 +63,7 @@ def benchmark_figure(bench):
     plt.close(fig)
 
 
-def build_text():
+def bindings():
     ledger=sources();bench=read('benchmark.json');pop=read('population_validation.json');legacy=read('version1_reproduction.json')
     if bench['status']!='passed' or bench['full_loci']!=[1,2,3,4,5]:raise ValueError('Complete benchmark evidence required')
     benchmark_figure(bench)
@@ -113,9 +113,10 @@ def build_text():
                 ('sources/source_ledger.json','Reproducible claim/source bibliography','Primary and authoritative sources'),
                 ('manuscript/version2_manuscript.md','Editable evidence-derived candidate','Author review required'),
                 ('output/pdf/Genetics_Version_II.pdf','Typeset candidate','Rendered and visually checked before delivery')])}
-    text=(MAN/'template.md').read_text(encoding='utf-8')
-    for key,val in values.items():text=text.replace('{{'+key+'}}',val)
-    text=text.replace('Its SHA-256 digest before the extension','[version1_local] Its SHA-256 digest before the extension')
+    return ledger,values
+
+
+def apply_citations(text,ledger,citations_name='manuscript_citations.json'):
     used=[]
     for match in re.finditer(r'\[([a-zA-Z0-9_]+)\](?!\()',text):
         key=match.group(1)
@@ -131,12 +132,15 @@ def build_text():
         text=text.replace('['+key+']','['+str(index)+']')
     text=text.replace('{{BIBLIOGRAPHY}}','\n\n'.join(refs))
     if '{{' in text:raise ValueError('Unresolved manuscript placeholders: '+str(re.findall(r'\{\{.*?\}\}',text)))
-    (MAN/'version2_manuscript.md').write_text(text,encoding='utf-8')
-    (RES/'manuscript_citations.json').write_text(json.dumps({'references_in_order':used,'total':len(used)},indent=2)+'\n',encoding='utf-8')
+    (RES/citations_name).write_text(json.dumps({'references_in_order':used,'total':len(used)},indent=2)+'\n',encoding='utf-8')
     return text
 
 
-def render(text):
+def render(text,out_name='Genetics_Version_II.pdf',
+           doc_title='Complete Inheritance Without a Square-Matrix Constraint - Version II',
+           running_header='COMPLETE INHERITANCE WITHOUT A SQUARE-MATRIX CONSTRAINT',
+           cover_tag='GENETICS  /  VERSION II',
+           footer='Research candidate  |  Author review required'):
     OUT.mkdir(parents=True,exist_ok=True)
     for name,file in [('Body','georgia.ttf'),('Body-Bold','georgiab.ttf'),('Body-Italic','georgiai.ttf'),('Sans','arial.ttf'),('Sans-Bold','arialbd.ttf')]:
         pdfmetrics.registerFont(TTFont(name,'C:/Windows/Fonts/'+file))
@@ -200,19 +204,29 @@ def render(text):
         canvas.saveState()
         if doc.page==1:
             canvas.setFillColor(colors.HexColor('#136f79'));canvas.rect(56,A4[1]-66,52,5,fill=True,stroke=False)
-            canvas.setFont('Sans-Bold',9);canvas.drawString(56,A4[1]-89,'GENETICS  /  VERSION II')
+            canvas.setFont('Sans-Bold',9);canvas.drawString(56,A4[1]-89,cover_tag)
         else:
             canvas.setFillColor(colors.HexColor('#63757e'));canvas.setFont('Sans',8)
-            canvas.drawString(56,A4[1]-34,'COMPLETE INHERITANCE WITHOUT A SQUARE-MATRIX CONSTRAINT')
+            canvas.drawString(56,A4[1]-34,running_header)
             canvas.setStrokeColor(colors.HexColor('#d4dfe3'));canvas.line(56,A4[1]-42,A4[0]-56,A4[1]-42)
         canvas.setFillColor(colors.HexColor('#63757e'));canvas.setFont('Sans',8)
-        canvas.drawString(56,30,'Research candidate  |  Author review required')
+        canvas.drawString(56,30,footer)
         canvas.drawRightString(A4[0]-56,30,str(doc.page));canvas.restoreState()
-    path=OUT/'Genetics_Version_II.pdf'
+    path=OUT/out_name
     doc=SimpleDocTemplate(str(path),pagesize=A4,rightMargin=56,leftMargin=56,topMargin=58,bottomMargin=52,
-        title='Complete Inheritance Without a Square-Matrix Constraint - Version II',author='Research candidate for Arshyia Mehran',pageCompression=1)
+        title=doc_title,author='Research candidate for Arshyia Mehran',pageCompression=1)
     doc.build(story,onFirstPage=page,onLaterPages=page)
     print(str(path))
+
+
+def build_text():
+    ledger,values=bindings()
+    text=(MAN/'template.md').read_text(encoding='utf-8')
+    for key,val in values.items():text=text.replace('{{'+key+'}}',val)
+    text=text.replace('Its SHA-256 digest before the extension','[version1_local] Its SHA-256 digest before the extension')
+    text=apply_citations(text,ledger)
+    (MAN/'version2_manuscript.md').write_text(text,encoding='utf-8')
+    return text
 
 
 if __name__=='__main__':render(build_text())
