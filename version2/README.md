@@ -2,7 +2,12 @@
 
 A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchanged in the parent directory. The main result is a reproducible audit and complete probabilistic inheritance engine, with measured dense/CSR/hash/streamed comparisons and explicitly limited biological validation.
 
-**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (74 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. The [Version II review manuscript](output/pdf/Genetics_Version_II.pdf) ([source](manuscript/version2_manuscript.md)) remains available as the standalone audit. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
+**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (80 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. The [Version II review manuscript](output/pdf/Genetics_Version_II.pdf) ([source](manuscript/version2_manuscript.md)) remains available as the standalone audit. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
+
+There is also a **[short journal version](output/pdf/Genetics_Bounds_Paper.pdf)** (14 pages,
+[source](manuscript/genetics_bounds_paper.md)): the bounds result on its own, without the audit
+of the earlier model. It shares every numeric binding with the long form, so the two cannot
+disagree about a number. Rebuild with `run.py journal`.
 
 ## Findings
 
@@ -24,6 +29,14 @@ A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchang
   implemented factored query is **Theta(n)** and therefore optimal. Derived growth is confirmed at the top of
   the measured range: nnz rises 14.878x from four to five loci, measured construction time rose 15.01x,
   15.09x and 14.68x.
+- **The complete kernel is unavailable for every published model of a real polygenic disease.**
+  The PGS Catalog holds **88 CAD scores from 27 to 7,082,943 variants**. At the *smallest*, the
+  catalog is 3^27 = 7,625,597,484,987 genotypes. A counting argument, not a failed run.
+- **LIMITATION - the factored regime is not size-free either, and this paper's own exponent was
+  optimistic.** The score DP runs every published score in ~1 s at a fixed bin budget, but past
+  ~1,000 variants the discretisation error exceeds the score's own SD, reaching **1,443 SD** at
+  n = 75,028. Holding accuracy fixed forces bins to grow as n^(3/2), so the true cost is
+  **Theta(n^(5/2))**, not Theta(n^2). Controlled study: fitted exponent **1.4987** vs derived 1.5.
 - **LIMITATION - mutation destroys the sparsity the architecture rests on.** With any positive
   per-transmission mutation probability every structural zero becomes positive. At five loci the
   supported-transition count rises from **381,250 to the full dense 7,203,978**, and CSR becomes
@@ -57,6 +70,8 @@ python -m venv .venv
 .\.venv\Scripts\python.exe run.py manuscript
 .\.venv\Scripts\python.exe run.py eyecolor
 .\.venv\Scripts\python.exe run.py complexity
+.\.venv\Scripts\python.exe run.py pgs
+.\.venv\Scripts\python.exe run.py journal
 .\.venv\Scripts\python.exe run.py unified
 ```
 
@@ -77,6 +92,8 @@ Fetch defaults to offline validation against the frozen provenance. Use `python 
 | `experiments/benchmark.py` | Isolated workers, raw repeated timings, distinct memory metrics |
 | `experiments/science.py` | HWE, synthetic dynamics, MNS, ABO/FUT1, linkage and quantitative-trait checks |
 | `experiments/eye_color.py` | Two-locus eye-colour model on real rs12913832 calls, four representations, HWE audit |
+| `experiments/pgs_catalog.py` | The four regimes tested on 88 published CAD scores; accuracy-controlled scaling |
+| `experiments/build_journal.py` | The 14-page journal version, sharing the long form's bindings |
 | `experiments/complexity.py` | Derived bounds per model, and measured growth against derived growth |
 | `experiments/fetch_eye_color_data.py` | Fetch/validate the rs12913832 snapshot; resolves strand from population ordering |
 | `experiments/build_unified.py` | Unified Version I + II manuscript and PDF, bound to retained results |

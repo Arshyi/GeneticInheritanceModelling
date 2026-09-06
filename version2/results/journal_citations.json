@@ -1,0 +1,21 @@
+{
+  "references_in_order": [
+    "hardy_1908",
+    "brown_linkage_2002",
+    "alberts2002meiosis",
+    "scipy_csr_array",
+    "sedgewickwayne_hash",
+    "sedgewickwayne_tries",
+    "grossi2011compressedtries",
+    "kschischang2001sumproduct",
+    "dechter1999bucket",
+    "bryant1986bdd",
+    "yengo2022height",
+    "lambert2021pgscatalog",
+    "pgs_catalog_cad_20260906",
+    "mega2015grs27",
+    "truong2024prsmix",
+    "1000genomes_2015"
+  ],
+  "total": 16
+}

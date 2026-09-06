@@ -33,13 +33,16 @@ Python are untouched.
 > in the paper's front matter.
 
 **The single unified paper is [`version2/output/pdf/Genetics_Complete.pdf`](version2/output/pdf/Genetics_Complete.pdf)**
-(75 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
+(80 pages, [Markdown source](version2/manuscript/genetics_unified.md)). It merges Version I
 and Version II into one document, in six parts: the original biology and matrix algebra with
 every derivation preserved; sickle cell, then ABO, then ABO x Rh, each given its Version I
 treatment and then audited; the combinatorial theorem and the complete kernel that replaces
 the square matrix; real-data evidence and an explicit comparison against the original
 square-matrix baseline; age, mutation and epigenetic regulation; then evaluation.
-**Part V adds eye colour, height and P(n).** Eye colour is built as a two-locus epistatic trait on
+**A 14-page [journal version](version2/output/pdf/Genetics_Bounds_Paper.pdf)** carves out the
+bounds result on its own, for submission. It shares every numeric binding with the long paper.
+
+**Part V adds eye colour, height, P(n) and real published models.** Eye colour is built as a two-locus epistatic trait on
 real rs12913832 genotype calls for 2,504 individuals across 26 populations, run through the same
 kernel with four representations agreeing to 2.78e-17, audited for Hardy-Weinberg, and compared
 against two published cohorts. Its density is 0.3086, so the sparse architecture earns nothing at
@@ -58,6 +61,15 @@ therefore asymptotically optimal. The derived exponent is confirmed at the top o
 range - supported transitions rise 14.878x from four to five loci, measured construction time rose
 15.01x, 15.09x and 14.68x - while a single exponent fitted across all of n = 1..5 returns 8.5-10.4,
 because fixed overhead flattens the small-n slope.
+
+**Section 16 tests the regimes on 88 published CAD scores** from the PGS Catalog, 27 to
+7,082,943 variants for one disease. The complete kernel is unavailable at the *smallest* of them
+(3^27 = 7,625,597,484,987 genotypes). The score DP runs all of them in ~1 s at a fixed bin budget
+— and past ~1,000 variants the discretisation error exceeds the score's own standard deviation,
+reaching 1,443 SD at n = 75,028. Holding accuracy fixed instead raises the cost to
+**Theta(n^(5/2))**, correcting this paper's own Theta(n^2); a controlled study returns a fitted
+exponent of 1.4987 against a derived 1.5. The architecture moves the wall twice and removes it
+never.
 
 Appendix E reserves a documented slot for further polygenic traits, and **Appendix F reproduces
 Version I's five MATLAB programs verbatim** - including the `X_next(3) = 0;` line that Section 4.4

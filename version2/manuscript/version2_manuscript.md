@@ -2,7 +2,7 @@
 
 ## A computational and biological audit, followed by sparse and factored implementations
 
-Version II research candidate | Extension of Arshyia Mehran's Version I | 05 September 2026
+Version II research candidate | Extension of Arshyia Mehran's Version I | 06 September 2026
 
 Prepared for author review. Original PDF and DOCX preserved. Computations, manuscript preparation, and adversarial checks were assisted by AI agents; scientific authorship, interpretation, and submission require the author's review. This document reports a completed set of local experiments, not a claim that the wider research programme or clinical validation is finished.
 
