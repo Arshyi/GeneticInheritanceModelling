@@ -12,6 +12,47 @@ The checklist that produced it is kept below for the next release.
 
 ---
 
+# Version 2.1 — ready to deposit
+
+Prepared and pushed; not yet deposited. Publishing a new version keeps the concept
+DOI **10.5281/zenodo.22401514** and mints a new version DOI.
+
+**Upload these three files:**
+
+| File | Size |
+|---|---|
+| `version2/output/pdf/Genetics_Complete.pdf` | 80 pages, 1.4 MB |
+| `version2/output/pdf/Genetics_Bounds_Paper.pdf` | 14 pages, 0.65 MB |
+| `version2/output/Genetics_Research_Package.zip` | 198 files, 3.3 MB |
+
+**Steps.**
+
+1. Open <https://zenodo.org/records/22401515>, signed in.
+2. Click **New version** in the right-hand panel. Zenodo opens a draft that already
+   carries all the 2.0 metadata and files.
+3. **Remove the two old files** from the draft (the 2.0 PDF and zip). Files are
+   per-version, so the old ones do not carry forward usefully.
+4. Upload the three files above.
+5. Change **Version** from `2.0.0` to **`2.1.0`** and **Publication date** to
+   **2026-09-06**.
+6. Prepend the "new in version 2.1" paragraph from `.zenodo.json` to the top of the
+   description. It names Section 16, the corrected exponent and the journal version.
+7. **Publish.** The DOI ending `…22401514` will now resolve to 2.1.
+
+Everything else — title, author, ORCID, licence, keywords, related work — carries
+over from 2.0 and needs no change.
+
+**What changed since 2.0.** Section 16 tests the four regimes against 88 published
+polygenic scores for coronary artery disease (27 to 7,082,943 variants); the complete
+kernel is unavailable at the smallest; and holding discretisation accuracy fixed
+rather than bin count raises the score-distribution cost to Theta(n^(5/2)),
+correcting the Theta(n^2) stated in 2.0. A 14-page journal version is added.
+
+---
+
+
+---
+
 # Publishing checklist — Zenodo
 
 Everything below is prepared. The steps that require signing in to an account are
