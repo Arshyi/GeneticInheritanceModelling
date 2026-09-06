@@ -12,10 +12,13 @@ The checklist that produced it is kept below for the next release.
 
 ---
 
-# Version 2.1 — ready to deposit
+# Version 2.1 — published 6 September 2026
 
-Prepared and pushed; not yet deposited. Publishing a new version keeps the concept
-DOI **10.5281/zenodo.22401514** and mints a new version DOI.
+**Record:** <https://zenodo.org/records/22538034>  ·  **DOI:** [10.5281/zenodo.22538034](https://doi.org/10.5281/zenodo.22538034)
+
+The concept DOI **10.5281/zenodo.22401514** now resolves to 2.1.0. Version 2.0.0 and its DOI **10.5281/zenodo.22401515** remain permanently as published.
+
+**Correction to the steps below.** Zenodo starts a new-version draft with an *empty* file list and offers an "Import files" button to copy the previous version's files across. There is nothing to remove: simply upload the new files instead of importing.
 
 **Upload these three files:**
 
@@ -30,8 +33,8 @@ DOI **10.5281/zenodo.22401514** and mints a new version DOI.
 1. Open <https://zenodo.org/records/22401515>, signed in.
 2. Click **New version** in the right-hand panel. Zenodo opens a draft that already
    carries all the 2.0 metadata and files.
-3. **Remove the two old files** from the draft (the 2.0 PDF and zip). Files are
-   per-version, so the old ones do not carry forward usefully.
+3. Leave the empty file list alone; do **not** press "Import files". Files are
+   per-version and the new ones replace the old set entirely.
 4. Upload the three files above.
 5. Change **Version** from `2.0.0` to **`2.1.0`** and **Publication date** to
    **2026-09-06**.

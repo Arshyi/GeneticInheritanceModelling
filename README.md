@@ -27,8 +27,8 @@ recorded in Appendix D so the audit's primary source remains identifiable.
 Python are untouched.
 
 
-> **Published** as a preprint on Zenodo: <https://zenodo.org/records/22401515>
-> Cite all versions with **10.5281/zenodo.22401514**; this version is **10.5281/zenodo.22401515**.
+> **Published** as a preprint on Zenodo: <https://zenodo.org/records/22538034>
+> Cite all versions with **10.5281/zenodo.22401514**; version 2.1.0 is **10.5281/zenodo.22538034**.
 > Not peer reviewed. Availability, AI-assistance disclosure and the scope of claims are stated
 > in the paper's front matter.
 
@@ -259,11 +259,11 @@ generation count; run them from the `matlab/` directory.
 ## Citing and licence
 
 > **Preprint**, not peer reviewed. Published on Zenodo with DOI [10.5281/zenodo.22401514](https://doi.org/10.5281/zenodo.22401514)
-> (all versions) / [10.5281/zenodo.22401515](https://doi.org/10.5281/zenodo.22401515) (this version).
+> (all versions) / [10.5281/zenodo.22538034](https://doi.org/10.5281/zenodo.22538034) (version 2.1.0).
 > [`CITATION.cff`](CITATION.cff) carries machine-readable citation metadata.
 
 Mehran, A. (2026). *Inheritance as a Linear Operator, and What Replaces It: From Punnett squares
-to a complete probabilistic kernel* (Version 2.0.0) [Preprint]. Zenodo.
+to a complete probabilistic kernel* (Version 2.1.0) [Preprint]. Zenodo.
 https://doi.org/10.5281/zenodo.22401514
 
 Dual-licensed, see [`LICENSE`](LICENSE):
