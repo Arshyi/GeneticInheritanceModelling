@@ -6,7 +6,7 @@ Parts I to VII | Arshyia Mehran | Version I written 2022-2025, audited and exten
 
 Parts I and II preserve the mathematics of the original 54-page study and are reworked only for exposition. Parts III to V are new: they audit that study against its own source code, replace the square-matrix constraint with a complete rectangular kernel, measure four implementations of it, test the population assumptions against public genotype calls, add eye colour as a two-locus trait on real genotype data, and state the general n-locus problem with upper and lower bounds. Part VI derives, without implementing, an extension in which age enters through mutation and epigenetic regulation.
 
-**This is a preprint. It has not been peer reviewed.** Every quantitative claim is reproducible from the accompanying code and retained results; the limits of each claim are stated where it is made, and Section 27 collects the counterarguments that survive.
+**This is a preprint. It has not been peer reviewed.** Every quantitative claim is reproducible from the accompanying code and retained results; the limits of each claim are stated where it is made, and Section 28 collects the counterarguments that survive.
 
 <!-- pagebreak -->
 
@@ -20,7 +20,7 @@ The coverage percentages are reproduced and their provenance separated. Exact pr
 
 For n independent biallelic diploid loci, an induction proves G = 3^n unphased genotypes and U = G(G+1)/2 unordered parental pairs, generalised to arbitrary allele counts; the complete kernel is G by U with exactly (15^n + 5^n)/2 supported transitions. Dense arrays, compressed sparse rows, hash adjacency and streamed computation are implemented with identical transmission semantics and benchmarked. {{BENCH_ABSTRACT}}
 
-Public rs334 genotype calls from 2,504 individuals across 26 populations support an exact Hardy-Weinberg and pooling audit. A staged extension covers simplified M/N, ABO-FUT1 epistasis, phased two-locus recombination, and a 200-locus additive score whose nominal 90% interval covered 90.03% of 10,000 simulated outcomes. Eye colour is then built as a two-locus epistatic trait on real rs12913832 genotype calls for the same 2,504 individuals, run through the unchanged kernel with four representations agreeing to {{EYE_AGREEMENT}}, and compared against two published cohorts. The general case is stated as P(n), with output-size lower bounds showing that the complete kernel is Omega(15^n) and that the implemented factored query is Theta(n) and therefore optimal. A final part derives, without implementing, an extension in which parental age enters the transmission kernel through de novo mutation and an individual's age enters the genotype-to-phenotype map through methylation and histone acetylation.
+Public rs334 genotype calls from 2,504 individuals across 26 populations support an exact Hardy-Weinberg and pooling audit. A staged extension covers simplified M/N, ABO-FUT1 epistasis, phased two-locus recombination, and a 200-locus additive score whose nominal 90% interval covered 90.03% of 10,000 simulated outcomes. Eye colour is then built as a two-locus epistatic trait on real rs12913832 genotype calls for the same 2,504 individuals, run through the unchanged kernel with four representations agreeing to {{EYE_AGREEMENT}}, and compared against two published cohorts. The general case is stated as P(n), with output-size lower bounds showing that the complete kernel is Omega(15^n) and that the implemented factored query is Theta(n) and therefore optimal. Those regimes are then tested against 88 published polygenic scores for one disease, spanning 27 to 7,082,943 variants: the complete kernel is unavailable at the smallest of them, and holding discretisation accuracy fixed rather than bin count raises the score-distribution cost to Theta(n^(5/2)), an exponent confirmed by controlled measurement to 1.4987 against a derived 1.5. A final part derives, without implementing, an extension in which parental age enters the transmission kernel through de novo mutation and an individual's age enters the genotype-to-phenotype map through methylation and histone acetylation.
 
 Two findings limit the contribution and are stated rather than buried: a positive mutation rate destroys the structural sparsity the architecture depends on, and age is collinear with its own epigenetic mediators, so the weights of the proposed expression gate are not separately identifiable without a design built to break that collinearity.
 
@@ -40,9 +40,9 @@ Keywords: Mendelian inheritance; transition matrices; combinatorial growth; spar
 
 6. **External data audits assumptions, not predictions.** rs334 calls for 2,504 individuals across 26 populations give a pooled expectation of 1.874 rare homozygotes against 7.600 from separately fitted populations. No predictive accuracy is established anywhere in this work.
 
-7. **LIMITATION - mutation destroys the sparsity the architecture rests on.** With any positive per-transmission mutation probability, every structural zero of the kernel becomes a positive number. At five loci the supported-transition count rises from 381,250 to the full dense 7,203,978, and CSR becomes strictly worse than dense because it pays index overhead on a matrix with no zeros. The measured 12.59-fold payload advantage is an advantage over a mutation-free model. This argues for the factored representation or a structured low-rank correction; neither is implemented. See Section 24.
+7. **LIMITATION - mutation destroys the sparsity the architecture rests on.** With any positive per-transmission mutation probability, every structural zero of the kernel becomes a positive number. At five loci the supported-transition count rises from 381,250 to the full dense 7,203,978, and CSR becomes strictly worse than dense because it pays index overhead on a matrix with no zeros. The measured 12.59-fold payload advantage is an advantage over a mutation-free model. This argues for the factored representation or a structured low-rank correction; neither is implemented. See Section 25.
 
-8. **LIMITATION - age is collinear with its own mediators.** In the proposed expression gate, methylation fraction is itself a smooth deterministic function of age, so the design matrix carries two nearly collinear columns. The age and methylation weights are then individually unidentifiable while the objective value remains healthy and no diagnostic computed from the fit reveals it. Conditioning must be checked before fitting, and the sampling design must supply within-age variation. See Section 28.
+8. **LIMITATION - age is collinear with its own mediators.** In the proposed expression gate, methylation fraction is itself a smooth deterministic function of age, so the design matrix carries two nearly collinear columns. The age and methylation weights are then individually unidentifiable while the objective value remains healthy and no diagnostic computed from the fit reveals it. Conditioning must be checked before fitting, and the sampling design must supply within-age variation. See Section 29.
 
 9. **Eye colour transfers, and shows the architecture earning nothing.** A two-locus epistatic model on real rs12913832 calls for 2,504 individuals runs through the unchanged kernel, with four representations agreeing to {{EYE_AGREEMENT}}. Its density is 0.3086, so compressed storage is not worth its overhead at this size. Under neutral random mating the phenotype distribution is already at its fixed point: nothing decays.
 
@@ -52,13 +52,17 @@ Keywords: Mendelian inheritance; transition matrices; combinatorial growth; spar
 
 12. **The derived growth is confirmed at the top of the measured range.** From four to five loci the supported-transition count rises 14.878-fold; measured construction time rose 15.01, 15.09 and 14.68-fold for dense, CSR and hash. A single exponent fitted across all of n = 1..5 returns 8.5 to 10.4 instead, because fixed overhead flattens the small-n slope, and reporting only that would understate the growth by about a third.
 
-13. **Not delivered.** Tries, decision DAGs, priority queues and general factor-graph inference are documented candidates, not implementations. Part VI is derivation only: no code, no test, no dataset. Height is treated derivationally and no height prediction is made.
+13. **The complete kernel is unavailable for every published model of a real polygenic disease.** The PGS Catalog holds 88 published coronary-artery-disease scores from 27 to 7,082,943 variants. At the *smallest* of them the genotype catalog is 3^27 = 7,625,597,484,987 entries. This is a counting argument, not a failed run.
+
+14. **The factored regime is not size-free either, and the paper's own exponent was optimistic.** The score dynamic programme runs every published score in about a second at a fixed bin budget - but past roughly a thousand variants the discretisation error exceeds the score's own standard deviation, reaching 1,443 SD at n = 75,028. Holding accuracy fixed instead forces the bin count to grow as n^(3/2), so the true cost is **Theta(n^(5/2))**, not the Theta(n^2) of Section 14.2. A controlled study gives a fitted exponent of 1.4987 against the derived 1.5.
+
+15. **Not delivered.** Tries, decision DAGs, priority queues and general factor-graph inference are documented candidates, not implementations. Part VI is derivation only: no code, no test, no dataset. Height is treated derivationally and no height prediction is made.
 
 # Reader's guide
 
 The intellectual progression of Version I is preserved: explain the biology, introduce the mathematics that represents it, implement the model, then evaluate what the output establishes. Each part introduces its concept, derives it, uses it, and then evaluates it against something external.
 
-**Part I** covers the biology, the matrix algebra Version I needs, and the complete sickle-cell derivation, followed by its audit. **Part II** does the same for ABO and then ABO x Rh. **Part III** proves the combinatorial growth by induction, generalises it, and builds and measures the complete kernel that removes the square-matrix constraint. **Part IV** tests the population assumptions against public data and compares the new representation with Version I's square matrices under an explicit taxonomy of what "coverage" can mean. **Part V** adds eye colour as a two-locus epistatic trait driven by real genotype calls, runs it through the same kernel, compares it against published cohorts, then treats height and finally P(n), the general problem of a trait depending on n genes, with upper and lower bounds. **Part VI** derives the age, mutation and epigenetic extension. **Part VII** evaluates the whole.
+**Part I** covers the biology, the matrix algebra Version I needs, and the complete sickle-cell derivation, followed by its audit. **Part II** does the same for ABO and then ABO x Rh. **Part III** proves the combinatorial growth by induction, generalises it, and builds and measures the complete kernel that removes the square-matrix constraint. **Part IV** tests the population assumptions against public data and compares the new representation with Version I's square matrices under an explicit taxonomy of what "coverage" can mean. **Part V** adds eye colour as a two-locus epistatic trait driven by real genotype calls, runs it through the same kernel, compares it against published cohorts, then treats height, then P(n), the general problem of a trait depending on n genes, with upper and lower bounds, and finally tests those bounds on 88 published polygenic scores that nobody in this project wrote. **Part VI** derives the age, mutation and epigenetic extension. **Part VII** evaluates the whole.
 
 Numbered Results are stated once and referred to afterwards by number. Every benchmark figure comes from retained machine-readable output; theoretical extrapolations are labelled separately. Sections marked *Audit* revisit Version I with evidence and are the only places where its conclusions are revised. Complexity is treated wherever a model is introduced rather than in one block: a short note for each of sickle cell, ABO and ABO x Rh, the measured comparison in Section 10, and the general upper and lower bounds for n loci in Section 15.
 
@@ -493,15 +497,15 @@ If the parental population itself factorises across loci, so does the offspring 
 
 Before materialising anything, the implementation computes catalog size, pair count, nonzero count and representation estimates, and a byte budget may refuse the request, returning a structured resource error while leaving factored queries available. A caught allocation failure clears the bounded cache and propagates a structured error rather than an incomplete object.
 
-The scientific contract is explicit. **No probability threshold removes rare transmission branches.** Structural zeros are omitted in sparse representations; positive values are never pruned. Conditional queries expose a log-space interface, and the ordinary probability interface raises rather than returning a silent zero when a mathematically positive result underflows. Population updates use binary64 and explicitly reject detected zero underflows; this is not a general log-space population engine, and Section 24 shows why that gap becomes pressing.
+The scientific contract is explicit. **No probability threshold removes rare transmission branches.** Structural zeros are omitted in sparse representations; positive values are never pruned. Conditional queries expose a log-space interface, and the ordinary probability interface raises rather than returning a silent zero when a mathematically positive result underflows. Population updates use binary64 and explicitly reject detected zero underflows; this is not a general log-space population engine, and Section 25 shows why that gap becomes pressing.
 
 ## 9.4 Verification before measurement
 
 The primary oracle enumerates maternal and paternal allele-copy choices independently of the kernel builder, converts each path to a canonical child, and sums exact rational weights. Exhaustive tests cover one-locus biallelic and triallelic systems, four-allele loci, two- and three-locus biallelic systems and ABO x Rh, checking parent-exchange symmetry, normalisation, supported-transition counts and exact Mendelian probabilities. Dense and CSR are compared entry for entry; hash and streamed results are compared against dense for seeded non-uniform inputs. Allocation failure is injected deterministically rather than by exhausting the machine.
 
-Legacy regression tests deliberately preserve the original sickle-cell defect, expecting the displayed result to sum to 17/16 while the repaired model sums to one. A test that silently fixed the legacy output would erase the evidence the audit rests on.
+Legacy regression tests deliberately preserve the original sickle-cell defect, expecting the displayed result to sum to 18/16 while the repaired model sums to one. A test that silently fixed the legacy output would erase the evidence the audit rests on.
 
-Adversarial review found and fixed four numerical defects during development: underflow in a lazy probability product, an absolute tolerance that distorted extreme exact-HWE tails, underflow when multiplying very small positive fitness weights, and a dense convolution where three shifted additions suffice. An independent exact-integer HWE enumeration checked every genotype triple with total sample size 1 to 30, 5,455 triples, with maximum absolute discrepancy below 7e-15.
+Adversarial review found and fixed four numerical defects during development: underflow in a lazy probability product, an absolute tolerance that distorted extreme exact-HWE tails, underflow when multiplying very small positive fitness weights, and a dense convolution where three shifted additions suffice. An independent exact-integer HWE enumeration checked every genotype triple with total sample size 1 to 31, 5,455 triples, with maximum absolute discrepancy below 7e-15.
 
 {{TEST_STATUS}}
 
@@ -652,7 +656,7 @@ Before attempting anything polygenic, the engine was exercised on systems whose 
 
 <!-- pagebreak -->
 
-# PART V - POLYGENIC TRAITS: EYE COLOUR, HEIGHT, AND P(n)
+# PART V - POLYGENIC TRAITS: EYE COLOUR, HEIGHT, P(n), AND REAL PUBLISHED MODELS
 
 # 13. Eye colour: the first trait Version I could not reach
 
@@ -804,6 +808,8 @@ Each locus contributes three shifted additions into an array indexed by score, n
 > The corresponding genotype catalog has 3^n entries. At n = 200 that is the difference between an array of 401 numbers and a catalog of about 2.66 x 10^95.
 >
 > The saving is not free: the output is a distribution over the score, not over genotypes. Any question that genuinely requires the joint genotype distribution is not answered by this method, and Section 15 makes that trade explicit.
+>
+> **This bound holds the bin count fixed, not the accuracy.** The weights here are integers by construction; real effect weights are not, and rounding them onto a grid introduces an error that grows with n. Section 16.6 redoes this analysis with the accuracy held fixed instead and obtains Theta(n^(5/2)).
 
 ## 14.3 Calibration under a known simulator
 
@@ -901,22 +907,138 @@ The scaffold accepts a new trait when, and only when, the following are stated i
 3. Whether loci are linked, and if so the recombination fractions and the phase convention (Result 12.2).
 4. The source of any effect sizes, with licence and population of origin recorded in the ledger.
 5. A held-out evaluation target chosen before fitting, and the population it generalises to, distinguished from coverage per Section 12.1.
-6. A conditioning check on the design, performed before any coefficient is reported (Result 28.1).
+6. A conditioning check on the design, performed before any coefficient is reported (Result 29.1).
 7. An independent oracle for at least one small case, so the implementation can be checked without trusting itself.
 
 Eye colour has now been added under this protocol and satisfies items 1 to 3 and 7; it does not satisfy 4 to 6, and Section 13.8 says so. Height satisfies none of 4 to 6 and is therefore present only as the derivational treatment of Section 14. A trait that cannot supply items 4 to 6 may still be added as a derivational section, clearly marked, but may not report fitted coefficients or accuracy.
+
+# 16. Real published polygenic models: the PGS Catalog
+
+Section 15 states four regimes and derives their bounds. This section tests them on models nobody in this project wrote, at sizes nobody in this project chose.
+
+## 16.1 Why coronary artery disease is the right test
+
+{{PGS_TRAIT_SUMMARY}}
+
+That range is the whole point. These are models of **the same phenotype**, so the comparison is internal: between the smallest and the largest, the biology being modelled does not change, the outcome being predicted does not change, and the only thing that moves is n. Any difference in what a representation can do is therefore attributable to size alone, which is exactly the claim Section 15 makes and exactly the claim a synthetic experiment cannot test.
+
+## 16.2 What is used, and what is assumed
+
+Scoring files are fetched from the PGS Catalog at run time and are **not redistributed** here; only derived quantities, SHA-256 digests of the fetched files, and the provenance needed to fetch them again are retained. Each score is cited to its own publication in the retained record.
+
+Four assumptions are made, and the third is the one that matters:
+
+1. Hardy-Weinberg dosage probabilities at every variant.
+2. Effect weights treated as fixed and known; their standard errors are ignored.
+3. **Linkage equilibrium between variants.** This is false for scores built by LD-aware methods such as LDpred and lassosum, which is most of the large ones. It means the variance computed here is not the variance of the real score, and no reported spread should be read as a population quantity.
+4. Where a score publishes no effect-allele frequency, one declared frequency is used for every variant and the run measures cost only.
+
+Two of the eight scores publish effect-allele frequencies alongside their weights, so for those the dosage distribution is taken from the score itself rather than declared.
+
+## 16.3 The complete kernel fails at the smallest published model
+
+> **RESULT 16.1 - THE COMPLETE-KERNEL REGIME IS UNAVAILABLE FOR EVERY PUBLISHED CAD SCORE**
+>
+> By Result 7.1 the catalog for n biallelic loci has 3^n entries. The smallest published coronary-artery-disease score in the PGS Catalog uses 27 variants, giving
+>
+> ```equation
+> G = 3^27 = 7,625,597,484,987 genotypes
+> ```
+>
+> and a parental-pair space of G(G+1)/2, about 2.9 x 10^25. The dense kernel payload would be roughly 2.3 x 10^26 bytes.
+>
+> The largest uses 7,082,943 variants, for which 3^n has more than three million digits.
+>
+> Version I's approach is therefore not slow for these models and not merely impractical. It is unavailable at the smallest one, by a counting argument, before any machine is involved.
+
+{{PGS_KERNEL_TABLE}}
+
+This is the cleanest possible statement of what the paper has been arguing since Section 7. It required no benchmark, no implementation and no tuning: only the catalog size, and a published model that somebody else built for a real clinical purpose.
+
+## 16.4 The score distribution handles all of them
+
+The additive dynamic programme of Result 14.1 was run on the real effect weights of eight published scores spanning four orders of magnitude, at a fixed budget of about forty thousand bins:
+
+{{PGS_LADDER_TABLE}}
+
+![What each regime would store, and the measured cost of the score distribution](../figures/pgs_regimes.png)
+
+Every score completes in about a second or less, including one with 75,028 variants whose genotype catalog has 35,798 digits. Taken alone, that table looks like a complete vindication of the factored regime.
+
+It is not, and the next subsection is why.
+
+## 16.5 At a fixed bin budget the answer stops meaning anything
+
+The dynamic programme requires integer weights. Real effect weights are continuous, so they must be rounded onto a grid, and rounding moves the score. The `worst-case error` column above is that displacement, expressed in units of the score's own standard deviation.
+
+> **RESULT 16.2 - A FIXED DISCRETISATION BUDGET DEGRADES WITH n**
+>
+> Rounding each weight to the nearest multiple of a step delta displaces it by at most delta/2, and a dosage of at most 2 doubles that, so the total displacement is bounded by n*delta. Holding the bin count fixed holds delta fixed, so the error bound grows **linearly in n** while the score's own standard deviation grows only like sqrt(n).
+>
+> Measured on this ladder at about forty thousand bins, the worst-case error crosses one full standard deviation between n = 540 and n = 1,059, and reaches 1,443 standard deviations at n = 75,028.
+>
+> The sub-second runtimes in Section 16.4 are therefore real and the distributions they produce are, past about a thousand variants, worthless.
+
+This is the failure mode Section 12.1 warns about in a different guise: a quantity that is easy to measure, here runtime, behaving beautifully while the quantity that matters behaves badly. It would have been very easy to report the timing table and stop.
+
+## 16.6 Holding accuracy fixed changes the exponent
+
+The honest comparison fixes the answer's quality and lets the cost move.
+
+> **RESULT 16.3 - AT FIXED RELATIVE ACCURACY THE SCORE DP COSTS Theta(n^(5/2))**
+>
+> Requiring the worst-case error to stay within a fraction epsilon of the score's standard deviation gives, from Result 16.2,
+>
+> ```equation
+> n * delta <= epsilon * SD,     delta = 2 * sum|w| / (B - 1)
+> so   B >= 1 + 2 n sum|w| / (epsilon * SD)
+> ```
+>
+> For weights of comparable typical magnitude, sum|w| grows like n while SD grows like sqrt(n). Hence
+>
+> ```equation
+> B = Theta(n^(3/2))     and     work = Theta(n B) = Theta(n^(5/2))
+> ```
+>
+> Section 14.2 gives Theta(n^2) for the score distribution. That figure holds the **bin count** fixed, not the accuracy. Once accuracy is held fixed instead, the exponent rises by a half.
+
+The derivation assumes weights of comparable magnitude, which the eight published scores do not satisfy: they come from different methods and differ in weight scale, so an exponent fitted across them is confounded. A controlled study isolates it, holding the weight distribution, the seed and the allele frequency fixed and moving only n:
+
+{{PGS_SCALING_TABLE}}
+
+{{PGS_SCALING_RESULT}}
+
+## 16.7 The third wall
+
+Part III found the first wall: the catalog is exponential, and Result 15.1(a) showed no implementation escapes it. Section 14 offered the score distribution as the way past it. This section locates the wall that remains.
+
+> **RESULT 16.4 - THE FACTORED REGIME IS NOT SIZE-FREE EITHER**
+>
+> {{PGS_EXTRAPOLATION}}
+>
+> The claim that a factored representation makes the model size irrelevant is therefore false as stated. What the factored regime removes is the *exponential*. What it leaves is a polynomial with an exponent high enough that the largest published models for this one disease remain out of reach at useful accuracy.
+
+Three responses exist, and none is implemented here. Weight-magnitude-aware discretisation would allocate resolution where the weights are large rather than uniformly, which the uniform bound above does not exploit. A normal or saddlepoint approximation to the score distribution would abandon exactness for a cost independent of n, which is what production polygenic-score pipelines actually do and is why they do it. And sampling would give a distribution with a stated Monte Carlo error rather than a stated discretisation error, trading one honest error bar for another.
+
+Naming which of the three is appropriate requires a stated question. If the question is a single individual's score, no distribution is needed at all and the cost is Theta(n) by Result 15.1(c). If the question is a population quantile, an approximation with a calibration check is almost certainly correct. The exact distribution is worth its exponent only when the tail itself is the object of study.
+
+## 16.8 What this section establishes
+
+It establishes that the complete-kernel regime is unavailable for every published model of this disease, by counting rather than by measurement, at the smallest one as much as the largest. It establishes that the factored regime handles all of them at a fixed bin budget in about a second, and that the resulting distributions are meaningless past roughly a thousand variants. It establishes, by derivation and by a controlled measurement agreeing with it to three significant figures, that holding accuracy fixed costs Theta(n^(5/2)).
+
+It establishes nothing whatever about coronary artery disease. No individual risk is computed for anyone, no published score is validated or criticised, and the linkage-equilibrium assumption of Section 16.2 is false for most of the models used. The scores here are load-bearing as **sizes and weight vectors**, not as clinical instruments.
 
 <!-- pagebreak -->
 
 # PART VI - TIME, MUTATION, AND WHAT COMES NEXT
 
-# 16. Where age enters
+# 17. Where age enters
 
 Everything in Parts I to V is timeless. The kernel depends on two parental genotypes and nothing else; the population operators advance a generation index, not an age. Two parents produce the same offspring distribution at twenty as at fifty, and an individual's genotype is fixed from conception.
 
 Version I identified this gap explicitly, noting that random mutation can occur in an individual before they reproduce and that the model cannot represent it. [version1_local] The gap survived into the complete kernel unchanged: better representation did nothing about it.
 
-> **OBSERVATION 16.1 - TWO ROUTES, ONLY ONE OF WHICH TOUCHES THE KERNEL**
+> **OBSERVATION 17.1 - TWO ROUTES, ONLY ONE OF WHICH TOUCHES THE KERNEL**
 >
 > **Germline.** Parental age at conception changes the mutation content of the transmitted gametes. This alters what the next generation inherits, modifies the kernel itself, and is heritable.
 >
@@ -924,9 +1046,9 @@ Version I identified this gap explicitly, noting that random mutation can occur 
 
 The distinction is load-bearing. A model that adds one "age" term acting on both routes produces an operator that is neither a valid kernel nor a valid penetrance function, and fitting will not reveal the error, because both routes push outcomes in the same direction with age.
 
-**Status of Sections 17 to 29.** Derivation only. No code, no test, no dataset, no figure in this project corresponds to any equation below.
+**Status of Sections 18 to 30.** Derivation only. No code, no test, no dataset, no figure in this project corresponds to any equation below.
 
-# 17. Notation for Part VI
+# 18. Notation for Part VI
 
 | Symbol | Meaning |
 |---|---|
@@ -947,15 +1069,15 @@ The distinction is load-bearing. A model that adds one "age" term acting on both
 | J(w) | Mean negative log-likelihood objective |
 | eta | Gradient step size |
 
-# 18. Germline mutation and the transmission kernel
+# 19. Germline mutation and the transmission kernel
 
-## 18.1 What is measured
+## 19.1 What is measured
 
 Sequencing 78 Icelandic parent-offspring trios gave an average de novo mutation rate of 1.20e-8 per nucleotide per generation at mean paternal age 29.7, with the count rising by roughly two mutations per year of paternal age. [kong2012paternal] The larger follow-up, 1,548 trios and 108,778 high-quality de novo mutations, averaged 70.3 per trio and separated the parental contributions: 1.51 additional mutations per year of paternal age against 0.37 per year of maternal age. [jonsson2017trios]
 
 These are regression slopes from one country's cohort, not per-locus probabilities for an arbitrary gene in an arbitrary population.
 
-## 18.2 From a genome-wide count to a per-locus probability
+## 19.2 From a genome-wide count to a per-locus probability
 
 ```equation
 Lambda(a_f, a_m) = Lambda_0 + beta_f (a_f - a_f0) + beta_m (a_m - a_m0)
@@ -971,11 +1093,11 @@ eps_l(a_f, a_m) = 1 - exp( -mu_l(a_f, a_m) )
 
 Setting kappa_l = 1 asserts uniform mutability, which is known to be false and is retained only as a declared null. For a gene-sized locus eps_l is of order 1e-8 to 1e-6 per transmission.
 
-## 18.3 The age-parameterised gamete operator
+## 19.3 The age-parameterised gamete operator
 
 The implementation already exposes a validated row-stochastic gamete mutation operator. The extension is to make that matrix a function of parental age, not to add a mechanism.
 
-> **RESULT 18.1 - AGE-PARAMETERISED GAMETE MUTATION**
+> **RESULT 19.1 - AGE-PARAMETERISED GAMETE MUTATION**
 >
 > For a locus with allele alphabet size k,
 >
@@ -985,15 +1107,15 @@ The implementation already exposes a validated row-stochastic gamete mutation op
 >
 > and the transmitted gamete law becomes t~_g(a) = sum over b of t_g(b) M_ba, with t_g the Mendelian law of Section 8.1.
 
-> **RESULT 18.2 - NORMALISATION IS PRESERVED**
+> **RESULT 19.2 - NORMALISATION IS PRESERVED**
 >
 > Each row of M sums to (1 - eps_l) + eps_l * 1 = 1. Since t_g is a distribution and M is row-stochastic, the sum over a of t~_g(a) equals the sum over b of t_g(b) times the row sums of M, which is 1.
 >
 > Therefore the modified kernel remains a conditional distribution over children, and every normalisation test in the existing suite remains a valid check of it. The allele-copy oracle would then compare against exact Mendelian probabilities composed with a known stochastic matrix, which is equally checkable by enumeration.
 
-# 19. The cost: sparsity does not survive
+# 20. The cost: sparsity does not survive
 
-> **RESULT 19.1 - A POSITIVE MUTATION RATE DESTROYS STRUCTURAL SPARSITY**
+> **RESULT 20.1 - A POSITIVE MUTATION RATE DESTROYS STRUCTURAL SPARSITY**
 >
 > Result 7.4 gives (15^n + 5^n)/2 nonzeros against G*U total, and that falling density is the entire justification for compressed sparse storage.
 >
@@ -1011,7 +1133,7 @@ This falsifies hypothesis H4 of Section 7.5 before it was ever tested, and it is
 
 The third is the interesting one, and it is not implemented.
 
-# 20. Somatic accumulation within a lifetime
+# 21. Somatic accumulation within a lifetime
 
 Somatic mutation does not change what an individual transmits; it changes the individual. Adult stem cells of liver, colon and small intestine accumulate roughly 40 novel mutations per year, at broadly similar rates across those tissues despite very different cancer incidence. [blokzijl2016somatic]
 
@@ -1022,7 +1144,7 @@ m_l(t) = integral from 0 to t of lambda_l(s) ds
 P(locus l unmutated at age t) = exp( -m_l(t) )
 ```
 
-> **RESULT 20.1 - CONSTANT INTENSITY GIVES EXPONENTIAL SURVIVAL, NOT LINEAR**
+> **RESULT 21.1 - CONSTANT INTENSITY GIVES EXPONENTIAL SURVIVAL, NOT LINEAR**
 >
 > With lambda_l constant, m_l(t) = lambda_l t and the probability of at least one somatic mutation by age t is 1 - exp(-lambda_l t).
 >
@@ -1030,7 +1152,7 @@ P(locus l unmutated at age t) = exp( -m_l(t) )
 
 A single hit is often insufficient. The classical multistage argument supposes k independent rare steps and derives an incidence rising as a power of age; fitting several non-endocrine carcinomas gave approximately a sixth-power dependence, with the log-log slope read as the number of stages minus one. [armitage1954multistage]
 
-> **RESULT 20.2 - MULTISTAGE HAZARD**
+> **RESULT 21.2 - MULTISTAGE HAZARD**
 >
 > If each of k stages occurs independently at small constant rate, the probability all k are complete by age t is of order (c t)^k / k!, so the hazard is
 >
@@ -1042,7 +1164,7 @@ A single hit is often insufficient. The classical multistage argument supposes k
 
 This is a hazard for a multi-hit somatic process and must not be substituted into the transmission kernel. Its role is age-of-onset once a genotype has been inherited. The general form, a baseline function of time multiplied by a covariate term, is proportional-hazards regression: h_l(t | x) = h_0(t) exp(gamma^T x). [cox1972hazard]
 
-# 21. Epigenetic state as a reversible process
+# 22. Epigenetic state as a reversible process
 
 DNA methylation acts in a context-dependent way at promoters, gene bodies and regulatory elements, with promoter-island methylation associated with transcriptional repression, and the relationship is explicitly not a simple switch. [jones2012methylation] Histone modifications including acetylation regulate chromatin as a responsive scaffold with mark-specific transcriptional consequences. [bannister2011histone]
 
@@ -1052,7 +1174,7 @@ Model a CpG site as a two-state continuous-time Markov chain with methylation ra
 dP_M/dt = alpha (1 - P_M) - beta P_M = alpha - (alpha + beta) P_M
 ```
 
-> **RESULT 21.1 - EXPONENTIAL APPROACH TO EQUILIBRIUM**
+> **RESULT 22.1 - EXPONENTIAL APPROACH TO EQUILIBRIUM**
 >
 > ```equation
 > P_M(t) = alpha/(alpha+beta) + [ P_M(0) - alpha/(alpha+beta) ] exp( -(alpha+beta) t )
@@ -1064,17 +1186,17 @@ dP_M/dt = alpha (1 - P_M) - beta P_M = alpha - (alpha + beta) P_M
 
 Averaging across a locus's sites gives the observable m_l(t). That methylation carries reproducible age information is established: a multi-tissue age predictor was built from approximately 8,000 samples across 51 healthy tissues and cell types [horvath2013clock], and a quantitative ageing model over more than 450,000 CpG markers in whole blood from 656 individuals aged 19 to 101 measured individual differences in methylome ageing rate [hannum2013aging]. Neither licenses the claim that methylation *causes* ageing.
 
-> **OBSERVATION 21.2 - MUTATION IS ABSORBING, METHYLATION IS ERGODIC**
+> **OBSERVATION 22.2 - MUTATION IS ABSORBING, METHYLATION IS ERGODIC**
 >
 > A mutation fixed in a cell lineage does not revert at a comparable rate: the process is effectively absorbing and P(unmutated) decreases monotonically towards zero. Methylation has strictly positive rates in both directions: the chain is ergodic and settles strictly inside (0,1).
 >
 > Consequence: an intervention can in principle reverse epigenetic silencing and cannot reverse a mutation. A model representing both with one operator discards the only actionable difference between them.
 
-# 22. The expression gate: weights and bias
+# 23. The expression gate: weights and bias
 
 The three routes now combine into one scalar per locus. This is the construction Section 5.1's weight column has been building towards.
 
-> **RESULT 22.1 - THE EXPRESSION GATE**
+> **RESULT 23.1 - THE EXPRESSION GATE**
 >
 > ```equation
 > z_l(t) = b_l + w_age t + w_met m_l(t) + w_ac h_l(t) + w_dos g_l + sum over c of w_c x_c
@@ -1083,7 +1205,7 @@ The three routes now combine into one scalar per locus. This is the construction
 >
 > pi_l(t) is the probability that locus l is transcriptionally competent at age t. The bias b_l is the log-odds of expression for a reference individual at reference age, reference epigenetic state and reference dosage: the locus's baseline propensity to be expressed, carrying everything the covariates do not explain.
 
-This is a generalised linear model with a binomial response and a logit link. [nelder1972glm] The score is nonlinear in age, through m_l(t) and h_l(t) which are themselves nonlinear by Result 21.1, but it is **linear in the parameters**, and that single property determines everything in Section 23.
+This is a generalised linear model with a binomial response and a logit link. [nelder1972glm] The score is nonlinear in age, through m_l(t) and h_l(t) which are themselves nonlinear by Result 22.1, but it is **linear in the parameters**, and that single property determines everything in Section 24.
 
 Two weights have signs constrained in advance, which converts them from free parameters into a falsification test:
 
@@ -1095,7 +1217,7 @@ Two weights have signs constrained in advance, which converts them from free par
 
 The third row is the diagnostic. If m and h genuinely mediate age, conditioning on them should drive w_age towards zero; a large surviving w_age says the mediation story is incomplete.
 
-> **RESULT 22.2 - AGE-DEPENDENT EFFECTIVE PENETRANCE**
+> **RESULT 23.2 - AGE-DEPENDENT EFFECTIVE PENETRANCE**
 >
 > If the phenotype requires functional product from at least one allele, and each inherited allele is independently competent with probability pi_l(t), then for c_l functional alleles by inheritance
 >
@@ -1107,7 +1229,7 @@ The third row is the diagnostic. If m and h genuinely mediate age, conditioning 
 
 That consequence needs restraint. It follows from the stated model. It is not a claim that any carrier of any variant will develop any condition, and nothing here is evidence for such a claim.
 
-# 23. Estimation: objective, gradient, convexity, step size
+# 24. Estimation: objective, gradient, convexity, step size
 
 Given samples (t_i, m_i, h_i, g_i, y_i) with binary expression label y_i, write x_i for the feature vector and pi_i = sigma(w^T x_i). The objective is the mean negative log-likelihood, that is, cross-entropy:
 
@@ -1117,7 +1239,7 @@ J(w) = -(1/M) sum over i of [ y_i log pi_i + (1 - y_i) log(1 - pi_i) ]
 
 Squared error is not used: under a binary response it is non-convex after composition with the logistic link, and cross-entropy is the log-likelihood of the assumed response distribution. [nelder1972glm]
 
-> **RESULT 23.1 - GRADIENT**
+> **RESULT 24.1 - GRADIENT**
 >
 > Using sigma'(z) = sigma(z)(1 - sigma(z)), for one sample:
 >
@@ -1133,7 +1255,7 @@ Squared error is not used: under a binary response it is non-convex after compos
 >
 > The gradient is the feature matrix applied to the residuals. The factors pi(1-pi) cancel exactly at step (4), which is what makes the logit link canonical for this response.
 
-> **RESULT 23.2 - CONVEXITY**
+> **RESULT 24.2 - CONVEXITY**
 >
 > With S = diag(pi_i (1 - pi_i)), the Hessian is H = (1/M) X^T S X. For any v,
 >
@@ -1143,7 +1265,7 @@ Squared error is not used: under a binary response it is non-convex after compos
 >
 > so H is positive semi-definite and J is convex: every stationary point is a global minimum, unique when X has full column rank. Unlike the linear case H depends on w, so there is no closed-form minimiser and estimation is necessarily iterative.
 
-> **RESULT 23.3 - STEP-SIZE BOUND**
+> **RESULT 24.3 - STEP-SIZE BOUND**
 >
 > Since pi(1-pi) attains its maximum 1/4 at pi = 1/2, a single sample's Hessian satisfies lambda_max <= ||x||^2 / 4. Gradient descent on a convex function with L-Lipschitz gradient converges for 0 < eta < 2/L, so
 >
@@ -1155,35 +1277,35 @@ Squared error is not used: under a binary response it is non-convex after compos
 
 An online form, consuming one individual at a time, follows with M = 1: w <- w - eta (pi_i - y_i) x_i. Adding a ridge penalty makes J strongly convex and bounds the conditioning, at the cost of biasing estimates towards zero.
 
-# 24. Numerical consequences for the existing engine
+# 25. Numerical consequences for the existing engine
 
 With eps_l of order 1e-8, previously structural zeros become entries of order 1e-8 per mutated locus, and products across many loci fall below binary64 range quickly. Section 9.3 records that population updates refuse detected zero underflows rather than returning silent zeros, and that log-space population inference is not implemented.
 
-Enabling mutation makes that refusal path routine rather than exceptional. **A log-domain population update is therefore a prerequisite for the extension of Section 18, not an optional refinement.** Combined with Result 19.1, the practical conclusion is that admitting mutation requires both a different numerical domain and a different storage strategy, and that neither is a small change.
+Enabling mutation makes that refusal path routine rather than exceptional. **A log-domain population update is therefore a prerequisite for the extension of Section 19, not an optional refinement.** Combined with Result 20.1, the practical conclusion is that admitting mutation requires both a different numerical domain and a different storage strategy, and that neither is a small change.
 
-# 25. Predictions and failure modes
+# 26. Predictions and failure modes
 
 | Proposition | Derived from | Would be falsified by |
 |---|---|---|
-| Germline de novo count rises linearly with paternal age at roughly 1.5 per year | Section 18.1 [jonsson2017trios] | A trio cohort with a materially different or nonlinear slope |
-| A positive mutation rate makes the kernel structurally dense | Result 19.1 | Nothing; it is a counting argument. Its practical severity is measurable |
-| CSR loses its payload advantage once mutation is enabled | Result 19.1 with Section 10 | A benchmark where CSR still wins, meaning eps was effectively zero |
-| Methylation approaches equilibrium exponentially, not linearly | Result 21.1 | Methylation tracking a straight line across a wide age range with no curvature |
-| w_met is negative at promoter islands | Section 22 [jones2012methylation] | A fitted positive coefficient on correctly annotated promoter sites |
-| Conditioning on m and h shrinks w_age towards zero | Section 22 | A large surviving age coefficient, indicating unmodelled mediation |
-| Age-of-onset hazard has log-log slope k-1 | Result 20.2 [armitage1954multistage] | An incidence curve inconsistent with any integer k |
+| Germline de novo count rises linearly with paternal age at roughly 1.5 per year | Section 19.1 [jonsson2017trios] | A trio cohort with a materially different or nonlinear slope |
+| A positive mutation rate makes the kernel structurally dense | Result 20.1 | Nothing; it is a counting argument. Its practical severity is measurable |
+| CSR loses its payload advantage once mutation is enabled | Result 20.1 with Section 10 | A benchmark where CSR still wins, meaning eps was effectively zero |
+| Methylation approaches equilibrium exponentially, not linearly | Result 22.1 | Methylation tracking a straight line across a wide age range with no curvature |
+| w_met is negative at promoter islands | Section 23 [jones2012methylation] | A fitted positive coefficient on correctly annotated promoter sites |
+| Conditioning on m and h shrinks w_age towards zero | Section 23 | A large surviving age coefficient, indicating unmodelled mediation |
+| Age-of-onset hazard has log-log slope k-1 | Result 21.2 [armitage1954multistage] | An incidence curve inconsistent with any integer k |
 
 <!-- pagebreak -->
 
 # PART VII - EVALUATION
 
-# 26. What this work supports
+# 27. What this work supports
 
 The corrected mathematical objects represent every declared Mendelian outcome without requiring the transmission kernel to be square. Exact-rational reconstruction explains the original displayed outputs and identifies divergences between prose, tables and software. Independent enumeration verifies the small-system implementation and the support formulas. Matched local benchmarks measure how the chosen dense, CSR, hash and streamed implementations behave on one stated machine. Factored queries and score dynamic programming avoid materialising outputs the scientific question does not require.
 
 The contribution combines audit, derivation, implementation and evaluation. It does not claim that sparse matrices, hash maps or factorisation are new, and it claims no priority for the counting identities beyond the derivations given here.
 
-# 27. Counterarguments retained
+# 28. Counterarguments retained
 
 1. The original ABO and Rh software already computes all pairings; a coverage-restoration headline would misrepresent the baseline.
 2. Dense arrays can be faster at small problems, because contiguous compiled operations outweigh sparse overhead.
@@ -1196,13 +1318,13 @@ The contribution combines audit, derivation, implementation and evaluation. It d
 9. Byte budgets and caught allocation exceptions are safeguards, not proof of operating-system-level memory safety.
 10. Part V is unimplemented throughout, and its two named limitations are unresolved.
 
-# 28. Identifiability: the hardest limitation
+# 29. Identifiability: the hardest limitation
 
 This limitation is stated here rather than in Part V's body because it governs whether the extension can ever be estimated, not merely whether it is currently built.
 
-By Result 21.1, m_l(t) is a deterministic function of age up to noise. The design matrix therefore carries a column t and a column m_l(t) that is a smooth monotone transform of it. Over a narrow age range the exponential is close to linear, so the two columns are close to collinear.
+By Result 22.1, m_l(t) is a deterministic function of age up to noise. The design matrix therefore carries a column t and a column m_l(t) that is a smooth monotone transform of it. Over a narrow age range the exponential is close to linear, so the two columns are close to collinear.
 
-> **RESULT 28.1 - COLLINEARITY MAKES THE WEIGHTS UNIDENTIFIABLE WHILE THE FIT LOOKS HEALTHY**
+> **RESULT 29.1 - COLLINEARITY MAKES THE WEIGHTS UNIDENTIFIABLE WHILE THE FIT LOOKS HEALTHY**
 >
 > Near-collinearity makes X^T S X near-singular. The estimator covariance, which scales with the inverse of that matrix, becomes enormous in the direction of the offending combination, so w_age and w_met are individually meaningless while their sum remains well determined.
 >
@@ -1215,13 +1337,13 @@ The defences are structural and must be chosen before fitting:
 - **Adjust for cell composition.** Bulk-tissue methylation changes with age partly because the cell-type mixture changes with age. Unadjusted, that confound is attributed to the locus.
 - **Do not read causation from the sign.** Transcriptional state can drive methylation as well as follow it, and a regression orients no arrow.
 
-# 29. Boundaries of the implementation
+# 30. Boundaries of the implementation
 
 The core catalog assumes autosomal diploidy and unordered allele pairs. It does not handle sex-linked dosage, imprinting, aneuploidy, copy-number variation, somatic mosaicism, penetrance uncertainty, arbitrary pedigrees or large linked haplotype blocks. The linkage extension covers two phased biallelic loci with a supplied recombination fraction. Mutation is a supplied gamete transition process whose rates are not estimated. The score dynamic programme supports non-negative integer effects and independent dosage factors.
 
 These boundaries are explicit because a data structure cannot compensate for a missing biological state variable. A fuller molecular catalog can be inserted only when its inheritance and phenotype rules are specified and independently checked, and unknown parameters should be modelled as uncertain quantities rather than replaced by unexplained noise.
 
-# 30. Conclusion
+# 31. Conclusion
 
 Version I asked whether linear algebra could replace repeated Punnett squares, and answered correctly that it could. It then identified the cost: forcing the operator to be square, so that it could be diagonalised and raised to a power, appeared to force the model to represent less of the population as more loci were added.
 
@@ -1229,7 +1351,9 @@ This unified treatment establishes three things about that cost. First, it was s
 
 The strongest contribution is not the sparse kernel but the separation it forced: transmission from mating, catalog coverage from probability mass, probability mass from predictive accuracy, and germline from somatic change. Version I's conclusion moved between those quantities. Keeping them apart is what makes the remaining claims defensible and the remaining gaps visible.
 
-Two gaps are worth naming last, because they bound what should be attempted next. Admitting mutation destroys the structural sparsity the architecture depends on, which means the honest successor to this work is factored or structured, not sparse. And age is collinear with its own epigenetic mediators, which means the expression gate of Part VI cannot be estimated from a convenience sample at any size, and needs a design built specifically to break that collinearity.
+A third boundary emerged only when the regimes were pointed at models this project did not write. The factored representation removes the exponential, and Section 16 shows what it leaves: a cost of Theta(n^(5/2)) once the answer's accuracy is held fixed rather than its array length, which puts the largest published scores for a single disease out of reach at useful precision. The honest summary of the whole architecture is therefore that it moves the wall twice and removes it never.
+
+Two further gaps are worth naming last, because they bound what should be attempted next. Admitting mutation destroys the structural sparsity the architecture depends on, which means the honest successor to this work is factored or structured, not sparse. And age is collinear with its own epigenetic mediators, which means the expression gate of Part VI cannot be estimated from a convenience sample at any size, and needs a design built specifically to break that collinearity.
 
 The next empirical priority is unchanged and unglamorous: an independent parent-offspring transmission dataset with a preregistered evaluation target. Everything in Part VI should wait for it.
 
@@ -1308,20 +1432,24 @@ The checks above concern delivered evidence. They do not assert that MATLAB was 
 | 14.1 | The score distribution is polynomial where the catalog is exponential | 14.2 |
 | 14.2 | What a real height model would additionally require | 14.4 |
 | 15.1 | Output-size lower bounds for P(n): Omega(15^n), Omega(3^n), Theta(n), Omega(B) | 15.3 |
-| 16.1 | Germline and somatic routes are different objects | 16 |
-| 18.1 | Age-parameterised gamete mutation operator | 18.3 |
-| 18.2 | Normalisation is preserved | 18.3 |
-| 19.1 | A positive mutation rate destroys structural sparsity | 19 |
-| 20.1 | Constant intensity gives exponential, not linear, survival | 20 |
-| 20.2 | Multistage hazard has log-log slope k-1 | 20 |
-| 21.1 | Methylation approaches equilibrium exponentially | 21 |
-| 21.2 | Mutation is absorbing; methylation is ergodic | 21 |
-| 22.1 | The expression gate | 22 |
-| 22.2 | Age-dependent effective penetrance | 22 |
-| 23.1 | Gradient is the feature matrix applied to residuals | 23 |
-| 23.2 | The cross-entropy objective is convex | 23 |
-| 23.3 | Step-size bound eta < 8/||x||^2 | 23 |
-| 28.1 | Collinearity makes weights unidentifiable while the fit looks healthy | 28 |
+| 16.1 | The complete-kernel regime is unavailable for every published CAD score | 16.3 |
+| 16.2 | A fixed discretisation budget degrades with n | 16.5 |
+| 16.3 | At fixed relative accuracy the score DP costs Theta(n^(5/2)) | 16.6 |
+| 16.4 | The factored regime is not size-free either | 16.7 |
+| 17.1 | Germline and somatic routes are different objects | 17 |
+| 19.1 | Age-parameterised gamete mutation operator | 19.3 |
+| 19.2 | Normalisation is preserved | 19.3 |
+| 20.1 | A positive mutation rate destroys structural sparsity | 20 |
+| 21.1 | Constant intensity gives exponential, not linear, survival | 21 |
+| 21.2 | Multistage hazard has log-log slope k-1 | 21 |
+| 22.1 | Methylation approaches equilibrium exponentially | 22 |
+| 22.2 | Mutation is absorbing; methylation is ergodic | 22 |
+| 23.1 | The expression gate | 23 |
+| 23.2 | Age-dependent effective penetrance | 23 |
+| 24.1 | Gradient is the feature matrix applied to residuals | 24 |
+| 24.2 | The cross-entropy objective is convex | 24 |
+| 24.3 | Step-size bound eta < 8/||x||^2 | 24 |
+| 29.1 | Collinearity makes weights unidentifiable while the fit looks healthy | 29 |
 
 # Appendix D. Version I artefacts preserved
 

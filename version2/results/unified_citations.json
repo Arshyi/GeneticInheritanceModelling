@@ -42,6 +42,10 @@
     "yengo2022height",
     "nist_wilson",
     "scipy_kstest",
+    "lambert2021pgscatalog",
+    "pgs_catalog_cad_20260906",
+    "mega2015grs27",
+    "truong2024prsmix",
     "kong2012paternal",
     "jonsson2017trios",
     "blokzijl2016somatic",
@@ -53,5 +57,5 @@
     "hannum2013aging",
     "nelder1972glm"
   ],
-  "total": 52
+  "total": 56
 }

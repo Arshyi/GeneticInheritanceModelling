@@ -1,0 +1,630 @@
+{
+  "trait": {
+    "id": "MONDO_0005010",
+    "label": "coronary artery disorder"
+  },
+  "catalogue_summary": {
+    "scores_for_this_trait": 88,
+    "smallest": {
+      "id": "PGS000010",
+      "variants": 27,
+      "firstauthor": "Mega JL",
+      "date": "2015-03-04"
+    },
+    "largest": {
+      "id": "PGS004744",
+      "variants": 7082943,
+      "firstauthor": "Truong B",
+      "date": "2024-03-12"
+    }
+  },
+  "ladder": [
+    {
+      "id": "PGS000010",
+      "name": "GRS27",
+      "reported_variants": 27,
+      "usable_variants": 27,
+      "method": "Genome-wide significant variants",
+      "weight_type": "NR",
+      "genome_build": "NR",
+      "publication": {
+        "firstauthor": "Mega JL",
+        "journal": "Lancet",
+        "date": "2015-03-04",
+        "doi": "10.1016/S0140-6736(14)61730-X",
+        "pmid": 25748612
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000010/ScoringFiles/PGS000010.txt.gz",
+      "scoring_file_sha256": "95a8ed43aa6fb7370746d38f55de0af548ad824402bdc160ff97e69fb198b90f",
+      "scoring_file_bytes": 1137,
+      "publishes_effect_allele_frequency": true,
+      "licence_note": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+      "n_used": 27,
+      "effect_allele_frequency_source": "published with the score",
+      "weight_summary": {
+        "min": 0.058268908123975824,
+        "max": 0.5306282510621704,
+        "mean_abs": 0.14178366133755482,
+        "sum_abs": 3.8281588561139803
+      },
+      "complete_kernel": {
+        "log10_genotypes": 12.882273877430885,
+        "log10_unordered_pairs": 25.46351775919779,
+        "log10_supported_transitions": 31.453433998839415,
+        "log10_dense_payload_bytes": 39.24888162362062,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.000191407942805699,
+        "bins": 39995,
+        "bins_predicted": 39995,
+        "pmf_payload_bytes": 319960,
+        "seconds": 0.002472499996656552,
+        "worst_case_absolute_error": 0.005168014455753873,
+        "mean_analytic": 3.237069312899963,
+        "mean_from_dp": 3.2362680745759174,
+        "variance_analytic": 0.175500840134396,
+        "variance_from_dp": 0.17545504550326463,
+        "sd_analytic": 0.41892820403309683,
+        "worst_case_error_in_sd": 0.012336277209317665,
+        "mean_absolute_discrepancy": 0.000801238324045439
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 49347,
+        "status": "measured",
+        "requested_bins": 49347,
+        "bins": 49345,
+        "seconds": 0.0018739000006462447,
+        "discretisation_step": 0.00015515579200397117,
+        "worst_case_absolute_error": 0.004189206384107222,
+        "mean_from_dp": 3.236822895396767,
+        "pmf_payload_bytes": 394760,
+        "achieved_error_in_sd": 0.009999819405275133,
+        "mean_absolute_discrepancy": 0.0002464175031957616
+      }
+    },
+    {
+      "id": "PGS012581",
+      "name": "PRS169_CAD",
+      "reported_variants": 169,
+      "usable_variants": 169,
+      "method": "Genome-wide significant SNPs",
+      "weight_type": "beta",
+      "genome_build": "NR",
+      "publication": {
+        "firstauthor": "Zheng J",
+        "journal": "J Intern Med",
+        "date": "2024-03-25",
+        "doi": "10.1111/joim.13780",
+        "pmid": 38528394
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS012581/ScoringFiles/PGS012581.txt.gz",
+      "scoring_file_sha256": "5568f86bb86228703ca79286a256829c72c12851344b1e766eafcaec3eea612b",
+      "scoring_file_bytes": 3536,
+      "publishes_effect_allele_frequency": true,
+      "licence_note": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+      "n_used": 169,
+      "effect_allele_frequency_source": "published with the score",
+      "weight_summary": {
+        "min": -0.4265,
+        "max": 0.1702,
+        "mean_abs": 0.08049940828402366,
+        "sum_abs": 13.604399999999998
+      },
+      "complete_kernel": {
+        "log10_genotypes": 80.63349204762295,
+        "log10_unordered_pairs": 160.96595409958192,
+        "log10_supported_transitions": 198.45839278474617,
+        "log10_dense_payload_bytes": 242.50253613419682,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.0006802199999999999,
+        "bins": 40001,
+        "bins_predicted": 40001,
+        "pmf_payload_bytes": 320008,
+        "seconds": 0.007479400002921466,
+        "worst_case_absolute_error": 0.11495717999999999,
+        "mean_analytic": -4.3371965800000005,
+        "mean_from_dp": -4.337144136351997,
+        "variance_analytic": 0.3135964158048614,
+        "variance_from_dp": 0.31364073426365735,
+        "sd_analytic": 0.5599967998166252,
+        "worst_case_error_in_sd": 0.20528185167780158,
+        "mean_absolute_discrepancy": 5.244364800383039e-05
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 821129,
+        "status": "measured",
+        "requested_bins": 821129,
+        "bins": 821115,
+        "seconds": 0.5780118999973638,
+        "discretisation_step": 3.3135881372940635e-05,
+        "worst_case_absolute_error": 0.005599963952026967,
+        "mean_from_dp": -4.337387773714594,
+        "pmf_payload_bytes": 6568920,
+        "achieved_error_in_sd": 0.009999992774709988,
+        "mean_absolute_discrepancy": 0.00019119371459375145
+      }
+    },
+    {
+      "id": "PGS002262",
+      "name": "metaPRS_CAD",
+      "reported_variants": 540,
+      "usable_variants": 540,
+      "method": "metaPRS (elasticnet)",
+      "weight_type": "metaPRS",
+      "genome_build": "GRCh37",
+      "publication": {
+        "firstauthor": "Lu X",
+        "journal": "Eur Heart J",
+        "date": "2022-02-23",
+        "doi": "10.1093/eurheartj/ehac093",
+        "pmid": 35195259
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002262/ScoringFiles/PGS002262.txt.gz",
+      "scoring_file_sha256": "fbe65451e16853cd958daa45709a418dd6e7d4fc345aabc68f63803f5ed7bcf2",
+      "scoring_file_bytes": 9560,
+      "publishes_effect_allele_frequency": false,
+      "licence_note": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+      "n_used": 540,
+      "effect_allele_frequency_source": "declared uniform 0.3",
+      "weight_summary": {
+        "min": -0.497,
+        "max": 1.11,
+        "mean_abs": 0.030505185185185184,
+        "sum_abs": 16.4728
+      },
+      "complete_kernel": {
+        "log10_genotypes": 257.6454775486177,
+        "log10_unordered_pairs": 514.9899251015714,
+        "log10_supported_transitions": 634.788249894404,
+        "log10_dense_payload_bytes": 773.5384926371811,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.0008236399999999999,
+        "bins": 40003,
+        "bins_predicted": 40003,
+        "pmf_payload_bytes": 320024,
+        "seconds": 0.01839990000007674,
+        "worst_case_absolute_error": 0.4447656,
+        "mean_analytic": 0.4315199999999999,
+        "mean_from_dp": 0.42911399199934763,
+        "variance_analytic": 1.1472162240000001,
+        "variance_from_dp": 1.1476709418776068,
+        "sd_analytic": 1.0710818007976795,
+        "worst_case_error_in_sd": 0.41524895639974874,
+        "mean_absolute_discrepancy": 0.002406008000652271
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 1660997,
+        "status": "measured",
+        "requested_bins": 1660997,
+        "bins": 1660995,
+        "seconds": 3.4251225999978487,
+        "discretisation_step": 1.9834846080303624e-05,
+        "worst_case_absolute_error": 0.010710816883363956,
+        "mean_from_dp": 0.4314717557892074,
+        "pmf_payload_bytes": 13287960,
+        "achieved_error_in_sd": 0.009999998950021523,
+        "mean_absolute_discrepancy": 4.8244210792525166e-05
+      }
+    },
+    {
+      "id": "PGS002775",
+      "name": "GTG_CAD_maxCT",
+      "reported_variants": 1059,
+      "usable_variants": 1059,
+      "method": "Maximum clumping and thresholding (maxCT)",
+      "weight_type": "NR",
+      "genome_build": "hg19",
+      "publication": {
+        "firstauthor": "Wong CK",
+        "journal": "PLoS One",
+        "date": "2022-12-02",
+        "doi": "10.1371/journal.pone.0278764",
+        "pmid": 36459520
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002775/ScoringFiles/PGS002775.txt.gz",
+      "scoring_file_sha256": "fb6576f287e5b91bab38c79e6f76de6c15e6157daf9d871c55a69daa01982961",
+      "scoring_file_bytes": 15671,
+      "publishes_effect_allele_frequency": false,
+      "licence_note": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+      "n_used": 1059,
+      "effect_allele_frequency_source": "declared uniform 0.3",
+      "weight_summary": {
+        "min": -0.2565,
+        "max": 0.3429,
+        "mean_abs": 0.065102776203966,
+        "sum_abs": 68.94384
+      },
+      "complete_kernel": {
+        "log10_genotypes": 505.2714087481225,
+        "log10_unordered_pairs": 1010.241787500581,
+        "log10_supported_transitions": 1245.1796133443024,
+        "log10_dense_payload_bytes": 1516.4162862356955,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.0034471919999999995,
+        "bins": 40017,
+        "bins_predicted": 40017,
+        "pmf_payload_bytes": 320136,
+        "seconds": 0.04588040000089677,
+        "worst_case_absolute_error": 3.6505763279999996,
+        "mean_analytic": 2.0727359999999995,
+        "mean_from_dp": 2.0894719679940437,
+        "variance_analytic": 2.656501667484,
+        "variance_from_dp": 2.6591798637527972,
+        "sd_analytic": 1.6298778075315954,
+        "worst_case_error_in_sd": 2.239785283983157,
+        "mean_absolute_discrepancy": 0.0167359679940442
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 8959143,
+        "status": "refused",
+        "reason": "needs 8,959,143 bins and about 9,487,732,437 element operations, beyond the 4,000,000 bin and 2,000,000,000 work ceilings"
+      }
+    },
+    {
+      "id": "PGS004196",
+      "name": "cad_1",
+      "reported_variants": 3892,
+      "usable_variants": 3892,
+      "method": "LASSO",
+      "weight_type": "beta",
+      "genome_build": "GRCh37",
+      "publication": {
+        "firstauthor": "Raben TG",
+        "journal": "Sci Rep",
+        "date": "2023-07-19",
+        "doi": "10.1038/s41598-023-37580-5",
+        "pmid": 37468507
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004196/ScoringFiles/PGS004196.txt.gz",
+      "scoring_file_sha256": "58a3d0070c4bda79671551306fa1c42356daa1e16b7788bde113ceb5a0755760",
+      "scoring_file_bytes": 76252,
+      "publishes_effect_allele_frequency": false,
+      "licence_note": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+      "n_used": 3892,
+      "effect_allele_frequency_source": "declared uniform 0.3",
+      "weight_summary": {
+        "min": -0.0551773632586959,
+        "max": 0.0152620703721884,
+        "mean_abs": 0.0008908314587554552,
+        "sum_abs": 3.4671160374762318
+      },
+      "complete_kernel": {
+        "log10_genotypes": 1856.9559233689263,
+        "log10_unordered_pairs": 3713.6108167421885,
+        "log10_supported_transitions": 4577.046150249048,
+        "log10_dense_payload_bytes": 5571.469830098107,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.00017335580187381158,
+        "bins": 39973,
+        "bins_predicted": 39973,
+        "pmf_payload_bytes": 319784,
+        "seconds": 0.15313199999945937,
+        "worst_case_absolute_error": 0.6747007808928747,
+        "mean_analytic": -0.4506676921681433,
+        "mean_from_dp": -0.45259412945459454,
+        "variance_analytic": 0.007324571470239545,
+        "variance_from_dp": 0.007332866521581494,
+        "sd_analytic": 0.08558371030891068,
+        "worst_case_error_in_sd": 7.883518703005181,
+        "mean_absolute_discrepancy": 0.0019264372864512547
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 31534076,
+        "status": "refused",
+        "reason": "needs 31,534,076 bins and about 122,730,623,792 element operations, beyond the 4,000,000 bin and 2,000,000,000 work ceilings"
+      }
+    },
+    {
+      "id": "PGS004197",
+      "name": "cad_2",
+      "reported_variants": 11490,
+      "usable_variants": 11490,
+      "method": "LASSO",
+      "weight_type": "beta",
+      "genome_build": "GRCh37",
+      "publication": {
+        "firstauthor": "Raben TG",
+        "journal": "Sci Rep",
+        "date": "2023-07-19",
+        "doi": "10.1038/s41598-023-37580-5",
+        "pmid": 37468507
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004197/ScoringFiles/PGS004197.txt.gz",
+      "scoring_file_sha256": "8cf81169da99602e40b5d8412388c5c281a719551bdd8cc562ffe3d1fa44b7cd",
+      "scoring_file_bytes": 219621,
+      "publishes_effect_allele_frequency": false,
+      "licence_note": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+      "n_used": 11490,
+      "effect_allele_frequency_source": "declared uniform 0.3",
+      "weight_summary": {
+        "min": -0.0649971263788486,
+        "max": 0.01575294400376,
+        "mean_abs": 0.0010160196033409017,
+        "sum_abs": 11.67406524238696
+      },
+      "complete_kernel": {
+        "log10_genotypes": 5482.123216728922,
+        "log10_unordered_pairs": 10963.94540346218,
+        "log10_supported_transitions": 13512.987536554114,
+        "log10_dense_payload_bytes": 16446.97171017809,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.000583703262119348,
+        "bins": 39237,
+        "bins_predicted": 39237,
+        "pmf_payload_bytes": 313896,
+        "seconds": 0.36653230000229087,
+        "worst_case_absolute_error": 6.706750481751309,
+        "mean_analytic": -0.9510212912528793,
+        "mean_from_dp": -1.168271356276147,
+        "variance_analytic": 0.021306391769678797,
+        "variance_from_dp": 0.02145468162333941,
+        "sd_analytic": 0.14596709139281633,
+        "worst_case_error_in_sd": 45.94700365510864,
+        "mean_absolute_discrepancy": 0.21725006502326782
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 183788016,
+        "status": "refused",
+        "reason": "needs 183,788,016 bins and about 2,111,724,303,840 element operations, beyond the 4,000,000 bin and 2,000,000,000 work ceilings"
+      }
+    },
+    {
+      "id": "PGS000012",
+      "name": "GRS49K",
+      "reported_variants": 49310,
+      "usable_variants": 49310,
+      "method": "LD thinning",
+      "weight_type": "NR",
+      "genome_build": "hg19",
+      "publication": {
+        "firstauthor": "Abraham G",
+        "journal": "Eur Heart J",
+        "date": "2016-09-21",
+        "doi": "10.1093/eurheartj/ehw450",
+        "pmid": 27655226
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000012/ScoringFiles/PGS000012.txt.gz",
+      "scoring_file_sha256": "87c1a21658a337520c7d9bb1cc63bba9fbf202301432a92e2dcc8ababa855d26",
+      "scoring_file_bytes": 338362,
+      "publishes_effect_allele_frequency": false,
+      "licence_note": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+      "n_used": 49310,
+      "effect_allele_frequency_source": "declared uniform 0.3",
+      "weight_summary": {
+        "min": 0.0,
+        "max": 0.187251,
+        "mean_abs": 0.014716308943419186,
+        "sum_abs": 725.661194
+      },
+      "complete_kernel": {
+        "log10_genotypes": 23526.849070226555,
+        "log10_unordered_pairs": 47053.397110457445,
+        "log10_supported_transitions": 57992.75895403998,
+        "log10_dense_payload_bytes": 70581.149270671,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.0362830597,
+        "bins": 30921,
+        "bins_predicted": 30921,
+        "pmf_payload_bytes": 247368,
+        "seconds": 0.8849907999974675,
+        "worst_case_absolute_error": 1789.117673807,
+        "mean_analytic": 435.3967164,
+        "mean_from_dp": 336.56166177679467,
+        "variance_analytic": 8.212865491031879,
+        "variance_from_dp": 9.744545490902965,
+        "sd_analytic": 2.865809744388465,
+        "worst_case_error_in_sd": 624.2974354142898,
+        "mean_absolute_discrepancy": 98.83505462320534
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 2497189743,
+        "status": "refused",
+        "reason": "needs 2,497,189,743 bins and about 123,136,426,227,330 element operations, beyond the 4,000,000 bin and 2,000,000,000 work ceilings"
+      }
+    },
+    {
+      "id": "PGS000337",
+      "name": "MetaPRS_CAD",
+      "reported_variants": 75028,
+      "usable_variants": 75028,
+      "method": "P-value thresholding",
+      "weight_type": "NR",
+      "genome_build": "hg19",
+      "publication": {
+        "firstauthor": "Koyama S",
+        "journal": "Nat Genet",
+        "date": "2020-10-05",
+        "doi": "10.1038/s41588-020-0705-3",
+        "pmid": 33020668
+      },
+      "scoring_file_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000337/ScoringFiles/PGS000337.txt.gz",
+      "scoring_file_sha256": "ffa6e7d7739ef51ccf8574b6203991a58e021b2404b81b6756dfe402671eaa4c",
+      "scoring_file_bytes": 916226,
+      "publishes_effect_allele_frequency": false,
+      "licence_note": "The use of data is limited for research purposes only. Identification of individuals is prohibited. The hum0014-v20 accession number should be cited in public publications and presentations.",
+      "n_used": 75028,
+      "effect_allele_frequency_source": "declared uniform 0.3",
+      "weight_summary": {
+        "min": -0.149177,
+        "max": 0.165598,
+        "mean_abs": 0.01836304702271152,
+        "sum_abs": 1377.74269202
+      },
+      "complete_kernel": {
+        "log10_genotypes": 35797.453499106836,
+        "log10_unordered_pairs": 71594.605968218,
+        "log10_supported_transitions": 88239.473954434,
+        "log10_dense_payload_bytes": 107392.96255731184,
+        "exceeds_budget": true,
+        "budget_bytes": 268435456
+      },
+      "score_dp": {
+        "discretisation_step": 0.068887134601,
+        "bins": 7715,
+        "bins_predicted": 7715,
+        "pmf_payload_bytes": 61720,
+        "seconds": 0.8802270000014687,
+        "worst_case_absolute_error": 5168.463934843829,
+        "mean_analytic": 22.071638196,
+        "mean_from_dp": -1077.3255642420568,
+        "variance_analytic": 12.817385028542375,
+        "variance_from_dp": 7.771033258046373,
+        "sd_analytic": 3.5801375711754955,
+        "worst_case_error_in_sd": 1443.6495335979016,
+        "mean_absolute_discrepancy": 1099.3972024380569
+      },
+      "accuracy_controlled": {
+        "target_error_in_sd": 0.01,
+        "bins_required": 5774598136,
+        "status": "refused",
+        "reason": "needs 5,774,598,136 bins and about 433,256,548,947,808 element operations, beyond the 4,000,000 bin and 2,000,000,000 work ceilings"
+      }
+    }
+  ],
+  "controlled_scaling": {
+    "rows": [
+      {
+        "n": 50,
+        "bins_required": 87822,
+        "sd": 0.2181458188573872,
+        "sum_abs_weight": 1.9157707619170126,
+        "requested_bins": 87822,
+        "bins": 87821,
+        "seconds": 0.006573099999513943,
+        "discretisation_step": 4.3628989920793717e-05,
+        "worst_case_absolute_error": 0.0021814494960396857,
+        "mean_from_dp": 0.3568629462436559,
+        "pmf_payload_bytes": 702568,
+        "status": "measured"
+      },
+      {
+        "n": 100,
+        "bins_required": 249258,
+        "sd": 0.3466198381831649,
+        "sum_abs_weight": 4.3198553969279585,
+        "requested_bins": 249258,
+        "bins": 249251,
+        "seconds": 0.09603829999832669,
+        "discretisation_step": 3.4661858218047707e-05,
+        "worst_case_absolute_error": 0.0034661858218047706,
+        "mean_from_dp": 0.394672701882409,
+        "pmf_payload_bytes": 1994008,
+        "status": "measured"
+      },
+      {
+        "n": 200,
+        "bins_required": 699920,
+        "sd": 0.41952177818822606,
+        "sum_abs_weight": 7.3407804470471705,
+        "requested_bins": 699920,
+        "bins": 699925,
+        "seconds": 0.5996964000005391,
+        "discretisation_step": 2.097608565290318e-05,
+        "worst_case_absolute_error": 0.004195217130580636,
+        "mean_from_dp": -0.4730768817000861,
+        "pmf_payload_bytes": 5599400,
+        "status": "measured"
+      },
+      {
+        "n": 400,
+        "bins_required": 1961178,
+        "sd": 0.6838113855444473,
+        "sum_abs_weight": 16.763433415579545,
+        "requested_bins": 1961178,
+        "bins": 1961197,
+        "seconds": 3.4832208000007086,
+        "discretisation_step": 1.7095278412483468e-05,
+        "worst_case_absolute_error": 0.006838111364993387,
+        "mean_from_dp": 0.171246773199762,
+        "pmf_payload_bytes": 15689576,
+        "status": "measured"
+      },
+      {
+        "n": 800,
+        "bins_required": 5521904,
+        "sd": 0.9148723779716941,
+        "sum_abs_weight": 31.573976298666107,
+        "status": "refused"
+      },
+      {
+        "n": 1600,
+        "bins_required": 15885451,
+        "sd": 1.302163174329345,
+        "sum_abs_weight": 64.64202207650064,
+        "status": "refused"
+      },
+      {
+        "n": 3200,
+        "bins_required": 44811170,
+        "sd": 1.8318810652064366,
+        "sum_abs_weight": 128.26364151019493,
+        "status": "refused"
+      },
+      {
+        "n": 6400,
+        "bins_required": 126492159,
+        "sd": 2.5751620183767225,
+        "sum_abs_weight": 254.48265661962137,
+        "status": "refused"
+      },
+      {
+        "n": 12800,
+        "bins_required": 355305963,
+        "sd": 3.6850195073129193,
+        "sum_abs_weight": 511.44898361230605,
+        "status": "refused"
+      },
+      {
+        "n": 25600,
+        "bins_required": 1009415500,
+        "sd": 5.166672034947151,
+        "sum_abs_weight": 1018.6169584921229,
+        "status": "refused"
+      }
+    ],
+    "fitted_bin_exponent": 1.4987425824923648,
+    "derived_bin_exponent": 1.5,
+    "fitted_time_vs_work_exponent": 1.1950921937345307,
+    "note": "Weights drawn once per n from Normal(0, 0.05) with a fixed seed and a constant effect-allele frequency, so only n varies. The bin exponent is derived, not assumed: sum|w| grows like n and the score SD like sqrt(n)."
+  },
+  "assumptions": [
+    "Hardy-Weinberg dosage probabilities at every variant.",
+    "Linkage equilibrium between variants. This is false for scores built by LD-aware methods, and it means the reported variance is not the variance of the real score.",
+    "Effect weights are treated as fixed and known; their standard errors are ignored.",
+    "Where a score publishes no effect-allele frequency, a single declared frequency is used and the run measures cost only, not any population quantity."
+  ],
+  "not_established": [
+    "No individual risk is computed for anyone.",
+    "No validation of any published score is attempted or implied.",
+    "The distributions are of a discretised score under the assumptions above, not of observed disease risk."
+  ],
+  "redistribution_note": "Scoring files are fetched from the PGS Catalog at run time and are not redistributed here. Only derived quantities, digests and provenance are retained.",
+  "completed_at_utc": "2026-09-06T11:27:38.807339+00:00"
+}

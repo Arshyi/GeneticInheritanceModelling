@@ -171,11 +171,73 @@ def complexity_tables(comp):
     return traits, growth
 
 
+def pgs_tables(pgs):
+    """Everything Section 16 reports, bound to results/pgs_catalog.json."""
+    cat = pgs['catalogue_summary']
+    summary = (
+        f"The PGS Catalog holds {cat['scores_for_this_trait']} published polygenic scores for "
+        f"coronary artery disorder. [lambert2021pgscatalog] [pgs_catalog_cad_20260906] The smallest, "
+        f"{cat['smallest']['id']}, uses {cat['smallest']['variants']:,} variants "
+        f"[mega2015grs27]; the largest, {cat['largest']['id']}, uses "
+        f"{cat['largest']['variants']:,} [truong2024prsmix]. That is a span of four orders of "
+        f"magnitude within one disease.")
+
+    kernel = table(
+        ['Score', 'Variants n', 'log10(3^n) genotypes', 'log10 dense payload bytes',
+         'Within the 256 MiB budget?'],
+        [(r['id'], f"{r['n_used']:,}",
+          f"{r['complete_kernel']['log10_genotypes']:,.1f}",
+          f"{r['complete_kernel']['log10_dense_payload_bytes']:,.1f}",
+          'no' if r['complete_kernel']['exceeds_budget'] else 'yes')
+         for r in pgs['ladder']])
+
+    ladder = table(
+        ['Score', 'Variants n', 'Frequencies', 'Bins', 'Seconds',
+         'Worst-case error, in score SD'],
+        [(r['id'], f"{r['n_used']:,}",
+          'published' if r['publishes_effect_allele_frequency'] else 'declared',
+          f"{r['score_dp']['bins']:,}", f"{r['score_dp']['seconds']:.3f}",
+          f"{r['score_dp']['worst_case_error_in_sd']:,.3f}")
+         for r in pgs['ladder']])
+
+    sc = pgs['controlled_scaling']
+    scaling = table(
+        ['Loci n', 'Bins needed for 1% of SD', 'Status', 'Seconds'],
+        [(f"{r['n']:,}", f"{r['bins_required']:,}", r['status'],
+          f"{r['seconds']:.3f}" if r['status'] == 'measured' else 'refused')
+         for r in sc['rows']])
+
+    scaling_result = (
+        f"Fitting the bin requirement against n over that study gives an exponent of "
+        f"**{sc['fitted_bin_exponent']:.4f}**, against the derived {sc['derived_bin_exponent']}. "
+        f"Measured time against n times bins gives an exponent of "
+        f"{sc['fitted_time_vs_work_exponent']:.3f} rather than 1, the excess being allocation and "
+        f"memory-bandwidth cost on arrays of a few million entries rather than any change in the "
+        f"operation count.")
+
+    top = pgs['ladder'][-1]
+    biggest = cat['largest']
+    ratio = biggest['variants'] / top['n_used']
+    projected = top['accuracy_controlled']['bins_required'] * ratio ** 1.5
+    extrapolation = (
+        f"The largest score measured here, {top['id']} at {top['n_used']:,} variants, already needs "
+        f"{top['accuracy_controlled']['bins_required']:,} bins to hold the error at one per cent of "
+        f"the score's standard deviation, which the bin and work ceilings refuse. Extrapolating the "
+        f"n^(3/2) law to the largest published score for this disease, {biggest['id']} at "
+        f"{biggest['variants']:,} variants, projects roughly {projected:.3g} bins, about "
+        f"{projected * 8 / 1024 ** 4:.3g} TiB of binary64, and on the order of "
+        f"{biggest['variants'] * projected:.3g} element operations. This is a labelled "
+        f"extrapolation, not a measurement: that score was never downloaded, and only its published "
+        f"variant count is used.")
+    return summary, kernel, ladder, scaling, scaling_result, extrapolation
+
+
 def main():
     ledger, values = bindings()
     legacy = read('version1_reproduction.json')
     poly = read('polygenic_synthetic.json')
     eye = read('eye_color.json')
+    pgs = read('pgs_catalog.json')
     comp = read('complexity.json')
     counts = legacy['state_counts']
     checks = legacy['displayed_matrix_checks']
@@ -184,6 +246,8 @@ def main():
     matlab_source, matlab_digests = matlab_appendix()
     eye_rep, eye_pop, eye_gens, eye_external = eye_tables(eye)
     comp_traits, comp_growth = complexity_tables(comp)
+    (pgs_summary, pgs_kernel, pgs_ladder, pgs_scaling,
+     pgs_scaling_result, pgs_extrapolation) = pgs_tables(pgs)
 
     values.update({
         'V1_COVERAGE_VARIANTS': variants_table,
@@ -236,6 +300,12 @@ def main():
             f"FIN {eye['orientation']['northern_european_frequency']['FIN']:.4f}, "
             f"GBR {eye['orientation']['northern_european_frequency']['GBR']:.4f}, "
             f"CEU {eye['orientation']['northern_european_frequency']['CEU']:.4f}"),
+        'PGS_TRAIT_SUMMARY': pgs_summary,
+        'PGS_KERNEL_TABLE': pgs_kernel,
+        'PGS_LADDER_TABLE': pgs_ladder,
+        'PGS_SCALING_TABLE': pgs_scaling,
+        'PGS_SCALING_RESULT': pgs_scaling_result,
+        'PGS_EXTRAPOLATION': pgs_extrapolation,
         'COMPLEXITY_TRAIT_TABLE': comp_traits,
         'COMPLEXITY_GROWTH_TABLE': comp_growth,
         'COMPLEXITY_NOTE': comp['growth_comparison_note'],

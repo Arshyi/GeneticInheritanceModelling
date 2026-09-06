@@ -2,7 +2,7 @@
 
 A research extension of **Bioinformatics-Arshyia Mehran.pdf**, preserved unchanged in the parent directory. The main result is a reproducible audit and complete probabilistic inheritance engine, with measured dense/CSR/hash/streamed comparisons and explicitly limited biological validation.
 
-**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (74 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. A standalone Version II audit is still generated as [Markdown](manuscript/version2_manuscript.md) by `run.py manuscript`; it is not shipped as a second PDF. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
+**Start with [the unified paper](output/pdf/Genetics_Complete.pdf)** (74 pages, [Markdown source](manuscript/genetics_unified.md)) - Version I and Version II merged into one document: the original mathematics preserved and reworked for exposition, then audited, then extended. The [Version II review manuscript](output/pdf/Genetics_Version_II.pdf) ([source](manuscript/version2_manuscript.md)) remains available as the standalone audit. Scientific methods and limitations are in the manuscript. No public upload or submission has been made.
 
 ## Findings
 

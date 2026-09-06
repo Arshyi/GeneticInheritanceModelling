@@ -597,6 +597,99 @@
       "accessed_date": "2026-09-05"
     },
     {
+      "id": "lambert2021pgscatalog",
+      "type": "primary_research",
+      "authors": [
+        "Samuel A. Lambert",
+        "Laurent Gil",
+        "Simon Jupp",
+        "and colleagues"
+      ],
+      "title": "The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation",
+      "year": 2021,
+      "venue": "Nature Genetics 53:420-425. PMID 33692568",
+      "doi": "10.1038/s41588-021-00783-5",
+      "url": "https://www.nature.com/articles/s41588-021-00783-5",
+      "access_status": "Bibliographic record confirmed by web search 2026-09-06; publisher full text not read in this session. The Catalog's REST API and FTP scoring files were used directly and are the operative source for every number reported.",
+      "supports": [
+        "An open, curated database of published polygenic scores with variants, alleles and weights",
+        "Programmatic access to score metadata and scoring files",
+        "The 88 published coronary-artery-disease scores used as the size ladder"
+      ],
+      "does_not_establish": [
+        "Validity or clinical utility of any individual score deposited there",
+        "That the linkage-equilibrium assumption made in this work holds for any of them",
+        "Any result about coronary artery disease"
+      ],
+      "accessed_date": "2026-09-06"
+    },
+    {
+      "id": "pgs_catalog_cad_20260906",
+      "type": "public_dataset",
+      "organization": "PGS Catalog, EMBL-EBI",
+      "title": "Published polygenic scores for coronary artery disorder (MONDO_0005010), and the effect weights of eight of them",
+      "year": 2026,
+      "venue": "PGS Catalog REST API and FTP scoring files. Derived quantities and file digests retained in results/pgs_catalog.json; scoring files not redistributed",
+      "url": "https://www.pgscatalog.org/trait/MONDO_0005010/",
+      "access_status": "Fetched live on 2026-09-06. Each scoring file's SHA-256 digest, size and source URL are recorded so the run can be repeated. Files are used under the Catalog's terms and are not redistributed with this work.",
+      "supports": [
+        "88 published scores for one phenotype, from 27 to 7,082,943 variants",
+        "Real effect weights, and published effect-allele frequencies for two of the eight scores used",
+        "The size ladder against which the four regimes of Section 15.2 are tested"
+      ],
+      "does_not_establish": [
+        "Any clinical claim; no individual risk is computed anywhere in this work",
+        "Validation or criticism of any deposited score",
+        "That the scores are mutually independent, which the analysis assumes and which is false for LD-aware methods"
+      ],
+      "accessed_date": "2026-09-06"
+    },
+    {
+      "id": "mega2015grs27",
+      "type": "primary_research",
+      "authors": [
+        "Jessica L. Mega",
+        "and colleagues"
+      ],
+      "title": "Genetic risk, coronary heart disease events, and the clinical benefit of statin therapy: an analysis of primary and secondary prevention trials",
+      "year": 2015,
+      "venue": "The Lancet. PMID 25748612. Deposited as PGS000010",
+      "doi": "10.1016/S0140-6736(14)61730-X",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25748612/",
+      "access_status": "Bibliographic record taken from the PGS Catalog entry for PGS000010, fetched 2026-09-06. Full text not read in this session; the score's weights, not its clinical conclusions, are what this work uses.",
+      "supports": [
+        "The smallest published coronary-artery-disease score in the Catalog, 27 variants",
+        "Effect weights and effect-allele frequencies used in Section 16"
+      ],
+      "does_not_establish": [
+        "Any clinical claim reproduced or evaluated here",
+        "That 27 variants are sufficient for any purpose"
+      ],
+      "accessed_date": "2026-09-06"
+    },
+    {
+      "id": "truong2024prsmix",
+      "type": "primary_research",
+      "authors": [
+        "Buu Truong",
+        "and colleagues"
+      ],
+      "title": "Integrative polygenic risk score improves the prediction accuracy of complex traits and diseases",
+      "year": 2024,
+      "venue": "Deposited as PGS004744, 7,082,943 variants",
+      "url": "https://www.pgscatalog.org/score/PGS004744/",
+      "access_status": "Bibliographic record taken from the PGS Catalog entry for PGS004744, fetched 2026-09-06. The scoring file was not downloaded; only its published variant count is used, as the basis of a labelled extrapolation.",
+      "supports": [
+        "The largest published coronary-artery-disease score in the Catalog, 7,082,943 variants",
+        "The upper end of the size range against which the regimes are tested"
+      ],
+      "does_not_establish": [
+        "Any measured result; this score is used only for its variant count",
+        "Any evaluation of the PRSmix method"
+      ],
+      "accessed_date": "2026-09-06"
+    },
+    {
       "id": "dean_abo_2005",
       "type": "authoritative_reference_chapter",
       "authors": [
