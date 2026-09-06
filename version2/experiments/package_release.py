@@ -24,12 +24,13 @@ def main():
         assert archive.testzip() is None
         assert len(archive.infolist())==len(files)
         names={info.filename for info in archive.infolist()}
-        assert 'GENETICS/version2/output/pdf/Genetics_Complete.pdf' in names
-        assert not [n for n in names if n.endswith('.pdf') and not n.endswith('Genetics_Complete.pdf')]
+        shipped={'Genetics_Complete.pdf','Genetics_Bounds_Paper.pdf'}
+        pdfs={n.rsplit('/',1)[-1] for n in names if n.endswith('.pdf')}
+        assert pdfs==shipped, pdfs
         assert not [n for n in names if n.endswith('.docx')]
     result={'created_at_utc':datetime.now(timezone.utc).isoformat(),'archive':str(output.relative_to(ROOT)),
             'files':len(files),'bytes':output.stat().st_size,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),
-            'zip_crc_validation':'passed','single_pdf_only':True,'version1_originals_included':False,'dependencies_included':False}
+            'zip_crc_validation':'passed','pdfs_shipped':sorted(shipped),'version1_originals_included':False,'dependencies_included':False}
     (ROOT/'results/package_manifest.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2))
 

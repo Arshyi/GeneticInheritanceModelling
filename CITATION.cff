@@ -15,9 +15,13 @@ abstract: >-
   Theta(n) and therefore optimal. Population assumptions are tested against
   public rs334 and rs12913832 genotype calls for 2,504 individuals across 26
   populations. Eye colour is added as a two-locus epistatic trait on real data
-  and compared against published cohorts. A final part derives, without
-  implementing, an extension in which age enters through germline mutation and
-  epigenetic regulation. No predictive accuracy is established for any trait.
+  and compared against published cohorts. The regimes are then tested against 88
+  published polygenic scores for one disease, spanning 27 to 7,082,943 variants:
+  the complete kernel is unavailable at the smallest of them, and holding
+  discretisation accuracy fixed rather than bin count raises the score-distribution
+  cost to Theta(n^(5/2)). A final part derives, without implementing, an extension
+  in which age enters through germline mutation and epigenetic regulation. No
+  predictive accuracy is established for any trait.
 type: software
 authors:
   - family-names: Mehran
@@ -35,8 +39,8 @@ identifiers:
     value: "10.5281/zenodo.22401515"
     description: "DOI of version 2.0.0"
 license: CC-BY-4.0
-version: "2.0.0"
-date-released: "2026-09-05"
+version: "2.1.0"
+date-released: "2026-09-06"
 keywords:
   - Mendelian inheritance
   - transition matrix

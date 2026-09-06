@@ -1,11 +1,14 @@
 {
-  "created_at_utc": "2026-09-05T19:22:26.988173+00:00",
+  "created_at_utc": "2026-09-06T12:11:55.413411+00:00",
   "archive": "output\\Genetics_Research_Package.zip",
-  "files": 187,
-  "bytes": 2424576,
-  "sha256": "5b54e83adfb2fb35b5f206da9fe50380de169f7c8908981bfc0d9437711c9b4f",
+  "files": 198,
+  "bytes": 3303438,
+  "sha256": "8a49c673c760764732afce8145e1653101614131a3f983f83fa9169a29174943",
   "zip_crc_validation": "passed",
-  "single_pdf_only": true,
+  "pdfs_shipped": [
+    "Genetics_Bounds_Paper.pdf",
+    "Genetics_Complete.pdf"
+  ],
   "version1_originals_included": false,
   "dependencies_included": false
 }
